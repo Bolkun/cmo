@@ -1,0 +1,27 @@
+.tic-tac-toe-cell {
+  width: 60px; /* adjust as necessary */
+  height: 60px;
+  border: 1px solid #000; /* giving it a border to differentiate cells */
+  display: flex;
+  align-items: center; /* vertically center */
+  justify-content: center; /* horizontally center */
+  cursor: pointer; /* indicates the cell is clickable */
+  font-size: 24px; /* adjust as necessary */
+  margin: 2px; /* some space between cells */
+}
+
+/* You can also style the cells based on their content */
+.tic-tac-toe-cell.x {
+  color: blue;
+}
+
+.tic-tac-toe-cell.o {
+  color: red;
+}
+
+/* This will make the row a flex container and each cell a flex item */
+.row-container {
+  display: flex;
+  justify-content: center; /* centering the row content horizontally */
+}
+

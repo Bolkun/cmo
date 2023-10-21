@@ -1,13 +1,20 @@
 <!-- <div>
   Timer: {{ timerService.timer }}
 </div> -->
-<app-flash-message></app-flash-message>
-<div *ngFor="let row of board; let rowIndex = index">
-  <button style="width: 50px; height: 50px;" *ngFor="let cell of row; let colIndex = index" (click)="makeMove(rowIndex, colIndex)">
-    {{ cell }}
-  </button>
+
+<div class="container add-form">
+  <h1 class="form-header">Game</h1>
+  <app-flash-message></app-flash-message>
+  <div class="form-control">
+    <div class="row-container" *ngFor="let row of board; let rowIndex = index">
+      <div class="tic-tac-toe-cell" [ngClass]="{'x': cell === 'X', 'o': cell === 'O'}"
+        *ngFor="let cell of row; let colIndex = index" (click)="makeMove(rowIndex, colIndex)">
+        {{ cell }}
+      </div>
+    </div>
+    <!-- <app-user-status uid="userID">{{ userEmail }}</app-user-status> -->
+  </div>
+  <div style="text-align: center;" class="form-footer">
+    <button class="btn btnDanger" (click)="signOut()">Logout</button>
+  </div>
 </div>
-
-<app-user-status uid="userID">{{ userEmail }}</app-user-status>
-
-<button (click)="signOut()">Logout</button>
