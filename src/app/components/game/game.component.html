@@ -1,0 +1,12 @@
+<!-- <div>
+  Timer: {{ timerService.timer }}
+</div> -->
+<div *ngFor="let row of board; let rowIndex = index">
+  <button *ngFor="let cell of row; let colIndex = index" (click)="makeMove(rowIndex, colIndex)">
+    {{ cell }}
+  </button>
+</div>
+
+<app-user-status uid="userID">{{ userEmail }}</app-user-status>
+
+<button (click)="signOut()">Logout</button>

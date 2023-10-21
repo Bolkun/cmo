@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PresenceService } from './services/presence.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cmo';
+  constructor(public presence: PresenceService) {}
 }

@@ -1,0 +1,24 @@
+<div class="container add-form">
+  <h1 class="form-header text-align-center">Register</h1>
+  <!-- <flash-messages></flash-messages> -->
+  <div>
+    <label class="form-label">Name</label>
+    <input class="form-control" type="text" placeholder="Name" #userNickname required>
+  </div>
+  <div style="padding-top: 10px;">
+    <label class="form-label">Email</label>
+    <input class="form-control" type="email" placeholder="Email" #userEmail required>
+  </div>
+  <div style="padding-top: 10px;">
+    <label class="form-label" for="text">Password</label>
+    <input class="form-control" type="password" placeholder="Password" #userPwd required>
+  </div>
+  <div class="form-footer">
+    <input type="button" class="form-control search" value="Sign up" (click)="signUp(userNickname.value, userEmail.value, userPwd.value)">
+    <!-- Continue with Google -->
+    <!-- <button type="button" class="btn btnGoogle" (click)="userService.GoogleReg()">Google</button> -->
+  </div>
+  <div>
+    <span style="color: orange;">Already have an account? <button class="link" (click)="backLogin()">Login</button></span>
+  </div>
+</div>

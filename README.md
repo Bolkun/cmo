@@ -1,4 +1,20 @@
 # Cmo
+npm install @angular/fire firebase
+ng generate guard auth (To redirect a user to the login page if they are not authenticated)
+
+
+
+Compat: https://github.com/angular/angularfire Angular-Firebase-AngularFire
+-----------
+node -v (v18.17.0)
+npm -v (9.8.1)
+Firebase CLI: firebase --version (12.7.0) (Command Line Interface (CLI) tool) (releases https://firebase.google.com/support/releases)
+-------------- (manuelle check package.json)
+ng version (angular 16.1.0)
+npm list @angular/fire (7.6.1)
+Firebase JavaScript SDK: npm list firebase (9.23.0)
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
 
