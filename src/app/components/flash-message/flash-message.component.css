@@ -1,0 +1,29 @@
+.flash-message {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  z-index: 1000;
+  text-align: center;
+}
+
+.info {
+  background-color: #d9edf7;
+  color: #31708f;
+  border-color: #bce8f1;
+}
+
+.warning {
+  background-color: #fcf8e3;
+  color: #8a6d3b;
+  border-color: #faebcc;
+}
+
+.error {
+  background-color: #f2dede;
+  color: #a94442;
+  border-color: #ebccd1;
+}

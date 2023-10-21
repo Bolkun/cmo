@@ -1,6 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, take } from 'rxjs';
+import { FlashMessageService } from './flash-message.service';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -14,41 +15,32 @@ import firebase from 'firebase/compat/app'; // firebase.auth
   providedIn: 'root',
 })
 export class UserService {
-  public userData: any; // Save logged in user data
+  public userData: any;
   public regIn = false;
-  // public commentCollection!: AngularFirestoreCollection;
   flashMessageTimeout: number = 5000;
 
   constructor(
     public afs: AngularFirestore, // Inject Firestore service
     public auth: AngularFireAuth, // Inject Firebase auth service
     public ngZone: NgZone, // NgZone service to remove outside scope warning
-    public router: Router // public flashMessage: FlashMessagesService
+    public router: Router,
+    private flashMessageService: FlashMessageService
   ) {}
 
   SignUp(nickname: string, email: string, password: string) {
     if (nickname == '' || nickname == undefined) {
-      // this.flashMessage.show('Please write your name!', {
-      //   cssClass: 'alert-danger',
-      //   timeout: this.flashMessageTimeout,
-      // });
-      alert('Please write your name!');
+      this.flashMessageService.showMessage('Please write your name!', 'error');
       return false;
     }
     return this.auth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign up and returns promise */
-        //this.SendVerificationMail();
+        this.SendVerificationMail();
         this.SetUserData(result.user!, nickname);
         this.regIn = true;
       })
       .catch((error) => {
-        // this.flashMessage.show(error.message, {
-        //   cssClass: 'alert-danger',
-        //   timeout: this.flashMessageTimeout,
-        // });
-        alert(error.message);
+        this.flashMessageService.showMessage(error.message, 'error');
       });
   }
 
@@ -56,15 +48,14 @@ export class UserService {
     return this.auth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        /* Login if user email verified */
-        // if (!result.user?.emailVerified) {
-        //   // this.flashMessage.show('Please verify Email Address!', {
-        //   //   cssClass: 'alert-danger',
-        //   //   timeout: this.flashMessageTimeout,
-        //   // });
-        //   alert('Please verify Email Address!')
-        //   return false;
-        // }
+        // Login if user email verified
+        if (!result.user?.emailVerified) {
+          this.flashMessageService.showMessage(
+            'Please verify Email Address!',
+            'error'
+          );
+          return false;
+        }
         this.GetUserData(result.user!.uid)
           .pipe(take(1))
           .subscribe((res: any) => {
@@ -78,7 +69,7 @@ export class UserService {
         return true;
       })
       .catch((error) => {
-        alert(error.message);
+        this.flashMessageService.showMessage(error.message, 'error');
         return false;
       });
   }
@@ -87,25 +78,22 @@ export class UserService {
     const user = firebase.auth().currentUser;
     if (user !== null) {
       if (user.emailVerified) {
-        // this.flashMessage.show('Email already verified!', {
-        //   cssClass: 'alert-danger',
-        //   timeout: this.flashMessageTimeout,
-        // });
-        alert('Email already verified!');
-        return Promise.resolve(); // Resolve the promise immediately
+        this.flashMessageService.showMessage(
+          'Email already verified!',
+          'error'
+        );
+        return Promise.resolve();
       } else {
         return user.sendEmailVerification().then(() => {
-          // Function createUserWithEmailAndPassword() in SignIn method promise that emailVarified will be true
-          // this.router.navigate(['verify-email']);
+          this.router.navigate(['verify-email']);
         });
       }
     } else {
-      // this.flashMessage.show('Cannot send email to unknown user!', {
-      //   cssClass: 'alert-danger',
-      //   timeout: this.flashMessageTimeout,
-      // });
-      alert('Cannot send email to unknown user!');
-      return Promise.reject('Unknown user'); // Reject the promise
+      this.flashMessageService.showMessage(
+        'Cannot send email to unknown user!',
+        'error'
+      );
+      return Promise.reject('Unknown user');
     }
   }
 
@@ -113,18 +101,13 @@ export class UserService {
     return this.auth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-        // this.flashMessage.show('Password reset email sent, check your inbox!', {
-        //   cssClass: 'alert-success',
-        //   timeout: this.flashMessageTimeout,
-        // });
-        alert('Password reset email sent, check your inbox!');
+        this.flashMessageService.showMessage(
+          'Password reset email sent, check your inbox!',
+          'info'
+        );
       })
       .catch((error) => {
-        // this.flashMessage.show(error.message, {
-        //   cssClass: 'alert-danger',
-        //   timeout: this.flashMessageTimeout,
-        // });
-        alert(error.message);
+        this.flashMessageService.showMessage(error.message, 'error');
       });
   }
 
@@ -146,45 +129,35 @@ export class UserService {
     return false;
   }
 
-  // Sign up with Google
-  GoogleReg() {
-    this.regIn = true;
-    return this.RegLogin(new firebase.auth.GoogleAuthProvider());
-  }
-
-  // Sign in with Google
-  GoogleLogin() {
+  // Sign up and Sign In with Google
+  GoogleAuth() {
     return this.RegLogin(new firebase.auth.GoogleAuthProvider());
   }
 
   // Reg logic to run auth providers
   RegLogin(provider: firebase.auth.AuthProvider) {
-    return this.auth
-      .signInWithPopup(provider)
-      .then((result: any) => {
-        this.GetUserDataOnEmail(JSON.stringify(result.user?.email));
+    return this.auth.signInWithPopup(provider).then((result: any) => {
+      if (result && result.user) {
+        this.GetUserDataOnEmail(JSON.stringify(result.user.email));
+
+        // Check if userData exists, if not set it
         if (!this.userData) {
-          this.SetUserData(result.user!);
+          this.SetUserData(result.user);
         }
-        this.ngZone.run(() => {
-          // Go to dashboard
-          document.getElementById('closeLogin')!.click();
-          document.getElementById('closeLogin')!.style.display = 'none';
-          // document.getElementById('name')!.innerHTML = this.userData.displayName;
-        });
-        localStorage.setItem('userID', result.user?.uid);
-        setTimeout(() => {
-          localStorage.setItem('userID', result.user?.uid);
-        }, 100);
-        localStorage.setItem('userEmail', JSON.stringify(result.user?.email));
-      })
-      .catch((error) => {
-        // this.flashMessage.show(error.message, {
-        //   cssClass: 'alert-danger',
-        //   timeout: this.flashMessageTimeout,
-        // });
-        alert(error.message);
-      });
+
+        localStorage.setItem('userID', result.user.uid);
+        localStorage.setItem('userEmail', JSON.stringify(result.user.email));
+
+        // Navigate to the game if authentication is successful
+        this.router.navigate(['/game']);
+      } else {
+        // Handle the scenario where result or result.user is undefined
+        this.flashMessageService.showMessage('Authentication failed!', 'error');
+      }
+    })
+    .catch((error) => {
+      this.flashMessageService.showMessage(error.message, 'error');
+    });
   }
 
   GetUserData(uid: string) {

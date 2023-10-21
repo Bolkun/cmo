@@ -8,32 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent implements OnInit {
-  @Output() goBackToLogin: EventEmitter<any> = new EventEmitter<any>();
 
-  @Output() goToVerifyEmail: EventEmitter<any> = new EventEmitter<any>();
-
-  constructor(
-    public userService: UserService,
-    public router: Router
-  ) {}
+  constructor(public userService: UserService, public router: Router) {}
 
   ngOnInit(): void {}
 
-  backLogin() {
-    this.router.navigate(['login']);
-  }
-
   async signUp(userNickname: string, userEmail: string, userPwd: string) {
     await this.userService.SignUp(userNickname, userEmail, userPwd);
-    if (this.userService.regIn) {
-      this.router.navigate(['game']);
-    }
   }
 
   async googleReg() {
-    await this.userService.GoogleReg();
-    if (this.userService.regIn) {
-      this.goToVerifyEmail.emit();
-    }
+    await this.userService.GoogleAuth();
   }
 }

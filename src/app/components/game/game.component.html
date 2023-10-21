@@ -1,8 +1,9 @@
 <!-- <div>
   Timer: {{ timerService.timer }}
 </div> -->
+<app-flash-message></app-flash-message>
 <div *ngFor="let row of board; let rowIndex = index">
-  <button *ngFor="let cell of row; let colIndex = index" (click)="makeMove(rowIndex, colIndex)">
+  <button style="width: 50px; height: 50px;" *ngFor="let cell of row; let colIndex = index" (click)="makeMove(rowIndex, colIndex)">
     {{ cell }}
   </button>
 </div>

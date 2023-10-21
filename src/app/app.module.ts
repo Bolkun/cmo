@@ -16,6 +16,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { GameComponent } from './components/game/game.component';
 import { UserStatusComponent } from './components/user-status/user-status.component';
+import { FlashMessageComponent } from './components/flash-message/flash-message.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserStatusComponent } from './components/user-status/user-status.compon
     UserProfileComponent,
     VerifyEmailComponent,
     GameComponent,
-    UserStatusComponent
+    UserStatusComponent,
+    FlashMessageComponent,
   ],
   imports: [
     BrowserModule,

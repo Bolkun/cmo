@@ -1,1 +1,105 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: white; /* whitesmoke */
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  /* border: 1px solid #212529; */
+  padding: 30px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btnSuccess {
+  background-color: #76b901;
+  color: #212529;
+  font-weight: bold;
+}
+.btnSecondary {
+  background-color: #ffc107;
+  color: #212529;
+  font-weight: bold;
+}
+.btnDanger {
+  background-color: #dc3545;
+  color: #212529;
+  font-weight: bold;
+}
+
+.btnGoogle {
+  background: url(assets/icon/google.png);
+  color: #212529;
+  font-weight: bold;
+  background-size: cover;
+  height: 35px;
+  width: 35px;
+}
+.btnFacebook {
+  background: url(assets/icon/facebook.png);
+  color: #212529;
+  background-size: cover;
+  height: 35px;
+  width: 35px;
+}
+
+.form-header {
+  text-align: center;
+  color: #000000;
+}
+.add-form {
+  margin-bottom: 40px;
+}
+.form-control {
+  margin: 10px 0;
+}
+.form-control label {
+  display: block;
+  font-size: 18px;
+}
+.form-control input,
+select,
+textarea {
+  height: 40px;
+  min-width: stretch;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
+  border: 1px solid #ccc;
+}
+.form-footer {
+  margin: 15px 0;
+}

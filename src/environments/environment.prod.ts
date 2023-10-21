@@ -3,6 +3,7 @@ export const environment = {
   firebase: {
     apiKey: "AIzaSyDk7wZEy-WDZqiIER8TqLV2cizjR2opaLA",
     authDomain: "cmo-game.firebaseapp.com",
+    databaseURL: "https://cmo-game-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "cmo-game",
     storageBucket: "cmo-game.appspot.com",
     messagingSenderId: "145621462944",

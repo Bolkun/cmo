@@ -44,8 +44,7 @@ export class PresenceService {
   }
 
   get timestamp() {
-    // return firebase.database.ServerValue.TIMESTAMP;
-    return firebase.database?.ServerValue?.TIMESTAMP;
+    return firebase.database.ServerValue.TIMESTAMP;
   }
 
   updateOnUser() {

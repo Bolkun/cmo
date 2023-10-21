@@ -1,0 +1,5 @@
+<div *ngIf="messageData$ | async as messageData" 
+     class="flash-message" 
+     [ngClass]="messageData.cssClass">
+  {{ messageData.message }}
+</div>

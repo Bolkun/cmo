@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TimerService } from 'src/app/services/timer.service';
 import { UserService } from 'src/app/services/user.service';
+import { FlashMessageService } from 'src/app/services/flash-message.service';
 
 @Component({
   selector: 'app-game',
@@ -22,6 +23,7 @@ export class GameComponent implements OnInit {
   constructor(
     //public timerService: TimerService,
     public userService: UserService,
+    private flashMessageService: FlashMessageService,
     private router: Router
   ) {}
 
@@ -31,10 +33,7 @@ export class GameComponent implements OnInit {
   }
 
   signOut() {
-    const confirmation = confirm('Do you want to logout?')
-    if(confirmation) {
-      this.userService.SignOut();
-    }
+    this.userService.SignOut();
   }
 
   makeMove(row: number, col: number): void {
@@ -42,7 +41,7 @@ export class GameComponent implements OnInit {
       this.board[row][col] = this.currentPlayer;
       
       if (this.checkVictory()) {
-        alert(`${this.currentPlayer} wins!`);
+        this.flashMessageService.showMessage(`${this.currentPlayer} wins!`, 'info');
       } else {
         this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
       }
