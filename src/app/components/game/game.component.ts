@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2, ElementRef, AfterViewChecked, ViewChild }
 import { Router } from '@angular/router';
 import { TimerService } from 'src/app/services/timer.service';
 import { UserService } from 'src/app/services/user.service';
+import { PresenceService } from 'src/app/services/presence.service';
 import { FlashMessageService } from 'src/app/services/flash-message.service';
 
 interface Move {
@@ -36,6 +37,7 @@ export class GameComponent implements OnInit, AfterViewChecked {
   constructor(
     //public timerService: TimerService,
     public userService: UserService,
+    private presenceService: PresenceService,
     private flashMessageService: FlashMessageService,
     private router: Router,
     private renderer: Renderer2
@@ -44,6 +46,7 @@ export class GameComponent implements OnInit, AfterViewChecked {
   ngOnInit(): void {
     this.userID = localStorage.getItem('userID');
     this.userEmail = localStorage.getItem('userEmail');
+    this.userService.fetchUsers();
   }
 
   ngAfterViewChecked(): void {
@@ -59,6 +62,7 @@ export class GameComponent implements OnInit, AfterViewChecked {
   }
 
   signOut() {
+    this.presenceService.signOut();
     this.userService.SignOut();
   }
 

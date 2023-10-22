@@ -23,7 +23,21 @@
         {{ cell }}
       </div>
     </div>
-    <!-- <app-user-status uid="userID">{{ userEmail }}</app-user-status> -->
+    <div class="usersStatus">
+      <h2>Users</h2>
+      <table>
+        <tbody>
+          <tr *ngFor="let user of userService.users$ | async">
+            <td>
+              <app-user-status [uid]="user.uid"></app-user-status>
+            </td>
+            <td>
+              {{ user.displayName }} 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>    
   </div>
   <div style="text-align: center;" class="form-footer">
     <button class="btn btnDanger" (click)="signOut()">Logout</button>

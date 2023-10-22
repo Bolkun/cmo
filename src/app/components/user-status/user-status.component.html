@@ -1,3 +1,4 @@
-<div *ngIf="typedPresence$ | async as presence" class="tag is-large" [ngClass]="getPresenceClass(presence)">
-  {{ presence.status }}
+<div *ngIf="typedPresence$ | async as presence" class="tag is-large">
+  <span [ngClass]="getPresenceClass(presence)"></span>
+  <!-- {{ presence.status }} -->
 </div>

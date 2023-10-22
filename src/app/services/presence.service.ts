@@ -20,7 +20,7 @@ import { of } from 'rxjs';
 export class PresenceService {
 
   constructor(public auth: AngularFireAuth, public db: AngularFireDatabase) {
-    console.log('presence');
+    // console.log('presence');
     this.updateOnUser().subscribe();
     this.updateOnDisconnect().subscribe();
     this.updateOnAway();

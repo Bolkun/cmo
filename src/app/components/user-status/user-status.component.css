@@ -1,0 +1,23 @@
+.status-online {
+  background-color: green;
+  border-radius: 50%; /* to make it circular */
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+}
+
+.status-away {
+  background-color: orange;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+}
+
+.status-offline {
+  background-color: grey;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+}

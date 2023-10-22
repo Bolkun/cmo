@@ -1,6 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, take } from 'rxjs';
+import { Observable } from 'rxjs';
 import { FlashMessageService } from './flash-message.service';
 import {
   AngularFirestore,
@@ -18,6 +19,7 @@ export class UserService {
   public userData: any;
   public regIn = false;
   flashMessageTimeout: number = 5000;
+  users$: Observable<any[]>;
 
   constructor(
     public afs: AngularFirestore, // Inject Firestore service
@@ -168,6 +170,10 @@ export class UserService {
     return this.afs
       .collection('users', (ref) => ref.where('email', '==', email))
       .valueChanges();
+  }
+
+  fetchUsers() {
+    this.users$ = this.afs.collection('users').valueChanges();
   }
 
   /* Setting up user data when sign in with username/password, 

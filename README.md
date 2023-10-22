@@ -12,7 +12,7 @@ Firebase CLI: firebase --version (12.7.0) (Command Line Interface (CLI) tool) (r
 -------------- (manuelle check package.json)
 ng version (angular 16.1.0)
 npm list @angular/fire (7.6.1)
-Firebase JavaScript SDK: npm list firebase (9.23.0)
+Firebase JavaScript SDK: npm list firebase (9.23.0) (releases https://firebase.google.com/support/release-notes/js)
 
 Format code
 html - HTML Language Features

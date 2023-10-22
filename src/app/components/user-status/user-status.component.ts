@@ -22,11 +22,15 @@ export class UserStatusComponent implements OnInit {
     return this.presence$ as Observable<any>;
   }
 
-  getPresenceClass(presence: any): { [key: string]: boolean } {
-    return {
-      'is-success': presence.status === 'online',
-      'is-warning': presence.status === 'away',
-      'is-danger': presence.status === 'offline'
-    };
+  getPresenceClass(presence: any): string {
+    switch (presence.status) {
+      case 'online':
+        return 'status-online';
+      case 'away':
+        return 'status-away';
+      case 'offline':
+      default:
+        return 'status-offline';
+    }
   }
 }

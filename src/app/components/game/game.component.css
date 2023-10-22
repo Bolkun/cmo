@@ -53,3 +53,16 @@
 .draw-color {
   color: orange;
 }
+
+/* Users */
+.usersStatus {
+  padding: 10px;
+  border: 1px solid #ccc;
+  height: 150px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.usersStatus h2 {
+  text-align: center;
+}
