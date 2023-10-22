@@ -6,6 +6,17 @@
   <h1 class="form-header">Game</h1>
   <app-flash-message></app-flash-message>
   <div class="form-control">
+    <div #scrollMe class="move-history">
+      <h2>Move History</h2>
+      <ng-container *ngFor="let round of rounds">
+        <div class="round-header">Round {{ round.round }}</div>
+        <div *ngFor="let move of round.moves">
+          <span [ngClass]="{'win-color': move.type === 'win', 'draw-color': move.type === 'draw'}">
+            {{ move.message }}
+          </span>
+        </div>
+      </ng-container>
+    </div>
     <div class="row-container" *ngFor="let row of board; let rowIndex = index">
       <div class="tic-tac-toe-cell" [ngClass]="{'x': cell === 'X', 'o': cell === 'O'}"
         *ngFor="let cell of row; let colIndex = index" (click)="makeMove(rowIndex, colIndex)">

@@ -14,6 +14,11 @@ ng version (angular 16.1.0)
 npm list @angular/fire (7.6.1)
 Firebase JavaScript SDK: npm list firebase (9.23.0)
 
+Format code
+html - HTML Language Features
+css - Prettier
+ts -TypeScript and JavaScript Type Features
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.

@@ -1,35 +1,61 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, AfterViewChecked, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { TimerService } from 'src/app/services/timer.service';
 import { UserService } from 'src/app/services/user.service';
 import { FlashMessageService } from 'src/app/services/flash-message.service';
 
+interface Move {
+  message: string;
+  type: 'normal' | 'win' | 'draw';
+}
+
+interface Round {
+  round: number;
+  moves: Move[];
+}
+
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css']
+  styleUrls: ['./game.component.css'],
 })
-export class GameComponent implements OnInit {
+export class GameComponent implements OnInit, AfterViewChecked {
   // Game
   board: string[][] = [
-    ["", "", ""],
-    ["", "", ""],
-    ["", "", ""]
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', ''],
   ];
   currentPlayer: string = 'X';
   userID: string | null = null;
   userEmail: string | null = null;
+  rounds: Round[] = [];
+  gameOver: boolean = false;
+  @ViewChild('scrollMe') private myScrollContainer!: ElementRef;
 
   constructor(
     //public timerService: TimerService,
     public userService: UserService,
     private flashMessageService: FlashMessageService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private renderer: Renderer2
+  ) { }
 
   ngOnInit(): void {
     this.userID = localStorage.getItem('userID');
     this.userEmail = localStorage.getItem('userEmail');
+  }
+
+  ngAfterViewChecked(): void {
+    this.scrollHistoryToBottom();
+  }
+
+  scrollHistoryToBottom(): void {
+    try {
+      this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   signOut() {
@@ -37,37 +63,87 @@ export class GameComponent implements OnInit {
   }
 
   makeMove(row: number, col: number): void {
-    if (!this.board[row][col]) {
-      this.board[row][col] = this.currentPlayer;
-      
-      if (this.checkVictory()) {
-        this.flashMessageService.showMessage(`${this.currentPlayer} wins!`, 'info');
-      } else {
-        this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
-      }
+    if (this.gameOver || this.board[row][col]) return;
+
+    this.board[row][col] = this.currentPlayer;
+
+    if (this.currentPlayer === 'X') this.startNewRound();
+
+    this.addMove({ message: `Player ${this.currentPlayer} placed ${this.currentPlayer} on board (${row + 1}, ${col + 1})`, type: 'normal' });
+
+    if (this.checkVictory()) {
+      this.endGame({ message: `Player ${this.currentPlayer} wins!`, type: 'win' });
+      return;
     }
+
+    this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+
+    if (this.checkDraw()) {
+      this.endGame({ message: `It's a draw!`, type: 'draw' });
+    }
+  }
+
+  startNewRound(): void {
+    this.rounds.push({ round: this.rounds.length + 1, moves: [] });
+  }
+
+  addMove(move: Move): void {
+    this.rounds[this.rounds.length - 1].moves.push(move);
+  }
+
+  endGame(move: Move): void {
+    this.gameOver = true;
+    this.addMove(move);
   }
 
   checkVictory(): boolean {
     // Check rows
     for (let i = 0; i < 3; i++) {
-      if (this.board[i][0] && this.board[i][0] === this.board[i][1] && this.board[i][1] === this.board[i][2]) {
+      if (
+        this.board[i][0] &&
+        this.board[i][0] === this.board[i][1] &&
+        this.board[i][1] === this.board[i][2]
+      ) {
         return true;
       }
     }
     // Check columns
     for (let i = 0; i < 3; i++) {
-      if (this.board[0][i] && this.board[0][i] === this.board[1][i] && this.board[1][i] === this.board[2][i]) {
+      if (
+        this.board[0][i] &&
+        this.board[0][i] === this.board[1][i] &&
+        this.board[1][i] === this.board[2][i]
+      ) {
         return true;
       }
     }
     // Check diagonals
-    if (this.board[0][0] && this.board[0][0] === this.board[1][1] && this.board[1][1] === this.board[2][2]) {
+    if (
+      this.board[0][0] &&
+      this.board[0][0] === this.board[1][1] &&
+      this.board[1][1] === this.board[2][2]
+    ) {
       return true;
     }
-    if (this.board[0][2] && this.board[0][2] === this.board[1][1] && this.board[1][1] === this.board[2][0]) {
+    if (
+      this.board[0][2] &&
+      this.board[0][2] === this.board[1][1] &&
+      this.board[1][1] === this.board[2][0]
+    ) {
       return true;
     }
     return false;
-  }  
+  }
+
+  checkDraw(): boolean {
+    // Check if all fields are set
+    for (let i = 0; i < this.board.length; i++) {
+      for (let j = 0; j < this.board[i].length; j++) {
+        if (this.board[i][j] === "") {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
 }

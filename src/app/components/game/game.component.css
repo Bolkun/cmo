@@ -25,3 +25,31 @@
   justify-content: center; /* centering the row content horizontally */
 }
 
+/* History */
+.move-history {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  height: 150px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.move-history h2 {
+  text-align: center;
+}
+
+.round-header {
+  text-align: center;
+  padding-left: 0;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.win-color {
+  color: green;
+}
+
+.draw-color {
+  color: orange;
+}
