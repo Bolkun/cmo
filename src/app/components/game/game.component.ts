@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TimerService } from 'src/app/services/timer.service';
 import { UserService } from 'src/app/services/user.service';
 import { PresenceService } from 'src/app/services/presence.service';
+import { RequestService } from 'src/app/services/request.service';
 import { FlashMessageService } from 'src/app/services/flash-message.service';
 import { timer } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -46,7 +47,6 @@ export class GameComponent implements OnInit, AfterViewChecked {
   currentPlayer: string = 'X';
   userID: string | null = null;
   userEmail: string | null = null;
-
   user: User | undefined;
   // Game
   board: string[][] = [
@@ -61,9 +61,9 @@ export class GameComponent implements OnInit, AfterViewChecked {
   requests: Request[] = [];
 
   constructor(
-    //public timerService: TimerService,
     public userService: UserService,
     private presenceService: PresenceService,
+    private requestService: RequestService,
     private flashMessageService: FlashMessageService,
     private router: Router,
     private renderer: Renderer2
@@ -77,9 +77,11 @@ export class GameComponent implements OnInit, AfterViewChecked {
     this.userService.getUserData(this.userID).subscribe((userData: User) => {
       this.user = userData;
       // Get requests
-      this.userService.getGameRequests(this.user.uid).subscribe((gameRequests: Request[]) => {
-        this.requests = gameRequests;
-      });
+      if (this.user) {
+        this.userService.getGameRequests(this.user.uid).subscribe((gameRequests: Request[]) => {
+          this.requests = gameRequests;
+        });
+      }
     });
 
     // Get all users
@@ -213,11 +215,12 @@ export class GameComponent implements OnInit, AfterViewChecked {
   }
 
   sendRequest(toUid: string, toDisplayName: string): void {
+    //this.requestService.sendGameRequest(this.user.uid, this.user.displayName, toUid, toDisplayName);
     this.userService.sendGameRequest(this.user.uid, this.user.displayName, toUid, toDisplayName);
   }
 
   acceptRequest(request: any): void {
-    
+
   }
 
   declineRequest(docId: string): void {
@@ -227,4 +230,6 @@ export class GameComponent implements OnInit, AfterViewChecked {
       console.error('Error deleting request:', error);
     });
   }
+
+
 }

@@ -17,6 +17,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { GameComponent } from './components/game/game.component';
 import { UserStatusComponent } from './components/user-status/user-status.component';
 import { FlashMessageComponent } from './components/flash-message/flash-message.component';
+import { TimerRequestComponent } from './components/timer-request/timer-request.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FlashMessageComponent } from './components/flash-message/flash-message.
     GameComponent,
     UserStatusComponent,
     FlashMessageComponent,
+    TimerRequestComponent,
   ],
   imports: [
     BrowserModule,

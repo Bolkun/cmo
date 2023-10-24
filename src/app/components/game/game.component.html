@@ -1,18 +1,15 @@
-<!-- <div>
-  Timer: {{ timerService.timer }}
-</div> -->
-
 <div class="container add-form">
   <h1 class="form-header">Game</h1>
   <app-flash-message></app-flash-message>
-  <div class="usersRequests" *ngIf="requests.length > 0">
-    <h3>Incoming Game Requests</h3>
+  <!-- <app-user-requests [uid]="user.uid"></app-user-requests> -->
+  <ng-container class="usersRequests" *ngIf="requests.length > 0">
     <div *ngFor="let request of requests">
       <span>Request from: {{ request.fromDisplayName }}</span>
       <button class="btn btnSuccess" (click)="acceptRequest(request)">Accept</button>
       <button class="btn btnDanger" (click)="declineRequest(request.id)">Decline</button>
+      <app-timer-request [startTime]="request.timestamp.toDate().getTime()"></app-timer-request>
     </div>
-  </div>
+  </ng-container>
   <div class="form-control">
     <div #scrollMe class="move-history">
       <h2>Move History</h2>
@@ -42,13 +39,14 @@
             <td style="cursor: pointer;" (click)="toggleDropdown(user.uid)">
               {{ user.displayName }}
               <div *ngIf="showDropdown[user.uid]" class="dropdown-menu">
-                <button class="btn btnSecondary" (click)="sendRequest(user.uid, user.displayName)">Send Play Request</button>
+                <button class="btn btnSecondary" (click)="sendRequest(user.uid, user.displayName)">Send Play
+                  Request</button>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
-    </div>    
+    </div>
   </div>
   <div style="text-align: center;" class="form-footer">
     <button class="btn btnDanger" (click)="signOut()">Logout</button>

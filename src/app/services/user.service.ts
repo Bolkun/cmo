@@ -205,16 +205,32 @@ export class UserService {
   }
 
   sendGameRequest(fromUid: string, fromDisplayName: string, toUid: string, toDisplayName: string): Promise<void> {
-    return this.afs.collection('gameRequests').add({
-      fromUid,
-      fromDisplayName,
-      toUid,
-      toDisplayName,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      status: 'pending'
-    }).then(() => { }).catch((error) => {
-      throw error;
-    });
+    const gameRequestsRef = this.afs.collection('gameRequests');
+    // Find a game request with matching fromUid and toUid
+    return gameRequestsRef.ref.where('fromUid', '==', fromUid)
+      .where('toUid', '==', toUid)
+      .get()
+      .then(snapshot => {
+        // If a matching document is found, update the timestamp
+        if (!snapshot.empty) {
+          const docId = snapshot.docs[0].id;
+          return gameRequestsRef.doc(docId).update({
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+          }).then(() => { }); // Ensure we're always returning Promise<void>
+        } else {
+          // If no matching document is found, add a new one
+          return gameRequestsRef.add({
+            fromUid,
+            fromDisplayName,
+            toUid,
+            toDisplayName,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            status: 'pending'
+          }).then(() => { }); // Ensure we're always returning Promise<void>
+        }
+      }).catch((error) => {
+        throw error;
+      });
   }
 
   getGameRequests(currentUserId: string): Observable<any[]> {
