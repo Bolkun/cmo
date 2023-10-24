@@ -1,6 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, take } from 'rxjs';
+import { BehaviorSubject, map, take } from 'rxjs';
 import { Observable } from 'rxjs';
 import { FlashMessageService } from './flash-message.service';
 import {
@@ -11,6 +11,7 @@ import {
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { GoogleAuthProvider } from 'firebase/auth';
 import firebase from 'firebase/compat/app'; // firebase.auth
+import { Timestamp } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +28,7 @@ export class UserService {
     public ngZone: NgZone, // NgZone service to remove outside scope warning
     public router: Router,
     private flashMessageService: FlashMessageService
-  ) {}
+  ) { }
 
   SignUp(nickname: string, email: string, password: string) {
     if (nickname == '' || nickname == undefined) {
@@ -58,7 +59,7 @@ export class UserService {
           );
           return false;
         }
-        this.GetUserData(result.user!.uid)
+        this.getUserData(result.user!.uid)
           .pipe(take(1))
           .subscribe((res: any) => {
             localStorage.setItem('userID', res['uid']);
@@ -157,13 +158,9 @@ export class UserService {
         this.flashMessageService.showMessage('Authentication failed!', 'error');
       }
     })
-    .catch((error) => {
-      this.flashMessageService.showMessage(error.message, 'error');
-    });
-  }
-
-  GetUserData(uid: string) {
-    return this.afs.collection('users').doc(uid).valueChanges();
+      .catch((error) => {
+        this.flashMessageService.showMessage(error.message, 'error');
+      });
   }
 
   GetUserDataOnEmail(email: string) {
@@ -174,6 +171,10 @@ export class UserService {
 
   fetchUsers() {
     this.users$ = this.afs.collection('users').valueChanges();
+  }
+
+  getUserData(uid: string) {
+    return this.afs.doc(`users/${uid}`).valueChanges();
   }
 
   /* Setting up user data when sign in with username/password, 
@@ -202,4 +203,40 @@ export class UserService {
       this.router.navigate(['login']);
     });
   }
+
+  sendGameRequest(fromUid: string, fromDisplayName: string, toUid: string, toDisplayName: string): Promise<void> {
+    return this.afs.collection('gameRequests').add({
+      fromUid,
+      fromDisplayName,
+      toUid,
+      toDisplayName,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      status: 'pending'
+    }).then(() => { }).catch((error) => {
+      throw error;
+    });
+  }
+
+  getGameRequests(currentUserId: string): Observable<any[]> {
+    return this.afs.collection('gameRequests', ref =>
+      ref.where('toUid', '==', currentUserId)
+        .where('status', '==', 'pending')
+    ).snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as any;
+        const id = a.payload.doc.id;
+        const currentTime = Timestamp.now();
+        const differenceInSeconds = (currentTime.seconds - data.timestamp.seconds);
+        if (differenceInSeconds > 15) {
+          this.deleteGameRequest(id);
+        }
+        return { id, ...data };
+      }))
+    );
+  }
+
+  deleteGameRequest(docId: string): Promise<void> {
+    return this.afs.doc(`gameRequests/${docId}`).delete();
+  }
+
 }

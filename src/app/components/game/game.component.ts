@@ -1,9 +1,30 @@
-import { Component, OnInit, Renderer2, ElementRef, AfterViewChecked, ViewChild } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, AfterViewChecked, ViewChild, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { TimerService } from 'src/app/services/timer.service';
 import { UserService } from 'src/app/services/user.service';
 import { PresenceService } from 'src/app/services/presence.service';
 import { FlashMessageService } from 'src/app/services/flash-message.service';
+import { timer } from 'rxjs';
+import { take } from 'rxjs/operators';
+import firebase from 'firebase/compat/app';
+
+interface User {
+  displayName: string;
+  email: string;
+  photoURL: string | null;
+  role: string;
+  uid: string;
+}
+
+interface Request {
+  id: string;
+  fromDisplayName: string;
+  fromUid: string;
+  status: 'pending' | 'accepted' | 'declined';
+  timestamp: firebase.firestore.Timestamp;
+  toDisplayName: string;
+  toUid: string;
+}
 
 interface Move {
   message: string;
@@ -21,18 +42,23 @@ interface Round {
   styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit, AfterViewChecked {
+  // User
+  currentPlayer: string = 'X';
+  userID: string | null = null;
+  userEmail: string | null = null;
+
+  user: User | undefined;
   // Game
   board: string[][] = [
     ['', '', ''],
     ['', '', ''],
     ['', '', ''],
   ];
-  currentPlayer: string = 'X';
-  userID: string | null = null;
-  userEmail: string | null = null;
   rounds: Round[] = [];
   gameOver: boolean = false;
   @ViewChild('scrollMe') private myScrollContainer!: ElementRef;
+  showDropdown: { [key: string]: boolean } = {};
+  requests: Request[] = [];
 
   constructor(
     //public timerService: TimerService,
@@ -46,6 +72,17 @@ export class GameComponent implements OnInit, AfterViewChecked {
   ngOnInit(): void {
     this.userID = localStorage.getItem('userID');
     this.userEmail = localStorage.getItem('userEmail');
+
+    // Get user data
+    this.userService.getUserData(this.userID).subscribe((userData: User) => {
+      this.user = userData;
+      // Get requests
+      this.userService.getGameRequests(this.user.uid).subscribe((gameRequests: Request[]) => {
+        this.requests = gameRequests;
+      });
+    });
+
+    // Get all users
     this.userService.fetchUsers();
   }
 
@@ -149,5 +186,45 @@ export class GameComponent implements OnInit, AfterViewChecked {
       }
     }
     return true;
+  }
+  // Menu
+  toggleDropdown(uid: string): void {
+    // Check if the clicked user is the currently logged-in user
+    if (this.userID === uid) {
+      return; // Return without doing anything if it's the logged-in user
+    }
+    // Set all dropdowns to hidden
+    Object.keys(this.showDropdown).forEach(key => {
+      this.showDropdown[key] = false;
+    });
+
+    // Toggle the dropdown for the clicked user
+    this.showDropdown[uid] = true;
+  }
+
+  @HostListener('document:click', ['$event'])
+  globalClick(event: any): void {
+    // If the clicked element is not a dropdown menu or a td, hide all dropdowns
+    if (!event.target.classList.contains('dropdown-menu') && !event.target.closest('td')) {
+      Object.keys(this.showDropdown).forEach(key => {
+        this.showDropdown[key] = false;
+      });
+    }
+  }
+
+  sendRequest(toUid: string, toDisplayName: string): void {
+    this.userService.sendGameRequest(this.user.uid, this.user.displayName, toUid, toDisplayName);
+  }
+
+  acceptRequest(request: any): void {
+    
+  }
+
+  declineRequest(docId: string): void {
+    this.userService.deleteGameRequest(docId).then(() => {
+      console.log('Request declined and deleted.');
+    }).catch(error => {
+      console.error('Error deleting request:', error);
+    });
   }
 }

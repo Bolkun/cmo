@@ -20,4 +20,8 @@ export class FlashMessageService {
     this.messageSubject.next({ message, cssClass });
     setTimeout(() => this.messageSubject.next(null), 5000); // auto-hide after 5 seconds
   }
+
+  hideMessage(): void {
+    this.messageSubject.next(null);
+  }
 }
