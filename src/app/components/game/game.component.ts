@@ -1,12 +1,8 @@
 import { Component, OnInit, Renderer2, ElementRef, AfterViewChecked, ViewChild, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { TimerService } from 'src/app/services/timer.service';
 import { UserService } from 'src/app/services/user.service';
 import { PresenceService } from 'src/app/services/presence.service';
-import { RequestService } from 'src/app/services/request.service';
 import { FlashMessageService } from 'src/app/services/flash-message.service';
-import { timer } from 'rxjs';
-import { take } from 'rxjs/operators';
 import firebase from 'firebase/compat/app';
 
 interface User {
@@ -63,7 +59,6 @@ export class GameComponent implements OnInit, AfterViewChecked {
   constructor(
     public userService: UserService,
     private presenceService: PresenceService,
-    private requestService: RequestService,
     private flashMessageService: FlashMessageService,
     private router: Router,
     private renderer: Renderer2
@@ -215,7 +210,6 @@ export class GameComponent implements OnInit, AfterViewChecked {
   }
 
   sendRequest(toUid: string, toDisplayName: string): void {
-    //this.requestService.sendGameRequest(this.user.uid, this.user.displayName, toUid, toDisplayName);
     this.userService.sendGameRequest(this.user.uid, this.user.displayName, toUid, toDisplayName);
   }
 
