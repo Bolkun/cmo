@@ -78,10 +78,23 @@
 }
 
 /* usersRequests */
+.usersRequestsContainer {
+  max-height: 270px;
+  overflow-y: auto;
+}
+
 .usersRequests {
+  text-align: center;
   padding: 10px;
+  margin-top: 5px;
   border: 1px solid #ccc;
-  height: 150px;
+  height: auto;
   max-height: 150px;
   overflow-y: auto;
+}
+
+/* Game */
+.gameTimer {
+  text-align: center;
+  font-family: cursive;
 }

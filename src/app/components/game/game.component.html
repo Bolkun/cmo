@@ -1,18 +1,20 @@
 <div class="container add-form">
-  <h1 class="form-header">Tic-Tai-Toe</h1>
+  <h1 class="form-header">Tic-Tac-Toe</h1>
   <app-flash-message></app-flash-message>
-  <ng-container *ngIf="requests" class="usersRequests">
-    <div *ngFor="let request of requests">
-      <span>Request from: {{ request.fromDisplayName }}</span>
-      <button class="btn btnSuccess" (click)="acceptRequest(request)">Accept</button>
-      <button class="btn btnDanger" (click)="declineRequest(request.id)">Decline</button>
-      <app-timer-request [startTime]="request.timestamp.toDate().getTime()"></app-timer-request>
+  <ng-container *ngIf="requests">
+    <div class="usersRequestsContainer">
+      <div *ngFor="let request of requests" class="usersRequests">
+        <span>Request from: {{ request.fromDisplayName }}</span>
+        <app-timer-request [startTime]="request.timestamp.toDate().getTime()"></app-timer-request>
+        <br>
+        <button class="btn btnSuccess" (click)="acceptRequest(request)">Accept</button>
+        <button class="btn btnDanger" (click)="declineRequest(request.id)">Decline</button>
+      </div>
     </div>
   </ng-container>
   <div class="form-control">
     <div *ngIf="game">
       <div #scrollMe class="move-history">
-        <h2>Move History</h2>
         <ng-container *ngFor="let round of rounds">
           <div class="round-header">Round {{ round.round }}</div>
           <div *ngFor="let move of round.moves">
@@ -22,7 +24,7 @@
           </div>
         </ng-container>
       </div>
-      <div style="text-align: center;">
+      <div class="gameTimer">
         <p *ngIf="userID === game.currentTurnUid && game.status === 'ongoing'">It's your turn!</p>
         <p *ngIf="userID !== game.currentTurnUid && game.status === 'ongoing'">Waiting for other player ...</p>
       </div>

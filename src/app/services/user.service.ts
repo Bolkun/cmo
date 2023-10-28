@@ -1,6 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
-import { map, take, Observable, combineLatest } from 'rxjs';
+import { map, take, Observable, combineLatest, first } from 'rxjs';
 import { FlashMessageService } from './flash-message.service';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -39,22 +39,20 @@ export class UserService {
     });
   }
 
-  signIn(email: string, password: string): Promise<boolean | void> {
-    return this.auth.signInWithEmailAndPassword(email, password).then((result) => {
-      // Login if user email verified
+  signIn(email: string, password: string): Promise<boolean> {
+    return this.auth.signInWithEmailAndPassword(email, password).then(result => {
       if (!result.user?.emailVerified) {
         this.flashMessageService.showMessage('Please verify Email Address!', 'error');
-        return false;
+        throw new Error('Email not verified');
       }
-      this.getUserData(result.user!.uid).pipe(take(1)).subscribe((data: any) => {
-        localStorage.setItem('userID', data['id']);
-      });
-      // Go to game
+      return result.user!.uid;
+    }).then(uid => this.getUserData(uid).pipe(first()).toPromise()).then(data => {
+      localStorage.setItem('userID', data.id);
       this.ngZone.run(() => {
         this.router.navigate(['game']);
       });
       return true;
-    }).catch((error) => {
+    }).catch(error => {
       this.flashMessageService.showMessage(error.message, 'error');
       return false;
     });
@@ -224,6 +222,30 @@ export class UserService {
     return this.afs.doc(`gameRequests/${docId}`).delete();
   }
 
+  getRequestsInvolvingOponent(uid: string): Observable<any[]> {
+    return this.afs.collection('gameRequests', ref =>
+      ref.where('toUid', '==', uid)
+    ).snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as Request;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
+  }
+
+  getRequestsInvolvingUser(uid: string): Observable<any[]> {
+    return this.afs.collection('gameRequests', ref =>
+      ref.where('fromUid', '==', uid)
+    ).snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as Request;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
+  }
+
   // Games
   createGame(request: any, playerIdStarts: string) {
     this.afs.collection('games').add({
@@ -235,7 +257,7 @@ export class UserService {
       startedUid: playerIdStarts,
       currentTurnUid: playerIdStarts,
       status: 'ongoing',
-      rounds: null,
+      rounds: [{ round: 1, moves: [] }],
       leftGamePlayer1Uid: null,
       leftGamePlayer2Uid: null,
     }).then(() => {
@@ -245,7 +267,7 @@ export class UserService {
     });
   }
 
-  getGame(uid: string): Observable<any[]> {
+  getGame(uid: string): Observable<Game[]> {
     // Check if uid is player1 or player2 and also if he left a game
     const player1Games$ = this.afs.collection('games', ref => ref
       .where('player1Uid', '==', uid)
@@ -324,6 +346,27 @@ export class UserService {
     return this.afs.doc(`games/${gameId}`).update({
       [leftGameColumn]: uid
     });
+  }
+
+  isUserInGame(uid: string): Observable<boolean> {
+    // Query for player1Uid
+    const player1Games$ = this.afs.collection('games', ref => ref
+      // .where('status', '==', 'ongoing')
+      .where('player1Uid', '==', uid)
+    ).snapshotChanges();
+
+    // Query for player2Uid
+    const player2Games$ = this.afs.collection('games', ref => ref
+      // .where('status', '==', 'ongoing')
+      .where('player2Uid', '==', uid)
+    ).snapshotChanges();
+
+    // Combine both queries and check if either returns a game
+    return combineLatest([player1Games$, player2Games$]).pipe(
+      map(([player1Games, player2Games]) => {
+        return player1Games.length > 0 || player2Games.length > 0;
+      })
+    );
   }
 
 }
