@@ -25,6 +25,7 @@
         </ng-container>
       </div>
       <div class="gameTimer">
+        <h3>{{ game.player1Name }} vs. {{ game.player2Name }}</h3>
         <p *ngIf="userID === game.currentTurnUid && game.status === 'ongoing'">It's your turn!</p>
         <p *ngIf="userID !== game.currentTurnUid && game.status === 'ongoing'">Waiting for other player ...</p>
       </div>
@@ -42,14 +43,14 @@
       <h2>Users</h2>
       <table>
         <tbody>
-          <tr *ngFor="let user of userService.users$ | async">
+          <tr *ngFor="let oneUser of userService.users$ | async" [class.mark-user]="oneUser.id === user.id">
             <td>
-              <app-user-status [id]="user.id"></app-user-status>
+              <app-user-status [id]="oneUser.id"></app-user-status>
             </td>
-            <td style="cursor: pointer;" (click)="toggleDropdown(user.id)">
-              {{ user.displayName }}
-              <div *ngIf="showDropdown[user.id]" class="dropdown-menu">
-                <button class="btn btnSecondary" (click)="sendRequest(user.id, user.displayName)">Send Play
+            <td style="cursor: pointer;" (click)="toggleDropdown(oneUser.id)">
+              {{ oneUser.displayName }}
+              <div *ngIf="showDropdown[oneUser.id]" class="dropdown-menu">
+                <button class="btn btnSecondary" (click)="sendRequest(oneUser.id, oneUser.displayName)">Send Play
                   Request</button>
               </div>
             </td>

@@ -67,6 +67,10 @@
   text-align: center;
 }
 
+.mark-user td {
+  color: green;
+}
+
 /* Menu */
 .dropdown-menu {
   display: block;
@@ -94,7 +98,10 @@
 }
 
 /* Game */
+.gameTimer p {
+  font-family: cursive;
+}
+
 .gameTimer {
   text-align: center;
-  font-family: cursive;
 }
