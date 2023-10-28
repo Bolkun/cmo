@@ -10,8 +10,8 @@
     <input id="userPasswordInput" class="form-control" type="password" name="password" placeholder="Password" #userPassword required>
   </div>
   <div class="form-footer">
-    <button class="btn btnSuccess" (click)="userService.SignIn(userEmail.value, userPassword.value)">Sign in</button>
-    <button class="btn btnGoogle" (click)="userService.GoogleAuth()"></button>
+    <button class="btn btnSuccess" (click)="userService.signIn(userEmail.value, userPassword.value)">Sign in</button>
+    <button class="btn btnGoogle" (click)="userService.googleAuth()"></button>
   </div>
   <div class="form-control">
     <div>

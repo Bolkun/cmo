@@ -14,10 +14,10 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {}
 
   async signUp(userNickname: string, userEmail: string, userPwd: string) {
-    await this.userService.SignUp(userNickname, userEmail, userPwd);
+    await this.userService.signUp(userNickname, userEmail, userPwd);
   }
 
   async googleReg() {
-    await this.userService.GoogleAuth();
+    await this.userService.googleAuth();
   }
 }

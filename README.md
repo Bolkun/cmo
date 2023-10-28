@@ -2,6 +2,7 @@
 npm install @angular/fire firebase
 ng generate guard auth (To redirect a user to the login page if they are not authenticated)
 
+Anyone with a link can comment diagram https://drive.google.com/file/d/1EZoQ8DQngN7BWRQnjp8zGFLfTA0G6vvF/view?usp=sharing
 
 
 Compat: https://github.com/angular/angularfire Angular-Firebase-AngularFire

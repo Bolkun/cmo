@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { GameComponent } from './components/game/game.component';
 import { UserStatusComponent } from './components/user-status/user-status.component';
@@ -25,7 +24,6 @@ import { TimerRequestComponent } from './components/timer-request/timer-request.
     LoginComponent,
     RegistrationComponent,
     ResetPasswordComponent,
-    UserProfileComponent,
     VerifyEmailComponent,
     GameComponent,
     UserStatusComponent,

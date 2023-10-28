@@ -1,15 +1,11 @@
 <div class="container add-form">
   <h1 class="form-header">Thank You for Registering</h1>
   <app-flash-message></app-flash-message>
-  <div class="form-control" *ngIf="userService.userData as user">
-    <div *ngIf="userService.userData.emailVerified === false">
-      <p>We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
-      <p>Please check your email (spam directory) and click on the link to verfiy your email address.</p>
-    </div>
-  </div>
   <div class="form-control">
+    <p>We have sent a confirmation message to your email account.</p>
+    <p>Please check your email (spam directory) and click on the link to verfiy your email address.</p>
     <!-- Calling SendVerificationMail() method using userService Api -->
-    <button type="button" class="btn btnSecondary" (click)="userService.SendVerificationMail()">
+    <button type="button" class="btn btnSecondary" (click)="userService.sendVerificationMail()">
       <i class="fas fa-redo-alt"></i>
       Resend Verification Email
     </button>

@@ -9,13 +9,13 @@ import { PresenceService } from 'src/app/services/presence.service';
 })
 export class UserStatusComponent implements OnInit {
 
-  @Input() uid;
+  @Input() id;
   presence$;
 
   constructor(private presence: PresenceService) {}
 
   ngOnInit(): void {
-    this.presence$ = this.presence.getPresence(this.uid);
+    this.presence$ = this.presence.getPresence(this.id);
   }
 
   get typedPresence$(): Observable<any> {
