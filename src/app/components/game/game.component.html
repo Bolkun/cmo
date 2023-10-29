@@ -26,8 +26,17 @@
       </div>
       <div class="gameTimer">
         <h3>{{ game.player1Name }} vs. {{ game.player2Name }}</h3>
-        <p *ngIf="userID === game.currentTurnUid && game.status === 'ongoing'">It's your turn!</p>
-        <p *ngIf="userID !== game.currentTurnUid && game.status === 'ongoing'">Waiting for other player ...</p>
+        <div *ngIf="userID === game.currentTurnUid && game.status === 'ongoing'">
+          <p>It's your turn!</p>
+          <app-timer-game *ngIf="game.timestampForMoves"
+            [startTime]="game.timestampForMoves.toDate().getTime()"></app-timer-game>
+        </div>
+        <div *ngIf="userID !== game.currentTurnUid && game.status === 'ongoing'">
+          <p>Waiting for other player ...</p>
+          <app-timer-game *ngIf="game.timestampForMoves" [startTime]="game.timestampForMoves.toDate().getTime()"
+            (timeUp)="timeOutOccurred = true"></app-timer-game>
+          <button class="btn btnSecondary" *ngIf="timeOutOccurred" (click)="kickPlayer()">Kick</button>
+        </div>
       </div>
       <div class="row-container" *ngFor="let row of board; let rowIndex = index">
         <div class="tic-tac-toe-cell" [ngClass]="{'x': cell === 'X', 'o': cell === 'O'}"
@@ -43,18 +52,21 @@
       <h2>Users</h2>
       <table>
         <tbody>
-          <tr *ngFor="let oneUser of userService.users$ | async" [class.mark-user]="oneUser.id === user.id">
-            <td>
-              <app-user-status [id]="oneUser.id"></app-user-status>
-            </td>
-            <td style="cursor: pointer;" (click)="toggleDropdown(oneUser.id)">
-              {{ oneUser.displayName }}
-              <div *ngIf="showDropdown[oneUser.id]" class="dropdown-menu">
-                <button class="btn btnSecondary" (click)="sendRequest(oneUser.id, oneUser.displayName)">Send Play
-                  Request</button>
-              </div>
-            </td>
-          </tr>
+          <!-- Check if users are loaded -->
+          <ng-container *ngIf="userService.users$ | async as users">
+            <tr *ngFor="let oneUser of users" [class.mark-user]="oneUser && user && oneUser.id === user.id">
+              <td>
+                <app-user-status [id]="oneUser.id"></app-user-status>
+              </td>
+              <td style="cursor: pointer;" (click)="toggleDropdown(oneUser.id)">
+                {{ oneUser.displayName }}
+                <div *ngIf="showDropdown[oneUser.id]" class="dropdown-menu">
+                  <button class="btn btnSecondary" (click)="sendRequest(oneUser.id, oneUser.displayName)">Send Play
+                    Request</button>
+                </div>
+              </td>
+            </tr>
+          </ng-container>
         </tbody>
       </table>
     </div>

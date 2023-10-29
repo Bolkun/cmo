@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app';
 
 export interface User {
-  id: string;
+  id?: string;
   displayName: string;
   email: string;
   photoURL: string | null;
@@ -31,6 +31,7 @@ export interface Game {
   rounds: Round[] | null;
   leftGamePlayer1Uid: string | null;
   leftGamePlayer2Uid: string | null;
+  timestampForMoves: firebase.firestore.Timestamp;
 }
 
 export interface Round {

@@ -1,0 +1,10 @@
+<span *ngIf="timeLeft > 0" [ngStyle]="{
+    'color': (timeLeft <= 16 && timeLeft > 9) ? 'green' :
+             (timeLeft <= 9 && timeLeft > 4) ? 'orange' :
+             'red'
+  }">
+  {{ timeLeft }}
+</span>
+<span style="color: orange;" *ngIf="timeLeft <= 0">
+  Time's up!
+</span>

@@ -13,7 +13,7 @@ import { User, Game, Round } from 'src/app/interfaces/app.interfaces';
   providedIn: 'root',
 })
 export class UserService {
-  public userData: any;
+  public userData: User;
   public regIn = false;
   users$: Observable<User[]>;
 
@@ -123,13 +123,14 @@ export class UserService {
   }
 
   isLoggedIn(): boolean {
-    const userId = JSON.parse(localStorage.getItem('userID')!);
-    if (userId == null) {
+    try {
+      const userId = localStorage.getItem('userID');
+      return userId !== null && userId !== undefined && userId !== '';
+    } catch (e) {
+      console.error('Error checking user login status:', e);
       return false;
-    } else {
-      return true;
     }
-  }
+  }  
 
   isAdminLoggedIn() {
     if (this.isLoggedIn()) {
@@ -199,8 +200,7 @@ export class UserService {
       });
   }
 
-  // ToDo - Cloud Functions: delete game requests older than 15 seconds
-  getGameRequests(currentUserId: string): Observable<any[]> {
+  getGameRequests(currentUserId: string): Observable<any[]> { // ToDo - Cloud Functions: delete game requests older than 15 seconds
     return this.afs.collection('gameRequests', ref =>
       ref.where('toUid', '==', currentUserId)
         .where('status', '==', 'pending')
@@ -260,6 +260,7 @@ export class UserService {
       rounds: [{ round: 1, moves: [] }],
       leftGamePlayer1Uid: null,
       leftGamePlayer2Uid: null,
+      timestampForMoves: firebase.firestore.FieldValue.serverTimestamp()
     }).then(() => {
       // Navigate to the game screen or update the UI to show the game board
     }).catch(error => {
@@ -298,8 +299,7 @@ export class UserService {
     );
   }
 
-  // ToDo - Cloud Functions: delete finished games
-  getGamesPlayer1Left(): Observable<any[]> {
+  getGamesPlayer1Left(): Observable<any[]> { // ToDo - Cloud Functions: delete finished games
     return this.afs.collection('games', ref => ref
       .where('leftGamePlayer1Uid', '!=', null)
     ).snapshotChanges().pipe(
@@ -313,8 +313,7 @@ export class UserService {
     );
   }
 
-  // ToDo - Cloud Functions: delete finished games
-  getGamesPlayer2Left(): Observable<any[]> {
+  getGamesPlayer2Left(): Observable<any[]> { // ToDo - Cloud Functions: delete finished games
     return this.afs.collection('games', ref => ref
       .where('leftGamePlayer2Uid', '!=', null)
     ).snapshotChanges().pipe(
@@ -328,7 +327,6 @@ export class UserService {
     );
   }
 
-  // ToDo - Cloud Functions: delete finished games
   deleteGame(docId: string): Promise<void> {
     return this.afs.doc(`games/${docId}`).delete();
   }
@@ -338,7 +336,8 @@ export class UserService {
       board: [].concat(...newBoardState),
       currentTurnUid: nextTurnUid,
       status: status,
-      rounds: rounds
+      rounds: rounds,
+      timestampForMoves: firebase.firestore.FieldValue.serverTimestamp()
     });
   }
 

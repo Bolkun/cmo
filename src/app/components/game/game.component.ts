@@ -4,6 +4,8 @@ import { PresenceService } from 'src/app/services/presence.service';
 import { FlashMessageService } from 'src/app/services/flash-message.service';
 // interfaces
 import { User, Request, Game, Round, Move } from 'src/app/interfaces/app.interfaces';
+// libraries
+import { Router } from '@angular/router';
 import { first, take, tap } from 'rxjs';
 
 @Component({
@@ -30,18 +32,22 @@ export class GameComponent implements OnInit, AfterViewChecked {
   game: Game | undefined;
   nextTurnUid: string | undefined;
   currentPlayerName: string;
+  timeOutOccurred: boolean = false;
   // Round
   rounds: Round[];
 
   constructor(
     public userService: UserService,
     private presenceService: PresenceService,
-    private flashMessageService: FlashMessageService
+    private flashMessageService: FlashMessageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    if (!this.userService.isLoggedIn()) {
+      this.router.navigate(['login']);
+    }
     this.userID = localStorage.getItem('userID');
-
     // Get user data
     this.userService.getUserData(this.userID).subscribe((user: User) => {
       // Get requests
@@ -62,6 +68,7 @@ export class GameComponent implements OnInit, AfterViewChecked {
     // Get game 
     this.userService.getGame(this.userID).subscribe((games: Game[]) => {
       if (games && games.length > 0) {
+        this.timeOutOccurred = false; // ToDo - Put in TimerGameComponent the logic
         this.game = games[0];
 
         if (this.userID === this.game.startedUid) {
@@ -153,6 +160,15 @@ export class GameComponent implements OnInit, AfterViewChecked {
     this.game = undefined;
     this.nextTurnUid = undefined;
     this.rounds = undefined;
+  }
+
+  kickPlayer() {
+    if (this.game.currentTurnUid === this.game.player1Uid) {
+      this.addMove({ message: `Player ${this.game.player1Name} was kicked out of the game due to timeout reason! Player ${this.game.player1Name} wins!`, type: 'win' });
+    } else {
+      this.addMove({ message: `Player ${this.game.player2Name} was kicked out of the game due to timeout reason! Player ${this.game.player1Name} wins!`, type: 'win' });
+    }
+    this.userService.saveMove(this.game.id, this.board, this.nextTurnUid, this.rounds, 'won');
   }
 
   signOut() {

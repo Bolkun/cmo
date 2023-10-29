@@ -17,6 +17,7 @@ import { GameComponent } from './components/game/game.component';
 import { UserStatusComponent } from './components/user-status/user-status.component';
 import { FlashMessageComponent } from './components/flash-message/flash-message.component';
 import { TimerRequestComponent } from './components/timer-request/timer-request.component';
+import { TimerGameComponent } from './components/timer-game/timer-game.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TimerRequestComponent } from './components/timer-request/timer-request.
     UserStatusComponent,
     FlashMessageComponent,
     TimerRequestComponent,
+    TimerGameComponent,
   ],
   imports: [
     BrowserModule,
