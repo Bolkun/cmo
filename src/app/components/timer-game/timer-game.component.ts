@@ -8,7 +8,8 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./timer-game.component.css']
 })
 export class TimerGameComponent implements OnInit, OnDestroy, OnChanges {
-  @Input() startTime: number;
+  @Input() startTime: number;   // timestamp in seconds
+  @Input() currentTime: number; // timestamp in seconds
   @Output() timeUp = new EventEmitter<void>();
   timeLeft: number;
   private destroy$ = new Subject<void>();
@@ -20,28 +21,6 @@ export class TimerGameComponent implements OnInit, OnDestroy, OnChanges {
     this.startTimer();
   }
 
-  startTimer(): void {
-    interval(1000).pipe(takeUntil(this.destroy$)).subscribe(() => this.calculateTimeLeft(),
-      error => console.error(error)
-    );
-  }
-
-  calculateTimeLeft(): void {
-    const elapsedTime = Date.now() - this.startTime;
-    const secondsElapsed = Math.floor(elapsedTime / 1000);
-    this.timeLeft = 2 - secondsElapsed;
-
-    if (this.timeLeft <= 0) {
-      this.timeUp.emit();
-      this.destroy$.next(); // Stop the timer when it reaches 0
-    }
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
-
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['startTime'] && !changes['startTime'].isFirstChange()) {
       // Stop the old timer
@@ -51,6 +30,38 @@ export class TimerGameComponent implements OnInit, OnDestroy, OnChanges {
       this.calculateTimeLeft();
       this.startTimer();
     }
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  calculateTimeLeft(): void {
+    const endTime = this.startTime + 3;
+    this.timeLeft = endTime - this.currentTime;
+    console.log(this.startTime);
+    console.log(this.currentTime);
+    
+    
+
+    if (this.timeLeft <= 0) {
+      // console.log("Timer finished!");
+      this.timeUp.emit();
+      this.destroy$.next(); // Stop the timer when it reaches 0
+    }
+  }
+
+  startTimer(): void {
+    interval(1000)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: () => {
+          this.currentTime++; // assuming you want to increase currentTime
+          this.calculateTimeLeft();
+        },
+        error: error => console.error(error)
+      });
   }
 
 }

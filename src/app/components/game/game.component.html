@@ -6,7 +6,7 @@
       <div *ngFor="let request of requests" class="usersRequests">
         <span>Request from: {{ request.fromDisplayName }}</span>
         <app-timer-request [startTime]="request.timestamp.seconds"
-          [currentTime]="currentServerSeconds"></app-timer-request>
+          [currentTime]="currentServerRequestSeconds"></app-timer-request>
         <br>
         <button class="btn btnSuccess" (click)="acceptRequest(request)">Accept</button>
         <button class="btn btnDanger" (click)="declineRequest(request.id)">Decline</button>
@@ -29,13 +29,13 @@
         <h3>{{ game.player1Name }} vs. {{ game.player2Name }}</h3>
         <div *ngIf="userID === game.currentTurnUid && game.status === 'ongoing'">
           <p>It's your turn!</p>
-          <app-timer-game *ngIf="game.timestampForMoves"
-            [startTime]="game.timestampForMoves.toDate().getTime()"></app-timer-game>
+          <app-timer-game *ngIf="game.timestampForMoves && currentServerGameSeconds" [startTime]="game.timestampForMoves.seconds"
+            [currentTime]="currentServerGameSeconds"></app-timer-game>
         </div>
         <div *ngIf="userID !== game.currentTurnUid && game.status === 'ongoing'">
           <p>Waiting for other player ...</p>
-          <app-timer-game *ngIf="game.timestampForMoves" [startTime]="game.timestampForMoves.toDate().getTime()"
-            (timeUp)="timeOutOccurred = true"></app-timer-game>
+          <app-timer-game *ngIf="game.timestampForMoves" [startTime]="game.timestampForMoves.seconds"
+            [currentTime]="currentServerGameSeconds && currentServerGameSeconds" (timeUp)="timeOutOccurred = true"></app-timer-game>
           <button class="btn btnSecondary" *ngIf="timeOutOccurred" (click)="kickPlayer()">Kick</button>
         </div>
       </div>

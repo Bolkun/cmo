@@ -17,16 +17,7 @@ export class TimerRequestComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.calculateTimeLeft();
-
-    interval(1000)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe({
-        next: () => {
-          this.currentTime++; // assuming you want to increase currentTime
-          this.calculateTimeLeft();
-        },
-        error: error => console.error(error)
-      });
+    this.startTimer();
   }
 
   calculateTimeLeft(): void {
@@ -41,6 +32,18 @@ export class TimerRequestComponent implements OnInit, OnDestroy {
       const parentDiv = this.el.nativeElement.parentElement;
       this.renderer.removeChild(parentDiv.parentNode, parentDiv);
     }
+  }
+
+  startTimer(): void {
+    interval(1000)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: () => {
+          this.currentTime++; // assuming you want to increase currentTime
+          this.calculateTimeLeft();
+        },
+        error: error => console.error(error)
+      });
   }
 
   ngOnDestroy(): void {

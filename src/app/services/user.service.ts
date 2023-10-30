@@ -269,18 +269,16 @@ export class UserService {
     });
   }
 
-  getGame(uid: string): Observable<Game[]> {
+  getActiveGame(uid: string): Observable<Game[]> {
     // Check if uid is player1 or player2 and also if he left a game
     const player1Games$ = this.afs.collection('games', ref => ref
       .where('player1Uid', '==', uid)
       .where('status', '==', 'ongoing')
-      .where('leftGamePlayer1Uid', '==', null)
     ).snapshotChanges();
 
     const player2Games$ = this.afs.collection('games', ref => ref
       .where('player2Uid', '==', uid)
       .where('status', '==', 'ongoing')
-      .where('leftGamePlayer2Uid', '==', null)
     ).snapshotChanges();
 
     return combineLatest([player1Games$, player2Games$]).pipe(

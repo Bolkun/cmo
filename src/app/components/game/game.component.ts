@@ -18,7 +18,8 @@ export class GameComponent implements OnInit, AfterViewChecked {
   // User
   user: User;
   // Server
-  currentServerSeconds: number;
+  currentServerRequestSeconds: number;
+  currentServerGameSeconds: number;
   // Request
   requests: Request[] | undefined;
   // Game
@@ -60,11 +61,11 @@ export class GameComponent implements OnInit, AfterViewChecked {
               switchMap(() => this.userService.getServerTimestamp(this.user.id))
             ).subscribe((serverTimestamp: any) => {
               if (serverTimestamp) {
-                this.currentServerSeconds = serverTimestamp.seconds;
+                this.currentServerRequestSeconds = serverTimestamp.seconds;
                 // Filter requests that are older than 15 seconds from the current server timestamp
                 this.requests = gameRequests.filter(request => {
                   const requestSeconds = request.timestamp.seconds;
-                  return (requestSeconds + 15) > this.currentServerSeconds;
+                  return (requestSeconds + 15) > this.currentServerRequestSeconds;
                 });
               }
             });
@@ -72,15 +73,12 @@ export class GameComponent implements OnInit, AfterViewChecked {
         });
       }
     });
-
     // Get all users
     this.userService.getUsers();
-
     // ToDo - Cloud Functions: delete finished games
-    this.cleanupGames();
-
+    // this.cleanupGames();
     // Get game 
-    this.userService.getGame(this.userID).subscribe((games: Game[]) => {
+    this.userService.getActiveGame(this.userID).subscribe((games: Game[]) => {
       if (games && games.length > 0) {
         this.timeOutOccurred = false; // ToDo - Put in TimerGameComponent the logic
         this.game = games[0];
@@ -109,19 +107,17 @@ export class GameComponent implements OnInit, AfterViewChecked {
           this.rounds = this.game.rounds;
         }
 
-        // Check if one of the players left the game and declare a winner
-        if (this.game.status === 'ongoing') {
-          if (this.game.leftGamePlayer1Uid != null || this.game.leftGamePlayer2Uid != null) {
-            const leaver = this.game.leftGamePlayer1Uid || this.game.leftGamePlayer2Uid;
-            if (leaver === this.game.player1Uid) {
-              this.addMove({ message: `Player ${this.game.player2Name} wins as opponent left the game!`, type: 'win' });
-            } else {
-              this.addMove({ message: `Player ${this.game.player1Name} wins as opponent left the game!`, type: 'win' });
-            }
-            this.game.status = 'won';
-            // DB: save
-            this.userService.saveMove(this.game.id, this.board, this.nextTurnUid, this.rounds, this.game.status);
+        // Check if one of the player pressed 'Leave' button
+        if (this.game.leftGamePlayer1Uid != null || this.game.leftGamePlayer2Uid != null) {
+          const leaver = this.game.leftGamePlayer1Uid || this.game.leftGamePlayer2Uid;
+          if (leaver === this.game.player1Uid) {
+            this.addMove({ message: `Player ${this.game.player2Name} wins as opponent left the game!`, type: 'win' });
+          } else {
+            this.addMove({ message: `Player ${this.game.player1Name} wins as opponent left the game!`, type: 'win' });
           }
+          this.game.status = 'won';
+          // DB: save
+          this.userService.saveMove(this.game.id, this.board, this.nextTurnUid, this.rounds, this.game.status);
         }
       }
     }), (error) => {
@@ -195,18 +191,6 @@ export class GameComponent implements OnInit, AfterViewChecked {
     if (this.game.status !== 'ongoing' || this.board[row][col]) return;
     // Check if it's current player's turn
     if (this.userID !== this.game.currentTurnUid) return;
-    // Check if another player left game
-    if ((this.game.leftGamePlayer1Uid != null || this.game.leftGamePlayer2Uid != null)) {
-      const leaver = this.game.leftGamePlayer1Uid || this.game.leftGamePlayer2Uid;
-      if (leaver === this.game.player1Uid) {
-        this.addMove({ message: `Player ${this.game.player2Name} wins as opponent left the game!`, type: 'win' });
-      } else {
-        this.addMove({ message: `Player ${this.game.player1Name} wins as opponent left the game!`, type: 'win' });
-      }
-      this.game.status = 'won';
-      // DB: save
-      this.userService.saveMove(this.game.id, this.board, this.nextTurnUid, this.rounds, this.game.status);
-    }
 
     // Places 'X' or 'O' on specific cell
     this.board[row][col] = this.playerSymbol;
