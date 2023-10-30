@@ -319,6 +319,10 @@ export class GameComponent implements OnInit, AfterViewChecked {
       } else {
         this.flashMessageService.showMessage(`You or ${toDisplayName} is currently in a game. Please try later.`, 'warning');
       }
+      // Hide Menu
+      Object.keys(this.showDropdown).forEach(key => {
+        this.showDropdown[key] = false;
+      });
     })).subscribe();
   }
 
