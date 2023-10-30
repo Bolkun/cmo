@@ -3,10 +3,10 @@ import { UserService } from 'src/app/services/user.service';
 import { PresenceService } from 'src/app/services/presence.service';
 import { FlashMessageService } from 'src/app/services/flash-message.service';
 // interfaces
-import { User, Request, Game, Round, Move } from 'src/app/interfaces/app.interfaces';
+import { User, Server, Request, Game, Round, Move } from 'src/app/interfaces/app.interfaces';
 // libraries
 import { Router } from '@angular/router';
-import { first, take, tap } from 'rxjs';
+import { first, from, switchMap, take, tap } from 'rxjs';
 
 @Component({
   selector: 'app-game',
@@ -17,6 +17,8 @@ export class GameComponent implements OnInit, AfterViewChecked {
   userID: string;
   // User
   user: User;
+  // Server
+  currentServerSeconds: number;
   // Request
   requests: Request[] | undefined;
   // Game
@@ -50,11 +52,23 @@ export class GameComponent implements OnInit, AfterViewChecked {
     this.userID = localStorage.getItem('userID');
     // Get user data
     this.userService.getUserData(this.userID).subscribe((user: User) => {
-      // Get requests
       if (user) {
         this.user = user;
-        this.userService.getGameRequests(this.user.id).subscribe((gameRequests: Request[]) => {
-          this.requests = gameRequests;
+        this.userService.getGameRequests(this.user.id).subscribe((gameRequests: any[]) => {
+          if (gameRequests) {
+            from(this.userService.createOrUpdateServer(this.user.id)).pipe(
+              switchMap(() => this.userService.getServerTimestamp(this.user.id))
+            ).subscribe((serverTimestamp: any) => {
+              if (serverTimestamp) {
+                this.currentServerSeconds = serverTimestamp.seconds;
+                // Filter requests that are older than 15 seconds from the current server timestamp
+                this.requests = gameRequests.filter(request => {
+                  const requestSeconds = request.timestamp.seconds;
+                  return (requestSeconds + 15) > this.currentServerSeconds;
+                });
+              }
+            });
+          }
         });
       }
     });
@@ -313,6 +327,11 @@ export class GameComponent implements OnInit, AfterViewChecked {
   }
 
   acceptRequest(request: Request): void {
+    // clear vars
+    this.game = undefined;
+    this.nextTurnUid = undefined;
+    this.rounds = undefined;
+
     const playerIdStarts = this.decideWhoStartFirst(request.fromUid, request.toUid);
     this.userService.createGame(request, playerIdStarts);
 
@@ -320,8 +339,7 @@ export class GameComponent implements OnInit, AfterViewChecked {
     this.userService.getRequestsInvolvingOponent(request.fromUid).pipe(take(1)).subscribe((requests: Request[]) => {
       requests.forEach(req => {
         this.userService.deleteGameRequest(req.id).then(() => {
-          // Optionally, you can keep the console.log or remove it if you no longer need it
-          //console.log(`Request ${req.id} deleted successfully`);
+          // console.log(`Request ${req.id} deleted successfully`);
         }).catch((error) => {
           console.error(`Error deleting the request ${req.id}:`, error);
         });
@@ -332,8 +350,7 @@ export class GameComponent implements OnInit, AfterViewChecked {
     this.userService.getRequestsInvolvingUser(request.toUid).pipe(take(1)).subscribe((requests: Request[]) => {
       requests.forEach(req => {
         this.userService.deleteGameRequest(req.id).then(() => {
-          // Optionally, you can keep the console.log or remove it if you no longer need it
-          //console.log(`Request ${req.id} deleted successfully`);
+          // console.log(`Request ${req.id} deleted successfully`);
         }).catch((error) => {
           console.error(`Error deleting the request ${req.id}:`, error);
         });

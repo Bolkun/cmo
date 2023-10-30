@@ -29,7 +29,7 @@ export class TimerGameComponent implements OnInit, OnDestroy, OnChanges {
   calculateTimeLeft(): void {
     const elapsedTime = Date.now() - this.startTime;
     const secondsElapsed = Math.floor(elapsedTime / 1000);
-    this.timeLeft = 14 - secondsElapsed;
+    this.timeLeft = 2 - secondsElapsed;
 
     if (this.timeLeft <= 0) {
       this.timeUp.emit();

@@ -1,13 +1,12 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
-import { map, take, Observable, combineLatest, first } from 'rxjs';
+import { map, Observable, combineLatest, first, take, tap } from 'rxjs';
 import { FlashMessageService } from './flash-message.service';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Timestamp } from 'firebase/firestore';
 import firebase from 'firebase/compat/app'; // firebase.auth
 // interfaces
-import { User, Game, Round } from 'src/app/interfaces/app.interfaces';
+import { User, Server, Game, Round } from 'src/app/interfaces/app.interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -130,15 +129,6 @@ export class UserService {
       console.error('Error checking user login status:', e);
       return false;
     }
-  }  
-
-  isAdminLoggedIn() {
-    if (this.isLoggedIn()) {
-      if (this.userData) {
-        return this.userData.role! === 'admin' ? true : false;
-      }
-    }
-    return false;
   }
 
   getUserData(docId: string) {
@@ -170,6 +160,22 @@ export class UserService {
     });
   }
 
+  // Server
+  createOrUpdateServer(uid: string): Promise<void> {
+    const serverRef = this.afs.collection('server').doc(uid);
+    return serverRef.set({
+      uid,
+      currentTimestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }, { merge: true });
+  }
+
+  getServerTimestamp(uid: string): Observable<any> {
+    return this.afs.collection<Server>('server', ref => ref.where('uid', '==', uid)).valueChanges().pipe(
+      map(docs => (docs.length ? docs[0].currentTimestamp : undefined)),
+      take(1)
+    );
+  }
+
   // Requests
   sendGameRequest(fromUid: string, fromDisplayName: string, toUid: string, toDisplayName: string): Promise<void> {
     const gameRequestsRef = this.afs.collection('gameRequests');
@@ -192,7 +198,6 @@ export class UserService {
             toUid,
             toDisplayName,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-            status: 'pending'
           }).then(() => { });
         }
       }).catch((error) => {
@@ -200,22 +205,18 @@ export class UserService {
       });
   }
 
-  getGameRequests(currentUserId: string): Observable<any[]> { // ToDo - Cloud Functions: delete game requests older than 15 seconds
-    return this.afs.collection('gameRequests', ref =>
-      ref.where('toUid', '==', currentUserId)
-        .where('status', '==', 'pending')
-    ).snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as any;
-        const id = a.payload.doc.id;
-        const currentTime = Timestamp.now();
-        const differenceInSeconds = (currentTime.seconds - data.timestamp.seconds);
-        if (differenceInSeconds > 15) {
-          this.deleteGameRequest(id);
-        }
-        return { id, ...data };
-      }))
-    );
+  getGameRequests(currentUserId: string): Observable<Request[]> { // ToDo - Cloud Functions: delete game requests older than 15 seconds
+    return this.afs.collection('gameRequests', ref => ref.where('toUid', '==', currentUserId))
+      .snapshotChanges()
+      .pipe(
+        map(requestSnapshots => {
+          return requestSnapshots.map(snapshot => {
+            const data = snapshot.payload.doc.data() as Request;
+            const docId = snapshot.payload.doc.id;
+            return { id: docId, ...data };
+          });
+        })
+      );
   }
 
   deleteGameRequest(docId: string): Promise<void> {
@@ -272,11 +273,13 @@ export class UserService {
     // Check if uid is player1 or player2 and also if he left a game
     const player1Games$ = this.afs.collection('games', ref => ref
       .where('player1Uid', '==', uid)
+      .where('status', '==', 'ongoing')
       .where('leftGamePlayer1Uid', '==', null)
     ).snapshotChanges();
 
     const player2Games$ = this.afs.collection('games', ref => ref
       .where('player2Uid', '==', uid)
+      .where('status', '==', 'ongoing')
       .where('leftGamePlayer2Uid', '==', null)
     ).snapshotChanges();
 
@@ -350,13 +353,13 @@ export class UserService {
   isUserInGame(uid: string): Observable<boolean> {
     // Query for player1Uid
     const player1Games$ = this.afs.collection('games', ref => ref
-      // .where('status', '==', 'ongoing')
+      .where('status', '==', 'ongoing')
       .where('player1Uid', '==', uid)
     ).snapshotChanges();
 
     // Query for player2Uid
     const player2Games$ = this.afs.collection('games', ref => ref
-      // .where('status', '==', 'ongoing')
+      .where('status', '==', 'ongoing')
       .where('player2Uid', '==', uid)
     ).snapshotChanges();
 

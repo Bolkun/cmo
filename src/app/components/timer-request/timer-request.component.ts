@@ -8,7 +8,8 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./timer-request.component.css']
 })
 export class TimerRequestComponent implements OnInit, OnDestroy {
-  @Input() startTime: number;
+  @Input() startTime: number;   // timestamp in seconds
+  @Input() currentTime: number; // timestamp in seconds
   timeLeft: number;
   private destroy$ = new Subject<void>();
 
@@ -19,19 +20,21 @@ export class TimerRequestComponent implements OnInit, OnDestroy {
 
     interval(1000)
       .pipe(takeUntil(this.destroy$))
-      .subscribe(
-        () => this.calculateTimeLeft(),
-        error => console.error(error)
-      );
+      .subscribe({
+        next: () => {
+          this.currentTime++; // assuming you want to increase currentTime
+          this.calculateTimeLeft();
+        },
+        error: error => console.error(error)
+      });
   }
 
   calculateTimeLeft(): void {
-    const elapsedTime = Date.now() - this.startTime;
-    const secondsElapsed = Math.floor(elapsedTime / 1000);
-    this.timeLeft = 15 - secondsElapsed;
+    const endTime = this.startTime + 15;
+    this.timeLeft = endTime - this.currentTime;
 
     if (this.timeLeft <= 0) {
-      console.log("Timer finished!");
+      // console.log("Timer finished!");
       this.destroy$.next(); // Stop the timer when it reaches 0.
 
       // Remove the parent div element

@@ -5,7 +5,8 @@
     <div class="usersRequestsContainer">
       <div *ngFor="let request of requests" class="usersRequests">
         <span>Request from: {{ request.fromDisplayName }}</span>
-        <app-timer-request [startTime]="request.timestamp.toDate().getTime()"></app-timer-request>
+        <app-timer-request [startTime]="request.timestamp.seconds"
+          [currentTime]="currentServerSeconds"></app-timer-request>
         <br>
         <button class="btn btnSuccess" (click)="acceptRequest(request)">Accept</button>
         <button class="btn btnDanger" (click)="declineRequest(request.id)">Decline</button>

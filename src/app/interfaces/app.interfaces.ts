@@ -8,18 +8,22 @@ export interface User {
   role: string;
 }
 
+export interface Server {
+  uid: string;
+  currentTimestamp: firebase.firestore.Timestamp;
+}
+
 export interface Request {
-  id: string;
+  id?: string;
   fromDisplayName: string;
   fromUid: string;
-  status: 'pending' | 'accepted' | 'declined';
-  timestamp: firebase.firestore.Timestamp;
   toDisplayName: string;
   toUid: string;
+  timestamp: firebase.firestore.Timestamp;  // started
 }
 
 export interface Game {
-  id: string
+  id?: string
   board: string[];
   player1Uid: string;
   player2Uid: string;
