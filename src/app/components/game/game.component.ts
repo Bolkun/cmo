@@ -80,45 +80,54 @@ export class GameComponent implements OnInit, AfterViewChecked {
     // Get game 
     this.userService.getActiveGame(this.userID).subscribe((games: Game[]) => {
       if (games && games.length > 0) {
-        this.timeOutOccurred = false; // ToDo - Put in TimerGameComponent the logic
-        this.game = games[0];
-
-        if (this.userID === this.game.startedUid) {
-          this.playerSymbol = 'X';
-        } else {
-          this.playerSymbol = 'O';
-        }
-
-        for (let i = 0; i < 3; i++) {
-          for (let j = 0; j < 3; j++) {
-            this.board[i][j] = this.game.board[i * 3 + j];
+        console.log(games);
+        
+        from(this.userService.createOrUpdateServer(this.userID)).pipe(
+          switchMap(() => this.userService.getServerTimestamp(this.userID))
+        ).subscribe((serverTimestamp: any) => {
+          if (serverTimestamp) {
+            this.currentServerGameSeconds = serverTimestamp.seconds;
           }
-        }
-
-        if (this.game.currentTurnUid === this.game.player1Uid) {
-          this.nextTurnUid = this.game.player2Uid
-          this.currentPlayerName = this.game.player1Name;
-        } else {
-          this.nextTurnUid = this.game.player1Uid
-          this.currentPlayerName = this.game.player2Name;
-        }
-
-        if (this.game.rounds) {
-          this.rounds = this.game.rounds;
-        }
-
-        // Check if one of the player pressed 'Leave' button
-        if (this.game.leftGamePlayer1Uid != null || this.game.leftGamePlayer2Uid != null) {
-          const leaver = this.game.leftGamePlayer1Uid || this.game.leftGamePlayer2Uid;
-          if (leaver === this.game.player1Uid) {
-            this.addMove({ message: `Player ${this.game.player2Name} wins as opponent left the game!`, type: 'win' });
+          
+          this.timeOutOccurred = false; // ToDo - Put in TimerGameComponent the logic
+          this.game = games[0];
+          if (this.userID === this.game.startedUid) {
+            this.playerSymbol = 'X';
           } else {
-            this.addMove({ message: `Player ${this.game.player1Name} wins as opponent left the game!`, type: 'win' });
+            this.playerSymbol = 'O';
           }
-          this.game.status = 'won';
-          // DB: save
-          this.userService.saveMove(this.game.id, this.board, this.nextTurnUid, this.rounds, this.game.status);
-        }
+
+          for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+              this.board[i][j] = this.game.board[i * 3 + j];
+            }
+          }
+
+          if (this.game.currentTurnUid === this.game.player1Uid) {
+            this.nextTurnUid = this.game.player2Uid
+            this.currentPlayerName = this.game.player1Name;
+          } else {
+            this.nextTurnUid = this.game.player1Uid
+            this.currentPlayerName = this.game.player2Name;
+          }
+
+          if (this.game.rounds) {
+            this.rounds = this.game.rounds;
+          }
+
+          // Check if one of the player pressed 'Leave' button
+          if (this.game.leftGamePlayer1Uid != null || this.game.leftGamePlayer2Uid != null) {
+            const leaver = this.game.leftGamePlayer1Uid || this.game.leftGamePlayer2Uid;
+            if (leaver === this.game.player1Uid) {
+              this.addMove({ message: `Player ${this.game.player2Name} wins as opponent left the game!`, type: 'win' });
+            } else {
+              this.addMove({ message: `Player ${this.game.player1Name} wins as opponent left the game!`, type: 'win' });
+            }
+            this.game.status = 'won';
+            // DB: save
+            this.userService.saveMove(this.game.id, this.board, this.nextTurnUid, this.rounds, this.game.status);
+          }
+        });
       }
     }), (error) => {
       console.error("Error fetching games:", error);
