@@ -9,15 +9,15 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegistrationComponent } from './components/registration/registration.component';
-import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-import { GameComponent } from './components/game/game.component';
-import { UserStatusComponent } from './components/user-status/user-status.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
+import { GameComponent } from './pages/game/game.component';
 import { FlashMessageComponent } from './components/flash-message/flash-message.component';
 import { TimerRequestComponent } from './components/timer-request/timer-request.component';
 import { TimerGameComponent } from './components/timer-game/timer-game.component';
+import { UserPresenceComponent } from './components/user-presence/user-presence.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +27,10 @@ import { TimerGameComponent } from './components/timer-game/timer-game.component
     ResetPasswordComponent,
     VerifyEmailComponent,
     GameComponent,
-    UserStatusComponent,
     FlashMessageComponent,
     TimerRequestComponent,
     TimerGameComponent,
+    UserPresenceComponent,
   ],
   imports: [
     BrowserModule,

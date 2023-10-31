@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { authGuard } from './auth.guard';
-import { GameComponent } from './components/game/game.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegistrationComponent } from './components/registration/registration.component';
-import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { GameComponent } from './pages/game/game.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},

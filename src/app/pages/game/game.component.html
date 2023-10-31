@@ -57,7 +57,7 @@
           <ng-container *ngIf="userService.users$ | async as users">
             <tr *ngFor="let oneUser of users" [class.mark-user]="oneUser && user && oneUser.id === user.id">
               <td>
-                <app-user-status [id]="oneUser.id"></app-user-status>
+                <app-user-presence [id]="oneUser.id"></app-user-presence>
               </td>
               <td style="cursor: pointer;" (click)="toggleDropdown(oneUser.id)">
                 {{ oneUser.displayName }}

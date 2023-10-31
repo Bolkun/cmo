@@ -3,12 +3,11 @@ import { Observable } from 'rxjs';
 import { PresenceService } from 'src/app/services/presence.service';
 
 @Component({
-  selector: 'app-user-status',
-  templateUrl: './user-status.component.html',
-  styleUrls: ['./user-status.component.css']
+  selector: 'app-user-presence',
+  templateUrl: './user-presence.component.html',
+  styleUrls: ['./user-presence.component.css']
 })
-export class UserStatusComponent implements OnInit {
-
+export class UserPresenceComponent implements OnInit {
   @Input() id;
   presence$;
 
