@@ -8,7 +8,7 @@ For reference, the game's structure and functionality are similar to popular Pok
 
 ## 1. Architecture
 
-The architecture of Cmo is visually represented in the following diagram, which provides an overview of the program's main concepts. You can view and comment on the diagram by following this link: [Cmo Architecture Diagram](https://drive.google.com/file/d/1EZoQ8DQngN7BWRQnjp8zGFLfTA0G6vvF/view?usp=sharing).
+The architecture of Cmo is visually represented in the following diagram created in [app.diagrams.net](https://app.diagrams.net/), which provides an overview of the program's main concepts. You can view and comment on the diagram by following this link: [Cmo Architecture Diagram](https://drive.google.com/file/d/1EZoQ8DQngN7BWRQnjp8zGFLfTA0G6vvF/view?usp=sharing).
 
 ## 2. Technology and Tools
 
@@ -25,7 +25,7 @@ Cmo ensures compatibility between Angular, Firebase, and AngularFire. To guarant
 
 ### Angular and Firebase Versions
 
-AngularFire does not strictly adhere to Angular's versioning, as Firebase introduces breaking changes throughout the year. However, AngularFire aims to maintain compatibility with both Firebase and Angular for as long as possible. Below is a compatibility matrix:
+AngularFire does not strictly adhere to Angular's versioning, as Firebase introduces breaking changes throughout the year. However, AngularFire aims to maintain compatibility with both Firebase and Angular for as long as possible. Below is a compatibility matrix, which was taken from [angularfire](https://github.com/angular/angularfire) README.md file:
 
 | Angular | Firebase | AngularFire  |
 | ------- | -------- | ------------ |
