@@ -70,6 +70,7 @@ By maintaining the specified versions, you can ensure the compatibility and func
 - sockets (websockets)
 - (cloud functions)
 - unit-tests
+- Bug: game timer refreshes by client if page reloaded
 
 ## Development server
 
