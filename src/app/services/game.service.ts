@@ -40,12 +40,10 @@ export class GameService {
     // Query for ongoing games where the provided 'uid' matches either 'player1Uid' or 'player2Uid'
     const player1Games$ = this.afs.collection('games', ref => ref
       .where('player1Uid', '==', uid)
-      .where('status', '==', 'ongoing')
     ).snapshotChanges();
   
     const player2Games$ = this.afs.collection('games', ref => ref
       .where('player2Uid', '==', uid)
-      .where('status', '==', 'ongoing')
     ).snapshotChanges();
   
     // Combine the two Observables to wait for both to complete
@@ -101,7 +99,7 @@ export class GameService {
     return this.afs.doc(`games/${docId}`).delete();
   }
 
-  saveMove(gameId: string, newBoardState: string[][], nextTurnUid: string, rounds: Round[], status: 'ongoing' | 'won' | 'draw'): Promise<void> {
+  saveMove(gameId: string, newBoardState: string[][], nextTurnUid: string, rounds: Round[], status: string): Promise<void> {
     return this.afs.doc(`games/${gameId}`).update({
       board: [].concat(...newBoardState),
       currentTurnUid: nextTurnUid,

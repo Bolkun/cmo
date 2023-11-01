@@ -31,7 +31,7 @@ export interface Game {
   player2Name: string;
   startedUid: string;
   currentTurnUid: string;
-  status: 'ongoing' | 'won' | 'draw';
+  status: 'ongoing' | 'won' | 'draw' | 'kicked' | 'left';
   rounds: Round[] | null;
   leftGamePlayer1Uid: string | null;
   leftGamePlayer2Uid: string | null;

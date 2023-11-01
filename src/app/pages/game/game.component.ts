@@ -17,7 +17,8 @@ import { User, Request, Game, Round, Move } from 'src/app/interfaces/app.interfa
   styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit, AfterViewChecked {
-  userID: string;
+  userID: string;     // current player
+  oponentID: string;  // oponent player
   // User
   user: User;
   // Server
@@ -38,6 +39,7 @@ export class GameComponent implements OnInit, AfterViewChecked {
   game: Game | undefined;
   nextTurnUid: string | undefined;
   currentPlayerName: string;
+  oponentPlayerName: string;
   timeOutOccurred: boolean = false;
   // Round
   rounds: Round[];
@@ -83,11 +85,10 @@ export class GameComponent implements OnInit, AfterViewChecked {
     this.userService.getUsers();
     // ToDo - Cloud Functions: delete finished games
     this.deleteFinishedGames();
-    // Get game 
-    let leaveButtonCheckExecuted = false;
+    // Get game
     this.gameService.getActiveGame(this.userID).subscribe((games: Game[]) => {
       if (games && games.length > 0) {
-        // Filter games where currentUser left the game
+        // Filter games where currentUser not left the game, by checking if uid set in one of the fields
         const filteredGames = games.filter(game => {
           return (
             game.leftGamePlayer1Uid !== this.userID &&
@@ -97,7 +98,7 @@ export class GameComponent implements OnInit, AfterViewChecked {
 
         // Check if there are remaining games after filtering
         if (filteredGames.length > 0) {
-          this.game = filteredGames[0]; // Set the first remaining game as 'this.game'
+          this.game = filteredGames[0];
 
           from(this.serverService.createOrUpdateServer(this.userID)).pipe(
             switchMap(() => this.serverService.getServerTimestamp(this.userID))
@@ -107,6 +108,12 @@ export class GameComponent implements OnInit, AfterViewChecked {
             }
 
             this.timeOutOccurred = false; // ToDo - Put in TimerGameComponent the logic
+
+            if (this.userID === this.game.player1Uid) {
+              this.oponentID = this.game.player2Uid;
+            } else {
+              this.oponentID = this.game.player1Uid;
+            }
 
             if (this.userID === this.game.startedUid) {
               this.playerSymbol = 'X';
@@ -123,27 +130,25 @@ export class GameComponent implements OnInit, AfterViewChecked {
             if (this.game.currentTurnUid === this.game.player1Uid) {
               this.nextTurnUid = this.game.player2Uid
               this.currentPlayerName = this.game.player1Name;
+              this.oponentPlayerName = this.game.player2Name;
             } else {
               this.nextTurnUid = this.game.player1Uid
               this.currentPlayerName = this.game.player2Name;
+              this.oponentPlayerName = this.game.player1Name;
             }
 
             if (this.game.rounds) {
               this.rounds = this.game.rounds;
             }
 
-            // Check if one of the player pressed 'Leave' button
-            if (!leaveButtonCheckExecuted && (this.game.leftGamePlayer1Uid != null || this.game.leftGamePlayer2Uid != null)) {
-              const leaver = this.game.leftGamePlayer1Uid || this.game.leftGamePlayer2Uid;
-              if (leaver === this.game.player1Uid) {
-                this.addMove({ message: `Player ${this.game.player2Name} wins as opponent left the game!`, type: 'win' });
-              } else {
-                this.addMove({ message: `Player ${this.game.player1Name} wins as opponent left the game!`, type: 'win' });
+            // Check if one of the players pressed 'Leave' button and close game after 15 seconds
+            if (this.game.leftGamePlayer1Uid === this.oponentID || this.game.leftGamePlayer2Uid === this.oponentID) {
+              if (this.game.status === 'ongoing') {
+                this.addMove({ message: `Player ${this.currentPlayerName} wins as ${this.oponentPlayerName} left the game!`, type: 'win' });
+                this.game.status = 'left';
+                // DB: save
+                this.gameService.saveMove(this.game.id, this.board, this.nextTurnUid, this.rounds, this.game.status);
               }
-              // DB: save
-              this.gameService.saveMove(this.game.id, this.board, this.nextTurnUid, this.rounds, this.game.status);
-              // Set the flag to indicate that the check has been executed
-              leaveButtonCheckExecuted = true;
             }
           });
         }
@@ -183,6 +188,7 @@ export class GameComponent implements OnInit, AfterViewChecked {
     } else {
       this.gameService.leaveGame(this.game.id, 'leftGamePlayer2Uid', this.game.player2Uid);
     }
+    // clear vars
     this.game = undefined;
     this.nextTurnUid = undefined;
     this.rounds = undefined;
@@ -194,29 +200,34 @@ export class GameComponent implements OnInit, AfterViewChecked {
     } else {
       this.addMove({ message: `Player ${this.game.player2Name} was kicked out of the game due to timeout reason! Player ${this.game.player1Name} wins!`, type: 'win' });
     }
-    this.gameService.saveMove(this.game.id, this.board, this.nextTurnUid, this.rounds, 'won');
+    this.gameService.saveMove(this.game.id, this.board, this.nextTurnUid, this.rounds, 'kicked');
   }
 
   // Requests
   sendRequest(toUid: string, toDisplayName: string): void {
-    this.gameService.isUserInGame(toUid).pipe(first(), tap(isInGame => {
-      if (!isInGame) {
-        this.requestService.sendRequest(this.user.id, this.user.displayName, toUid, toDisplayName);
-      } else {
-        this.flashMessageService.showMessage(`You or ${toDisplayName} is currently in a game. Please try later.`, 'warning');
-      }
-      // Hide Menu
-      Object.keys(this.showDropdown).forEach(key => {
-        this.showDropdown[key] = false;
-      });
-    })).subscribe();
+    // User did not left last game
+    if (this.game) {
+      this.flashMessageService.showMessage(`You are currently in a game. Leave the game to send requests.`, 'warning');
+    } else {
+      this.gameService.isUserInGame(toUid).pipe(first(), tap(isInGame => {
+        if (!isInGame) {
+          this.requestService.sendRequest(this.user.id, this.user.displayName, toUid, toDisplayName);
+        } else {
+          this.flashMessageService.showMessage(`${toDisplayName} is currently in a game. Please try later.`, 'warning');
+        }
+        // Hide Menu
+        Object.keys(this.showDropdown).forEach(key => {
+          this.showDropdown[key] = false;
+        });
+      })).subscribe();
+    }
   }
 
   acceptRequest(request: Request): void {
-    // clear vars
-    this.game = undefined;
-    this.nextTurnUid = undefined;
-    this.rounds = undefined;
+    // User did not left last game
+    if (this.game) {
+      this.leaveGame();
+    }
 
     const playerIdStarts = this.whoStartFirst(request.fromUid, request.toUid);
     this.gameService.createGame(request, playerIdStarts);
@@ -243,6 +254,10 @@ export class GameComponent implements OnInit, AfterViewChecked {
       });
     });
 
+    // clear vars
+    this.game = undefined;
+    this.nextTurnUid = undefined;
+    this.rounds = undefined;
     this.requests = undefined;
   }
 

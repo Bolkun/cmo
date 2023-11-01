@@ -64,6 +64,13 @@ By maintaining the specified versions, you can ensure the compatibility and func
 | css      | `.css`                                   | Prettier                                |
 | ts       | `.ts`                                    | TypeScript and JavaScript Type Features |
 
+### ToDo
+- generate auth token and get rid of localstorage
+- guards check
+- sockets (websockets)
+- (cloud functions)
+- unit-tests
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
