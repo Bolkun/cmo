@@ -105,6 +105,8 @@ export class GameComponent implements OnInit, AfterViewChecked {
           ).subscribe((serverTimestamp: any) => {
             if (serverTimestamp) {
               this.currentServerGameSeconds = serverTimestamp.seconds;
+            } else {
+              this.currentServerGameSeconds = this.game.timestampForMoves.seconds;
             }
 
             this.timeOutOccurred = false; // ToDo - Put in TimerGameComponent the logic

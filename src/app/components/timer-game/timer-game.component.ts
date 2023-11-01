@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { Subject, interval } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -7,7 +7,7 @@ import { takeUntil } from 'rxjs/operators';
   templateUrl: './timer-game.component.html',
   styleUrls: ['./timer-game.component.css']
 })
-export class TimerGameComponent implements OnInit, OnDestroy {
+export class TimerGameComponent implements OnInit, OnChanges, OnDestroy {
   @Input() startTime: number;   // timestamp in seconds
   @Input() currentTime: number; // timestamp in seconds
   @Output() timeUp = new EventEmitter<void>();
@@ -21,17 +21,26 @@ export class TimerGameComponent implements OnInit, OnDestroy {
     this.startTimer();
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if ((changes['startTime'] && !changes['startTime'].isFirstChange()) || (changes['currentTime'] && !changes['currentTime'].isFirstChange())) {
+      // Stop the old timer
+      this.destroy$.next();
+
+      // Recalculate time left and restart the timer
+      this.calculateTimeLeft();
+      this.startTimer();
+    }
+  }
+
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }
 
   calculateTimeLeft(): void {
-    const endTime = this.startTime + 3;
+    const endTime = this.startTime + 5;
     this.timeLeft = endTime - this.currentTime;
-    // console.log(this.startTime);
-    // console.log(this.currentTime);
-    
+
     if (this.timeLeft <= 0) {
       // console.log("Timer finished!");
       this.timeUp.emit();
