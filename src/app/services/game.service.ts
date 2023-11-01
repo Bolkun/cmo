@@ -36,7 +36,7 @@ export class GameService {
     });
   }
 
-  getActiveGame(uid: string): Observable<Game[]> {
+  getGames(uid: string): Observable<Game[]> {
     // Query for ongoing games where the provided 'uid' matches either 'player1Uid' or 'player2Uid'
     const player1Games$ = this.afs.collection('games', ref => ref
       .where('player1Uid', '==', uid)

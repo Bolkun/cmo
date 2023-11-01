@@ -86,7 +86,7 @@ export class GameComponent implements OnInit, AfterViewChecked {
     // ToDo - Cloud Functions: delete finished games
     this.deleteFinishedGames();
     // Get game
-    this.gameService.getActiveGame(this.userID).subscribe((games: Game[]) => {
+    this.gameService.getGames(this.userID).subscribe((games: Game[]) => {
       if (games && games.length > 0) {
         // Filter games where currentUser not left the game, by checking if uid set in one of the fields
         const filteredGames = games.filter(game => {
