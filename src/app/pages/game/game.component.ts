@@ -198,7 +198,7 @@ export class GameComponent implements OnInit, AfterViewChecked {
 
   kickPlayer() {
     if (this.game.currentTurnUid === this.game.player1Uid) {
-      this.addMove({ message: `Player ${this.game.player1Name} was kicked out of the game due to timeout reason! Player ${this.game.player1Name} wins!`, type: 'win' });
+      this.addMove({ message: `Player ${this.game.player1Name} was kicked out of the game due to timeout reason! Player ${this.game.player2Name} wins!`, type: 'win' });
     } else {
       this.addMove({ message: `Player ${this.game.player2Name} was kicked out of the game due to timeout reason! Player ${this.game.player1Name} wins!`, type: 'win' });
     }

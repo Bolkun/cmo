@@ -18,6 +18,7 @@ import { FlashMessageComponent } from './components/flash-message/flash-message.
 import { TimerRequestComponent } from './components/timer-request/timer-request.component';
 import { TimerGameComponent } from './components/timer-game/timer-game.component';
 import { UserPresenceComponent } from './components/user-presence/user-presence.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { UserPresenceComponent } from './components/user-presence/user-presence.
     TimerRequestComponent,
     TimerGameComponent,
     UserPresenceComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
