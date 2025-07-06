@@ -21,6 +21,7 @@ import { UserPresenceComponent } from './components/user-presence/user-presence.
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CoreComponent } from './pages/core/core.component';
 import { WorldComponent } from './pages/world/world.component';
+import { LogoutComponent } from './components/menu/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -36,12 +37,13 @@ import { WorldComponent } from './pages/world/world.component';
     UserPresenceComponent,
     NotFoundComponent,
     CoreComponent,
-    WorldComponent
+    WorldComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+
     // firebase
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,

@@ -48,7 +48,7 @@ export class UserService {
     }).then(uid => this.getUserData(uid).pipe(first()).toPromise()).then(data => {
       localStorage.setItem('userID', data.id);
       this.ngZone.run(() => {
-        this.router.navigate(['game']);
+        this.router.navigate(['world']);
       });
       return true;
     }).catch(error => {
@@ -69,7 +69,7 @@ export class UserService {
         }
         localStorage.setItem('userID', result.user.uid);
         // Navigate to game
-        this.router.navigate(['/game']);
+        this.router.navigate(['world']);
       } else {
         // Handle scenario where result or result.user is undefined
         this.flashMessageService.showMessage('Google Authentication failed!', 'error');
