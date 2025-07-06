@@ -1,5 +1,6 @@
 <!-- Button to open modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#monsterModal" (click)="openModal()">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#monsterModal"
+  (click)="openModal()">
   Monsters
 </button>
 
@@ -22,7 +23,8 @@
         <div class="d-flex align-items-center justify-content-center mb-3 gap-2">
           <button class="btn btn-outline-primary" (click)="prevMonster()">&larr;</button>
           <div class="input-group" style="max-width: 300px;">
-            <input type="text" class="form-control" placeholder="Search by ID or Name" [(ngModel)]="searchTerm" (keyup.enter)="search()" />
+            <input type="text" class="form-control" placeholder="Search by ID or Name" [(ngModel)]="searchTerm"
+              (keyup.enter)="search()" />
             <button class="btn btn-secondary" (click)="search()">Search</button>
           </div>
           <button class="btn btn-outline-primary" (click)="nextMonster()">&rarr;</button>
@@ -30,17 +32,14 @@
 
         <!-- Monster image -->
         <div class="text-center mb-3">
-          <img [src]="'assets/img/monsters/' + currentMonster.id + '.jpg'" 
-               [alt]="currentMonster.name" 
-               style="height: 200px; object-fit: contain; border: 1px solid black;" />
+          <img [src]="'assets/img/monsters/' + currentMonster.id + '.jpg'" [alt]="currentMonster.name"
+            style="height: 200px; object-fit: contain; border: 1px solid black;" />
         </div>
 
         <!-- Types -->
         <div class="mb-3 text-center">
-          <img *ngFor="let t of currentMonster.types" 
-               [src]="'assets/img/types/' + t + '.gif'" 
-               [alt]="t" 
-               style="height: 30px; margin-right: 10px;" />
+          <img *ngFor="let t of currentMonster.types" [src]="'assets/img/types/' + t + '.gif'" [alt]="t"
+            style="height: 30px; margin-right: 10px;" />
         </div>
 
         <!-- Three side-by-side tables -->
@@ -51,12 +50,30 @@
             <h6 class="text-center">Base Stats</h6>
             <table class="table table-borderless table-sm mx-auto text-start" style="width: auto;">
               <tbody>
-                <tr><td>HP</td><td>{{ currentMonster.baseStats.hp }}</td></tr>
-                <tr><td>Attack</td><td>{{ currentMonster.baseStats.a }}</td></tr>
-                <tr><td>Defense</td><td>{{ currentMonster.baseStats.d }}</td></tr>
-                <tr><td>Speed</td><td>{{ currentMonster.baseStats.s }}</td></tr>
-                <tr><td>Special Attack</td><td>{{ currentMonster.baseStats.sa }}</td></tr>
-                <tr><td>Special Defense</td><td>{{ currentMonster.baseStats.sd }}</td></tr>
+                <tr>
+                  <td>HP</td>
+                  <td>{{ currentMonster.baseStats.hp }}</td>
+                </tr>
+                <tr>
+                  <td>Attack</td>
+                  <td>{{ currentMonster.baseStats.a }}</td>
+                </tr>
+                <tr>
+                  <td>Defense</td>
+                  <td>{{ currentMonster.baseStats.d }}</td>
+                </tr>
+                <tr>
+                  <td>Speed</td>
+                  <td>{{ currentMonster.baseStats.s }}</td>
+                </tr>
+                <tr>
+                  <td>Special Attack</td>
+                  <td>{{ currentMonster.baseStats.sa }}</td>
+                </tr>
+                <tr>
+                  <td>Special Defense</td>
+                  <td>{{ currentMonster.baseStats.sd }}</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -66,17 +83,51 @@
             <h6 class="text-center">Moves</h6>
             <table class="table table-borderless table-sm mx-auto text-start" style="width: auto;">
               <tbody>
-                <tr *ngFor="let move of currentMonster.moves">
-                  <td *ngFor="let lvl of objectKeys(move)">
-                    Level {{ lvl }}: {{ move[lvl] | titlecase }}
-                  </td>
-                </tr>
+                <ng-container *ngFor="let move of currentMonster.moves; let i = index">
+                  <tr>
+                    <td *ngFor="let lvl of objectKeys(move)">
+                      <button class="btn btn-sm btn-secondary me-2" (click)="toggleMoveDetails(i)">
+                        {{ expandedMoves[i] ? 'Hide' : 'Show' }}
+                      </button>
+                      Level {{ lvl }}: {{ move[lvl] | titlecase }}
+                    </td>
+                  </tr>
+                  <tr *ngIf="expandedMoves[i]">
+                    <td [attr.colspan]="objectKeys(currentMonster.moves[i]).length" style="background-color: #f8f9fa;">
+                      <div *ngIf="getMoveDetails(move[objectKeys(move)[0]]) as details; else noMoveDetails">
+                        <!-- Type as image -->
+                        <p><strong>Type:</strong>
+                          <img [src]="'assets/img/types/' + (details.type.toLowerCase()) + '.gif'" [alt]="details.type"
+                            style="height: 20px; vertical-align: middle; margin-left: 5px;" />
+                        </p>
+
+                        <p><strong>Category:</strong> {{ details.category | titlecase }}</p>
+                        <p><strong>Power:</strong> {{ details.power !== null ? details.power : 'N/A' }}</p>
+
+                        <!-- Accuracy as percent -->
+                        <p><strong>Accuracy:</strong>
+                          {{ details.accuracy !== null ? (details.accuracy * 100) + '%' : 'N/A' }}
+                        </p>
+
+                        <p><strong>PP:</strong> {{ details.pp }}</p>
+                        <p *ngIf="details.priority !== null && details.priority !== undefined">
+                          <strong>Priority:</strong> {{ details.priority }}
+                        </p>
+                        <p><strong>Effect:</strong> {{ details.effect?.length ? details.effect : '-' }}</p>
+                      </div>
+                      <ng-template #noMoveDetails>
+                        <p>Move details not found.</p>
+                      </ng-template>
+                    </td>
+                  </tr>
+                </ng-container>
               </tbody>
             </table>
           </div>
 
           <!-- Evolutions -->
-          <div *ngIf="currentMonster.evolutions && objectKeys(currentMonster.evolutions).length > 0; else noEvolutions" class="col-md-4">
+          <div *ngIf="currentMonster.evolutions && objectKeys(currentMonster.evolutions).length > 0; else noEvolutions"
+            class="col-md-4">
             <h6 class="text-center">Evolutions</h6>
             <table class="table table-borderless table-sm mx-auto text-start" style="width: auto;">
               <tbody>
