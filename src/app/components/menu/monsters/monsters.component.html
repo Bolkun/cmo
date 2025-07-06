@@ -1,0 +1,114 @@
+<!-- Button to open modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#monsterModal" (click)="openModal()">
+  Monsters
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="monsterModal" tabindex="-1" aria-labelledby="monsterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <!-- Header with ID and name -->
+      <div class="modal-header">
+        <h5 class="modal-title text-capitalize" id="monsterModalLabel">
+          ID {{ currentMonster?.id }} | {{ currentMonster?.name || 'Loading...' }}
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body" *ngIf="currentMonster; else loading">
+
+        <!-- Controls -->
+        <div class="d-flex align-items-center justify-content-center mb-3 gap-2">
+          <button class="btn btn-outline-primary" (click)="prevMonster()">&larr;</button>
+          <div class="input-group" style="max-width: 300px;">
+            <input type="text" class="form-control" placeholder="Search by ID or Name" [(ngModel)]="searchTerm" (keyup.enter)="search()" />
+            <button class="btn btn-secondary" (click)="search()">Search</button>
+          </div>
+          <button class="btn btn-outline-primary" (click)="nextMonster()">&rarr;</button>
+        </div>
+
+        <!-- Monster image -->
+        <div class="text-center mb-3">
+          <img [src]="'assets/img/monsters/' + currentMonster.id + '.jpg'" 
+               [alt]="currentMonster.name" 
+               style="height: 200px; object-fit: contain; border: 1px solid black;" />
+        </div>
+
+        <!-- Types -->
+        <div class="mb-3 text-center">
+          <img *ngFor="let t of currentMonster.types" 
+               [src]="'assets/img/types/' + t + '.gif'" 
+               [alt]="t" 
+               style="height: 30px; margin-right: 10px;" />
+        </div>
+
+        <!-- Three side-by-side tables -->
+        <div class="row">
+
+          <!-- Base Stats -->
+          <div class="col-md-4">
+            <h6 class="text-center">Base Stats</h6>
+            <table class="table table-borderless table-sm mx-auto text-start" style="width: auto;">
+              <tbody>
+                <tr><td>HP</td><td>{{ currentMonster.baseStats.hp }}</td></tr>
+                <tr><td>Attack</td><td>{{ currentMonster.baseStats.a }}</td></tr>
+                <tr><td>Defense</td><td>{{ currentMonster.baseStats.d }}</td></tr>
+                <tr><td>Speed</td><td>{{ currentMonster.baseStats.s }}</td></tr>
+                <tr><td>Special Attack</td><td>{{ currentMonster.baseStats.sa }}</td></tr>
+                <tr><td>Special Defense</td><td>{{ currentMonster.baseStats.sd }}</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Moves -->
+          <div class="col-md-4">
+            <h6 class="text-center">Moves</h6>
+            <table class="table table-borderless table-sm mx-auto text-start" style="width: auto;">
+              <tbody>
+                <tr *ngFor="let move of currentMonster.moves">
+                  <td *ngFor="let lvl of objectKeys(move)">
+                    Level {{ lvl }}: {{ move[lvl] | titlecase }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Evolutions -->
+          <div *ngIf="currentMonster.evolutions && objectKeys(currentMonster.evolutions).length > 0; else noEvolutions" class="col-md-4">
+            <h6 class="text-center">Evolutions</h6>
+            <table class="table table-borderless table-sm mx-auto text-start" style="width: auto;">
+              <tbody>
+                <tr *ngFor="let lvl of objectKeys(currentMonster.evolutions)">
+                  <td>Level {{ lvl }}</td>
+                  <td>ID {{ currentMonster.evolutions[lvl] }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <ng-template #noEvolutions>
+            <div class="col-md-4 text-center">
+              <h6>Evolutions</h6>
+              <p style="color: grey;">No evolutions</p>
+            </div>
+          </ng-template>
+
+        </div>
+
+      </div>
+
+      <ng-template #loading>
+        <div class="modal-body text-center">
+          Loading monster info...
+        </div>
+      </ng-template>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

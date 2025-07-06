@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // firebase
 import { AngularFireModule } from '@angular/fire/compat';
@@ -22,6 +24,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CoreComponent } from './pages/core/core.component';
 import { WorldComponent } from './pages/world/world.component';
 import { LogoutComponent } from './components/menu/logout/logout.component';
+import { ProfileComponent } from './components/menu/profile/profile.component';
+import { MonstersComponent } from './components/menu/monsters/monsters.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +43,14 @@ import { LogoutComponent } from './components/menu/logout/logout.component';
     CoreComponent,
     WorldComponent,
     LogoutComponent,
+    ProfileComponent,
+    MonstersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
 
     // firebase
     AngularFireModule.initializeApp(environment.firebase),
