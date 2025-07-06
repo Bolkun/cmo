@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Starter Training",
+    "image": "1.png",
+    "success_rate": "90%",
+    "stat_boost": "10%"
+  },
+  {
+    "name": "Advanced Training",
+    "image": "2.png",
+    "success_rate": "60%",
+    "stat_boost": "15%"
+  },
+  {
+    "name": "Master Training",
+    "image": "3.png",
+    "success_rate": "25%",
+    "stat_boost": "25%"
+  },
+  {
+    "name": "Elite Training",
+    "image": "4.png",
+    "success_rate": "7%",
+    "stat_boost": "30%"
+  },
+  {
+    "name": "Legendary Training",
+    "image": "5.png",
+    "success_rate": "3%",
+    "stat_boost": "35%"
+  },
+  {
+    "name": "Gods Training",
+    "image": "6.png",
+    "success_rate": "1%",
+    "stat_boost": "40%"
+  }
+]

@@ -19,6 +19,8 @@ import { TimerRequestComponent } from './components/timer-request/timer-request.
 import { TimerGameComponent } from './components/timer-game/timer-game.component';
 import { UserPresenceComponent } from './components/user-presence/user-presence.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { CoreComponent } from './pages/core/core.component';
+import { WorldComponent } from './pages/world/world.component';
 
 @NgModule({
   declarations: [
@@ -33,10 +35,13 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     TimerGameComponent,
     UserPresenceComponent,
     NotFoundComponent,
+    CoreComponent,
+    WorldComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    
     // firebase
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,

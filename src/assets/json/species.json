@@ -1,0 +1,5895 @@
+[
+  {
+    "id": 1,
+    "name": "bulbasaur",
+    "strength_category": 5,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "a": 49,
+      "d": 49,
+      "s": 45,
+      "sa": 65,
+      "sd": 65
+    },
+    "evolutions": {
+      "16": 2
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "7": "leech seed"
+      },
+      {
+        "13": "vine whip"
+      },
+      {
+        "20": "poison powder"
+      },
+      {
+        "27": "razor leaf"
+      },
+      {
+        "34": "growth"
+      },
+      {
+        "41": "sleep powder"
+      },
+      {
+        "48": "solar beam"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "ivysaur",
+    "strength_category": 6,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 62,
+      "d": 63,
+      "s": 60,
+      "sa": 80,
+      "sd": 80
+    },
+    "evolutions": {
+      "32": 3
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "leech seed"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "13": "vine whip"
+      },
+      {
+        "22": "poison powder"
+      },
+      {
+        "30": "razor leaf"
+      },
+      {
+        "38": "growth"
+      },
+      {
+        "46": "sleep powder"
+      },
+      {
+        "54": "solar beam"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "venusaur",
+    "strength_category": 7,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "a": 82,
+      "d": 83,
+      "s": 80,
+      "sa": 100,
+      "sd": 100
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "leech seed"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "1": "vine whip"
+      },
+      {
+        "22": "poison powder"
+      },
+      {
+        "30": "razor leaf"
+      },
+      {
+        "43": "growth"
+      },
+      {
+        "55": "sleep powder"
+      },
+      {
+        "65": "solar beam"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "charmander",
+    "strength_category": 5,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 39,
+      "a": 52,
+      "d": 43,
+      "s": 65,
+      "sa": 60,
+      "sd": 50
+    },
+    "evolutions": {
+      "16": 5
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "9": "ember"
+      },
+      {
+        "15": "leer"
+      },
+      {
+        "22": "rage"
+      },
+      {
+        "30": "slash"
+      },
+      {
+        "38": "flamethrower"
+      },
+      {
+        "46": "fire spin"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "charmeleon",
+    "strength_category": 6,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 58,
+      "a": 64,
+      "d": 58,
+      "s": 80,
+      "sa": 80,
+      "sd": 65
+    },
+    "evolutions": {
+      "36": 6
+    },
+    "moves": [
+      {
+        "1": "ember"
+      },
+      {
+        "1": "growl"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "15": "leer"
+      },
+      {
+        "24": "rage"
+      },
+      {
+        "33": "slash"
+      },
+      {
+        "42": "flamethrower"
+      },
+      {
+        "56": "fire spin"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "charizard",
+    "strength_category": 7,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 78,
+      "a": 84,
+      "d": 78,
+      "s": 100,
+      "sa": 109,
+      "sd": 85
+    },
+    "moves": [
+      {
+        "1": "ember"
+      },
+      {
+        "1": "growl"
+      },
+      {
+        "1": "leer"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "24": "rage"
+      },
+      {
+        "36": "slash"
+      },
+      {
+        "46": "flamethrower"
+      },
+      {
+        "55": "fire spin"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "squirtle",
+    "strength_category": 5,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 44,
+      "a": 48,
+      "d": 65,
+      "s": 43,
+      "sa": 50,
+      "sd": 64
+    },
+    "evolutions": {
+      "16": 8
+    },
+    "moves": [
+      {
+        "1": "tackle"
+      },
+      {
+        "1": "tail whip"
+      },
+      {
+        "8": "bubble"
+      },
+      {
+        "15": "water gun"
+      },
+      {
+        "22": "bite"
+      },
+      {
+        "28": "withdraw"
+      },
+      {
+        "35": "skull bash"
+      },
+      {
+        "42": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "wartortle",
+    "strength_category": 6,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 59,
+      "a": 63,
+      "d": 80,
+      "s": 58,
+      "sa": 65,
+      "sd": 80
+    },
+    "evolutions": {
+      "36": 9
+    },
+    "moves": [
+      {
+        "1": "bubble"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "1": "tail whip"
+      },
+      {
+        "15": "water gun"
+      },
+      {
+        "24": "bite"
+      },
+      {
+        "31": "withdraw"
+      },
+      {
+        "39": "skull bash"
+      },
+      {
+        "47": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "blastoise",
+    "strength_category": 7,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 79,
+      "a": 83,
+      "d": 100,
+      "s": 78,
+      "sa": 85,
+      "sd": 105
+    },
+    "moves": [
+      {
+        "1": "bubble"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "1": "tail whip"
+      },
+      {
+        "1": "water gun"
+      },
+      {
+        "24": "bite"
+      },
+      {
+        "31": "withdraw"
+      },
+      {
+        "42": "skull bash"
+      },
+      {
+        "52": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "caterpie",
+    "strength_category": 4,
+    "types": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "a": 30,
+      "d": 35,
+      "s": 45,
+      "sa": 20,
+      "sd": 20
+    },
+    "evolutions": {
+      "7": 11
+    },
+    "moves": [
+      {
+        "1": "string shot"
+      },
+      {
+        "1": "tackle"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "metapod",
+    "strength_category": 5,
+    "types": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "a": 20,
+      "d": 55,
+      "s": 30,
+      "sa": 25,
+      "sd": 25
+    },
+    "evolutions": {
+      "10": 12
+    },
+    "moves": [
+      {
+        "1": "harden"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "butterfree",
+    "strength_category": 6,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 45,
+      "d": 50,
+      "s": 70,
+      "sa": 90,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "confusion"
+      },
+      {
+        "15": "poison powder"
+      },
+      {
+        "16": "stun spore"
+      },
+      {
+        "17": "sleep powder"
+      },
+      {
+        "21": "supersonic"
+      },
+      {
+        "26": "whirlwind"
+      },
+      {
+        "32": "psybeam"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "weedle",
+    "strength_category": 1,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 35,
+      "d": 30,
+      "s": 50,
+      "sa": 20,
+      "sd": 20
+    },
+    "evolutions": {
+      "7": 14
+    },
+    "moves": [
+      {
+        "1": "poison sting"
+      },
+      {
+        "1": "string shot"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "kakuna",
+    "strength_category": 2,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "a": 25,
+      "d": 50,
+      "s": 35,
+      "sa": 25,
+      "sd": 25
+    },
+    "evolutions": {
+      "10": 15
+    },
+    "moves": [
+      {
+        "1": "harden"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "beedrill",
+    "strength_category": 3,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 90,
+      "d": 40,
+      "s": 75,
+      "sa": 45,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "fury attack"
+      },
+      {
+        "16": "focus energy"
+      },
+      {
+        "20": "twineedle"
+      },
+      {
+        "25": "rage"
+      },
+      {
+        "30": "pin missile"
+      },
+      {
+        "35": "agility"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "pidgey",
+    "strength_category": 4,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 45,
+      "d": 40,
+      "s": 56,
+      "sa": 35,
+      "sd": 35
+    },
+    "evolutions": {
+      "18": 17
+    },
+    "moves": [
+      {
+        "1": "gust"
+      },
+      {
+        "5": "sand attack"
+      },
+      {
+        "12": "quick attack"
+      },
+      {
+        "19": "whirlwind"
+      },
+      {
+        "28": "wing attack"
+      },
+      {
+        "36": "agility"
+      },
+      {
+        "44": "mirror move"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "pidgeotto",
+    "strength_category": 5,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 63,
+      "a": 60,
+      "d": 55,
+      "s": 71,
+      "sa": 50,
+      "sd": 50
+    },
+    "evolutions": {
+      "36": 18
+    },
+    "moves": [
+      {
+        "1": "gust"
+      },
+      {
+        "1": "sand attack"
+      },
+      {
+        "12": "quick attack"
+      },
+      {
+        "21": "whirlwind"
+      },
+      {
+        "31": "wing attack"
+      },
+      {
+        "40": "agility"
+      },
+      {
+        "49": "mirror move"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "pidgeot",
+    "strength_category": 6,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 83,
+      "a": 80,
+      "d": 75,
+      "s": 101,
+      "sa": 70,
+      "sd": 70
+    },
+    "moves": [
+      {
+        "1": "gust"
+      },
+      {
+        "1": "quick attack"
+      },
+      {
+        "1": "sand attack"
+      },
+      {
+        "21": "whirlwind"
+      },
+      {
+        "31": "wing attack"
+      },
+      {
+        "44": "agility"
+      },
+      {
+        "54": "mirror move"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "rattata",
+    "strength_category": 3,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "a": 56,
+      "d": 35,
+      "s": 72,
+      "sa": 25,
+      "sd": 35
+    },
+    "evolutions": {
+      "20": 20
+    },
+    "moves": [
+      {
+        "1": "tackle"
+      },
+      {
+        "1": "tail whip"
+      },
+      {
+        "7": "quick attack"
+      },
+      {
+        "14": "hyper fang"
+      },
+      {
+        "23": "focus energy"
+      },
+      {
+        "34": "super fang"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "raticate",
+    "strength_category": 4,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "a": 81,
+      "d": 60,
+      "s": 97,
+      "sa": 50,
+      "sd": 70
+    },
+    "moves": [
+      {
+        "1": "quick attack"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "1": "tail whip"
+      },
+      {
+        "14": "hyper fang"
+      },
+      {
+        "27": "focus energy"
+      },
+      {
+        "41": "super fang"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "spearow",
+    "strength_category": 3,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 60,
+      "d": 30,
+      "s": 70,
+      "sa": 31,
+      "sd": 31
+    },
+    "evolutions": {
+      "20": 22
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "peck"
+      },
+      {
+        "9": "leer"
+      },
+      {
+        "15": "fury attack"
+      },
+      {
+        "22": "mirror move"
+      },
+      {
+        "29": "drill peck"
+      },
+      {
+        "36": "agility"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "fearow",
+    "strength_category": 4,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 90,
+      "d": 65,
+      "s": 100,
+      "sa": 61,
+      "sd": 61
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "leer"
+      },
+      {
+        "1": "peck"
+      },
+      {
+        "15": "fury attack"
+      },
+      {
+        "25": "mirror move"
+      },
+      {
+        "34": "drill peck"
+      },
+      {
+        "43": "agility"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "ekans",
+    "strength_category": 3,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "a": 60,
+      "d": 44,
+      "s": 55,
+      "sa": 40,
+      "sd": 54
+    },
+    "evolutions": {
+      "22": 24
+    },
+    "moves": [
+      {
+        "1": "leer"
+      },
+      {
+        "1": "wrap"
+      },
+      {
+        "10": "poison sting"
+      },
+      {
+        "17": "bite"
+      },
+      {
+        "24": "glare"
+      },
+      {
+        "31": "screech"
+      },
+      {
+        "38": "acid"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "arbok",
+    "strength_category": 4,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 95,
+      "d": 69,
+      "s": 80,
+      "sa": 65,
+      "sd": 79
+    },
+    "moves": [
+      {
+        "1": "leer"
+      },
+      {
+        "1": "poison sting"
+      },
+      {
+        "1": "wrap"
+      },
+      {
+        "17": "bite"
+      },
+      {
+        "27": "glare"
+      },
+      {
+        "36": "screech"
+      },
+      {
+        "47": "acid"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "pikachu",
+    "strength_category": 5,
+    "types": [
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "a": 55,
+      "d": 30,
+      "s": 90,
+      "sa": 50,
+      "sd": 40
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "thunder shock"
+      },
+      {
+        "9": "thunder wave"
+      },
+      {
+        "16": "quick attack"
+      },
+      {
+        "26": "swift"
+      },
+      {
+        "33": "agility"
+      },
+      {
+        "43": "thunder"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "raichu",
+    "strength_category": 6,
+    "types": [
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 90,
+      "d": 55,
+      "s": 110,
+      "sa": 90,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "thunder shock"
+      },
+      {
+        "1": "thunder wave"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "sandshrew",
+    "strength_category": 5,
+    "types": [
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "a": 75,
+      "d": 85,
+      "s": 40,
+      "sa": 20,
+      "sd": 30
+    },
+    "evolutions": {
+      "22": 28
+    },
+    "moves": [
+      {
+        "1": "scratch"
+      },
+      {
+        "10": "sand attack"
+      },
+      {
+        "17": "slash"
+      },
+      {
+        "24": "poison sting"
+      },
+      {
+        "31": "swift"
+      },
+      {
+        "38": "fury swipes"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "sandslash",
+    "strength_category": 6,
+    "types": [
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "a": 100,
+      "d": 110,
+      "s": 65,
+      "sa": 45,
+      "sd": 55
+    },
+    "moves": [
+      {
+        "1": "sand attack"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "17": "slash"
+      },
+      {
+        "27": "poison sting"
+      },
+      {
+        "36": "swift"
+      },
+      {
+        "47": "fury swipes"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "nidoran\u2640",
+    "strength_category": 4,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "a": 47,
+      "d": 52,
+      "s": 41,
+      "sa": 40,
+      "sd": 40
+    },
+    "evolutions": {
+      "16": 30
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "8": "scratch"
+      },
+      {
+        "14": "poison sting"
+      },
+      {
+        "21": "tail whip"
+      },
+      {
+        "29": "bite"
+      },
+      {
+        "36": "fury swipes"
+      },
+      {
+        "43": "double kick"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "nidorina",
+    "strength_category": 5,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "a": 62,
+      "d": 67,
+      "s": 56,
+      "sa": 55,
+      "sd": 55
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "14": "poison sting"
+      },
+      {
+        "23": "tail whip"
+      },
+      {
+        "32": "bite"
+      },
+      {
+        "41": "fury swipes"
+      },
+      {
+        "50": "double kick"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "nidoqueen",
+    "strength_category": 6,
+    "types": [
+      "poison",
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "a": 92,
+      "d": 87,
+      "s": 76,
+      "sa": 75,
+      "sd": 85
+    },
+    "moves": [
+      {
+        "1": "body slam"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "1": "tail whip"
+      },
+      {
+        "14": "poison sting"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "nidoran\u2642",
+    "strength_category": 5,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 46,
+      "a": 57,
+      "d": 40,
+      "s": 50,
+      "sa": 40,
+      "sd": 40
+    },
+    "evolutions": {
+      "16": 33
+    },
+    "moves": [
+      {
+        "1": "leer"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "8": "horn attack"
+      },
+      {
+        "14": "poison sting"
+      },
+      {
+        "21": "focus energy"
+      },
+      {
+        "29": "fury attack"
+      },
+      {
+        "36": "horn drill"
+      },
+      {
+        "43": "double kick"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "nidorino",
+    "strength_category": 6,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 61,
+      "a": 72,
+      "d": 57,
+      "s": 65,
+      "sa": 55,
+      "sd": 55
+    },
+    "moves": [
+      {
+        "1": "horn attack"
+      },
+      {
+        "1": "leer"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "14": "poison sting"
+      },
+      {
+        "23": "focus energy"
+      },
+      {
+        "32": "fury attack"
+      },
+      {
+        "41": "horn drill"
+      },
+      {
+        "50": "double kick"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "nidoking",
+    "strength_category": 6,
+    "types": [
+      "poison",
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 81,
+      "a": 102,
+      "d": 77,
+      "s": 85,
+      "sa": 85,
+      "sd": 75
+    },
+    "moves": [
+      {
+        "1": "horn attack"
+      },
+      {
+        "1": "poison sting"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "1": "thrash"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "clefairy",
+    "strength_category": 6,
+    "types": [
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "a": 45,
+      "d": 48,
+      "s": 35,
+      "sa": 60,
+      "sd": 65
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "pound"
+      },
+      {
+        "13": "sing"
+      },
+      {
+        "18": "double slap"
+      },
+      {
+        "24": "minimize"
+      },
+      {
+        "31": "metronome"
+      },
+      {
+        "39": "defense curl"
+      },
+      {
+        "48": "light screen"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "clefable",
+    "strength_category": 7,
+    "types": [
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "a": 70,
+      "d": 73,
+      "s": 60,
+      "sa": 95,
+      "sd": 90
+    },
+    "moves": [
+      {
+        "1": "double slap"
+      },
+      {
+        "1": "metronome"
+      },
+      {
+        "1": "minimize"
+      },
+      {
+        "1": "sing"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "vulpix",
+    "strength_category": 6,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 38,
+      "a": 41,
+      "d": 40,
+      "s": 65,
+      "sa": 50,
+      "sd": 65
+    },
+    "moves": [
+      {
+        "1": "ember"
+      },
+      {
+        "1": "tail whip"
+      },
+      {
+        "16": "quick attack"
+      },
+      {
+        "21": "roar"
+      },
+      {
+        "28": "confuse ray"
+      },
+      {
+        "35": "flamethrower"
+      },
+      {
+        "42": "fire spin"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "ninetales",
+    "strength_category": 7,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 73,
+      "a": 76,
+      "d": 75,
+      "s": 100,
+      "sa": 81,
+      "sd": 100
+    },
+    "moves": [
+      {
+        "1": "ember"
+      },
+      {
+        "1": "quick attack"
+      },
+      {
+        "1": "roar"
+      },
+      {
+        "1": "tail whip"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "jigglypuff",
+    "strength_category": 3,
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 115,
+      "a": 45,
+      "d": 20,
+      "s": 20,
+      "sa": 45,
+      "sd": 25
+    },
+    "moves": [
+      {
+        "1": "sing"
+      },
+      {
+        "9": "pound"
+      },
+      {
+        "14": "disable"
+      },
+      {
+        "19": "defense curl"
+      },
+      {
+        "24": "double slap"
+      },
+      {
+        "29": "rest"
+      },
+      {
+        "34": "body slam"
+      },
+      {
+        "39": "double-edge"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "wigglytuff",
+    "strength_category": 4,
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 140,
+      "a": 70,
+      "d": 45,
+      "s": 45,
+      "sa": 85,
+      "sd": 50
+    },
+    "moves": [
+      {
+        "1": "defense curl"
+      },
+      {
+        "1": "disable"
+      },
+      {
+        "1": "double slap"
+      },
+      {
+        "1": "sing"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "name": "zubat",
+    "strength_category": 4,
+    "types": [
+      "poison",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 45,
+      "d": 35,
+      "s": 55,
+      "sa": 30,
+      "sd": 40
+    },
+    "evolutions": {
+      "22": 42
+    },
+    "moves": [
+      {
+        "1": "leech life"
+      },
+      {
+        "10": "supersonic"
+      },
+      {
+        "15": "bite"
+      },
+      {
+        "21": "confuse ray"
+      },
+      {
+        "28": "wing attack"
+      },
+      {
+        "36": "haze"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "golbat",
+    "strength_category": 5,
+    "types": [
+      "poison",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "a": 80,
+      "d": 70,
+      "s": 90,
+      "sa": 65,
+      "sd": 75
+    },
+    "moves": [
+      {
+        "1": "bite"
+      },
+      {
+        "1": "leech life"
+      },
+      {
+        "1": "screech"
+      },
+      {
+        "10": "supersonic"
+      },
+      {
+        "21": "confuse ray"
+      },
+      {
+        "32": "wing attack"
+      },
+      {
+        "43": "haze"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "oddish",
+    "strength_category": 4,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "a": 50,
+      "d": 55,
+      "s": 30,
+      "sa": 75,
+      "sd": 65
+    },
+    "evolutions": {
+      "21": 44
+    },
+    "moves": [
+      {
+        "1": "absorb"
+      },
+      {
+        "15": "poison powder"
+      },
+      {
+        "17": "stun spore"
+      },
+      {
+        "19": "sleep powder"
+      },
+      {
+        "24": "acid"
+      },
+      {
+        "33": "petal dance"
+      },
+      {
+        "46": "solar beam"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "gloom",
+    "strength_category": 5,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 65,
+      "d": 70,
+      "s": 40,
+      "sa": 85,
+      "sd": 75
+    },
+    "moves": [
+      {
+        "1": "absorb"
+      },
+      {
+        "1": "poison powder"
+      },
+      {
+        "1": "stun spore"
+      },
+      {
+        "19": "sleep powder"
+      },
+      {
+        "28": "acid"
+      },
+      {
+        "38": "petal dance"
+      },
+      {
+        "52": "solar beam"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "vileplume",
+    "strength_category": 6,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "a": 80,
+      "d": 85,
+      "s": 50,
+      "sa": 110,
+      "sd": 90
+    },
+    "moves": [
+      {
+        "1": "acid"
+      },
+      {
+        "1": "petal dance"
+      },
+      {
+        "1": "sleep powder"
+      },
+      {
+        "1": "stun spore"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "paras",
+    "strength_category": 3,
+    "types": [
+      "bug",
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "a": 70,
+      "d": 55,
+      "s": 25,
+      "sa": 45,
+      "sd": 55
+    },
+    "evolutions": {
+      "24": 47
+    },
+    "moves": [
+      {
+        "1": "scratch"
+      },
+      {
+        "13": "stun spore"
+      },
+      {
+        "20": "leech life"
+      },
+      {
+        "27": "spore"
+      },
+      {
+        "34": "slash"
+      },
+      {
+        "41": "growth"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "parasect",
+    "strength_category": 4,
+    "types": [
+      "bug",
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 95,
+      "d": 80,
+      "s": 30,
+      "sa": 60,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "leech life"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "1": "stun spore"
+      },
+      {
+        "30": "spore"
+      },
+      {
+        "39": "slash"
+      },
+      {
+        "48": "growth"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "venonat",
+    "strength_category": 5,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 55,
+      "d": 50,
+      "s": 45,
+      "sa": 40,
+      "sd": 55
+    },
+    "evolutions": {
+      "31": 49
+    },
+    "moves": [
+      {
+        "1": "tackle"
+      },
+      {
+        "4": "disable"
+      },
+      {
+        "10": "supersonic"
+      },
+      {
+        "13": "confusion"
+      },
+      {
+        "16": "poison powder"
+      },
+      {
+        "19": "psybeam"
+      },
+      {
+        "22": "stun spore"
+      },
+      {
+        "25": "sleep powder"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "venomoth",
+    "strength_category": 6,
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "a": 65,
+      "d": 60,
+      "s": 90,
+      "sa": 90,
+      "sd": 75
+    },
+    "moves": [
+      {
+        "1": "disable"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "24": "poison powder"
+      },
+      {
+        "27": "leech life"
+      },
+      {
+        "30": "stun spore"
+      },
+      {
+        "35": "psybeam"
+      },
+      {
+        "38": "sleep powder"
+      },
+      {
+        "43": "psychic"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "diglett",
+    "strength_category": 6,
+    "types": [
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 10,
+      "a": 55,
+      "d": 25,
+      "s": 95,
+      "sa": 35,
+      "sd": 45
+    },
+    "evolutions": {
+      "26": 51
+    },
+    "moves": [
+      {
+        "1": "scratch"
+      },
+      {
+        "15": "growl"
+      },
+      {
+        "19": "dig"
+      },
+      {
+        "24": "sand attack"
+      },
+      {
+        "31": "slash"
+      },
+      {
+        "40": "earthquake"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "name": "dugtrio",
+    "strength_category": 7,
+    "types": [
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "a": 100,
+      "d": 50,
+      "s": 120,
+      "sa": 50,
+      "sd": 70
+    },
+    "moves": [
+      {
+        "1": "dig"
+      },
+      {
+        "1": "growl"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "24": "sand attack"
+      },
+      {
+        "35": "slash"
+      },
+      {
+        "47": "earthquake"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "meowth",
+    "strength_category": 3,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 45,
+      "d": 35,
+      "s": 90,
+      "sa": 40,
+      "sd": 40
+    },
+    "evolutions": {
+      "28": 53
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "12": "bite"
+      },
+      {
+        "17": "pay day"
+      },
+      {
+        "24": "screech"
+      },
+      {
+        "33": "fury swipes"
+      },
+      {
+        "44": "slash"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "persian",
+    "strength_category": 4,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 70,
+      "d": 60,
+      "s": 115,
+      "sa": 65,
+      "sd": 65
+    },
+    "moves": [
+      {
+        "1": "bite"
+      },
+      {
+        "1": "growl"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "1": "screech"
+      },
+      {
+        "17": "pay day"
+      },
+      {
+        "37": "fury swipes"
+      },
+      {
+        "51": "slash"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "name": "psyduck",
+    "strength_category": 4,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "a": 52,
+      "d": 48,
+      "s": 55,
+      "sa": 65,
+      "sd": 50
+    },
+    "evolutions": {
+      "33": 55
+    },
+    "moves": [
+      {
+        "1": "scratch"
+      },
+      {
+        "28": "tail whip"
+      },
+      {
+        "31": "disable"
+      },
+      {
+        "36": "confusion"
+      },
+      {
+        "43": "fury swipes"
+      },
+      {
+        "52": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "name": "golduck",
+    "strength_category": 5,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "a": 82,
+      "d": 78,
+      "s": 85,
+      "sa": 95,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "disable"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "1": "tail whip"
+      },
+      {
+        "39": "confusion"
+      },
+      {
+        "48": "fury swipes"
+      },
+      {
+        "59": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "name": "mankey",
+    "strength_category": 5,
+    "types": [
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 80,
+      "d": 35,
+      "s": 70,
+      "sa": 35,
+      "sd": 45
+    },
+    "evolutions": {
+      "28": 57
+    },
+    "moves": [
+      {
+        "1": "leer"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "15": "karate chop"
+      },
+      {
+        "21": "fury swipes"
+      },
+      {
+        "27": "focus energy"
+      },
+      {
+        "33": "seismic toss"
+      },
+      {
+        "39": "thrash"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "name": "primeape",
+    "strength_category": 6,
+    "types": [
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 105,
+      "d": 60,
+      "s": 95,
+      "sa": 60,
+      "sd": 70
+    },
+    "moves": [
+      {
+        "1": "fury swipes"
+      },
+      {
+        "1": "karate chop"
+      },
+      {
+        "1": "leer"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "27": "focus energy"
+      },
+      {
+        "37": "seismic toss"
+      },
+      {
+        "46": "thrash"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "name": "growlithe",
+    "strength_category": 6,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "a": 70,
+      "d": 45,
+      "s": 60,
+      "sa": 70,
+      "sd": 50
+    },
+    "moves": [
+      {
+        "1": "bite"
+      },
+      {
+        "1": "roar"
+      },
+      {
+        "18": "ember"
+      },
+      {
+        "23": "leer"
+      },
+      {
+        "30": "take down"
+      },
+      {
+        "39": "agility"
+      },
+      {
+        "50": "flamethrower"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "name": "arcanine",
+    "strength_category": 7,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "a": 110,
+      "d": 80,
+      "s": 95,
+      "sa": 100,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "ember"
+      },
+      {
+        "1": "leer"
+      },
+      {
+        "1": "roar"
+      },
+      {
+        "1": "take down"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "name": "poliwag",
+    "strength_category": 4,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 50,
+      "d": 40,
+      "s": 90,
+      "sa": 40,
+      "sd": 40
+    },
+    "evolutions": {
+      "25": 61
+    },
+    "moves": [
+      {
+        "1": "bubble"
+      },
+      {
+        "16": "hypnosis"
+      },
+      {
+        "19": "water gun"
+      },
+      {
+        "25": "double slap"
+      },
+      {
+        "31": "body slam"
+      },
+      {
+        "38": "amnesia"
+      },
+      {
+        "45": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "name": "poliwhirl",
+    "strength_category": 5,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 65,
+      "d": 65,
+      "s": 90,
+      "sa": 50,
+      "sd": 50
+    },
+    "moves": [
+      {
+        "1": "bubble"
+      },
+      {
+        "1": "hypnosis"
+      },
+      {
+        "1": "water gun"
+      },
+      {
+        "26": "double slap"
+      },
+      {
+        "33": "body slam"
+      },
+      {
+        "41": "amnesia"
+      },
+      {
+        "49": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "name": "poliwrath",
+    "strength_category": 6,
+    "types": [
+      "water",
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "a": 95,
+      "d": 95,
+      "s": 70,
+      "sa": 70,
+      "sd": 90
+    },
+    "moves": [
+      {
+        "1": "body slam"
+      },
+      {
+        "1": "double slap"
+      },
+      {
+        "1": "hypnosis"
+      },
+      {
+        "1": "water gun"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "name": "abra",
+    "strength_category": 5,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 25,
+      "a": 20,
+      "d": 15,
+      "s": 90,
+      "sa": 105,
+      "sd": 55
+    },
+    "evolutions": {
+      "16": 64
+    },
+    "moves": [
+      {
+        "1": "teleport"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "name": "kadabra",
+    "strength_category": 6,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 35,
+      "d": 30,
+      "s": 105,
+      "sa": 120,
+      "sd": 70
+    },
+    "moves": [
+      {
+        "1": "confusion"
+      },
+      {
+        "1": "disable"
+      },
+      {
+        "1": "teleport"
+      },
+      {
+        "27": "psybeam"
+      },
+      {
+        "31": "recover"
+      },
+      {
+        "38": "psychic"
+      },
+      {
+        "42": "reflect"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "name": "alakazam",
+    "strength_category": 7,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "a": 50,
+      "d": 45,
+      "s": 120,
+      "sa": 135,
+      "sd": 95
+    },
+    "moves": [
+      {
+        "1": "confusion"
+      },
+      {
+        "1": "disable"
+      },
+      {
+        "1": "teleport"
+      },
+      {
+        "27": "psybeam"
+      },
+      {
+        "31": "recover"
+      },
+      {
+        "38": "psychic"
+      },
+      {
+        "42": "reflect"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "name": "machop",
+    "strength_category": 5,
+    "types": [
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "a": 80,
+      "d": 50,
+      "s": 35,
+      "sa": 35,
+      "sd": 35
+    },
+    "evolutions": {
+      "28": 67
+    },
+    "moves": [
+      {
+        "1": "karate chop"
+      },
+      {
+        "20": "low kick"
+      },
+      {
+        "25": "leer"
+      },
+      {
+        "32": "focus energy"
+      },
+      {
+        "39": "seismic toss"
+      },
+      {
+        "46": "submission"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "name": "machoke",
+    "strength_category": 6,
+    "types": [
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "a": 100,
+      "d": 70,
+      "s": 45,
+      "sa": 50,
+      "sd": 60
+    },
+    "moves": [
+      {
+        "1": "karate chop"
+      },
+      {
+        "1": "leer"
+      },
+      {
+        "1": "low kick"
+      },
+      {
+        "36": "focus energy"
+      },
+      {
+        "44": "seismic toss"
+      },
+      {
+        "52": "submission"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "name": "machamp",
+    "strength_category": 7,
+    "types": [
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "a": 130,
+      "d": 80,
+      "s": 55,
+      "sa": 65,
+      "sd": 85
+    },
+    "moves": [
+      {
+        "1": "karate chop"
+      },
+      {
+        "1": "leer"
+      },
+      {
+        "1": "low kick"
+      },
+      {
+        "36": "focus energy"
+      },
+      {
+        "44": "seismic toss"
+      },
+      {
+        "52": "submission"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "name": "bellsprout",
+    "strength_category": 4,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "a": 75,
+      "d": 35,
+      "s": 40,
+      "sa": 70,
+      "sd": 30
+    },
+    "evolutions": {
+      "21": 70
+    },
+    "moves": [
+      {
+        "1": "growth"
+      },
+      {
+        "1": "vine whip"
+      },
+      {
+        "13": "wrap"
+      },
+      {
+        "15": "poison powder"
+      },
+      {
+        "18": "sleep powder"
+      },
+      {
+        "21": "stun spore"
+      },
+      {
+        "26": "acid"
+      },
+      {
+        "33": "razor leaf"
+      },
+      {
+        "42": "slam"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "name": "weepinbell",
+    "strength_category": 5,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 90,
+      "d": 50,
+      "s": 55,
+      "sa": 85,
+      "sd": 45
+    },
+    "moves": [
+      {
+        "1": "growth"
+      },
+      {
+        "1": "vine whip"
+      },
+      {
+        "1": "wrap"
+      },
+      {
+        "15": "poison powder"
+      },
+      {
+        "18": "sleep powder"
+      },
+      {
+        "23": "stun spore"
+      },
+      {
+        "29": "acid"
+      },
+      {
+        "38": "razor leaf"
+      },
+      {
+        "49": "slam"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "name": "victreebel",
+    "strength_category": 6,
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "a": 105,
+      "d": 65,
+      "s": 70,
+      "sa": 100,
+      "sd": 70
+    },
+    "moves": [
+      {
+        "1": "acid"
+      },
+      {
+        "1": "razor leaf"
+      },
+      {
+        "1": "sleep powder"
+      },
+      {
+        "1": "stun spore"
+      },
+      {
+        "13": "wrap"
+      },
+      {
+        "15": "poison powder"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "name": "tentacool",
+    "strength_category": 6,
+    "types": [
+      "water",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 40,
+      "d": 35,
+      "s": 70,
+      "sa": 50,
+      "sd": 100
+    },
+    "evolutions": {
+      "30": 73
+    },
+    "moves": [
+      {
+        "1": "acid"
+      },
+      {
+        "7": "supersonic"
+      },
+      {
+        "13": "wrap"
+      },
+      {
+        "18": "poison sting"
+      },
+      {
+        "22": "water gun"
+      },
+      {
+        "27": "constrict"
+      },
+      {
+        "33": "barrier"
+      },
+      {
+        "40": "screech"
+      },
+      {
+        "48": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "name": "tentacruel",
+    "strength_category": 7,
+    "types": [
+      "water",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "a": 70,
+      "d": 65,
+      "s": 100,
+      "sa": 80,
+      "sd": 120
+    },
+    "moves": [
+      {
+        "1": "acid"
+      },
+      {
+        "1": "supersonic"
+      },
+      {
+        "1": "wrap"
+      },
+      {
+        "18": "poison sting"
+      },
+      {
+        "22": "water gun"
+      },
+      {
+        "27": "constrict"
+      },
+      {
+        "35": "barrier"
+      },
+      {
+        "43": "screech"
+      },
+      {
+        "50": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "name": "geodude",
+    "strength_category": 4,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 80,
+      "d": 100,
+      "s": 20,
+      "sa": 30,
+      "sd": 30
+    },
+    "evolutions": {
+      "25": 75
+    },
+    "moves": [
+      {
+        "1": "tackle"
+      },
+      {
+        "11": "defense curl"
+      },
+      {
+        "16": "rock throw"
+      },
+      {
+        "21": "self-destruct"
+      },
+      {
+        "26": "harden"
+      },
+      {
+        "31": "earthquake"
+      },
+      {
+        "36": "explosion"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "name": "graveler",
+    "strength_category": 5,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "a": 95,
+      "d": 115,
+      "s": 35,
+      "sa": 45,
+      "sd": 45
+    },
+    "moves": [
+      {
+        "1": "defense curl"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "16": "rock throw"
+      },
+      {
+        "21": "self-destruct"
+      },
+      {
+        "29": "harden"
+      },
+      {
+        "36": "earthquake"
+      },
+      {
+        "43": "explosion"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "name": "golem",
+    "strength_category": 6,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "a": 120,
+      "d": 130,
+      "s": 45,
+      "sa": 55,
+      "sd": 65
+    },
+    "moves": [
+      {
+        "1": "defense curl"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "16": "rock throw"
+      },
+      {
+        "21": "self-destruct"
+      },
+      {
+        "29": "harden"
+      },
+      {
+        "36": "earthquake"
+      },
+      {
+        "43": "explosion"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "name": "ponyta",
+    "strength_category": 5,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "a": 85,
+      "d": 55,
+      "s": 90,
+      "sa": 65,
+      "sd": 65
+    },
+    "evolutions": {
+      "40": 78
+    },
+    "moves": [
+      {
+        "1": "ember"
+      },
+      {
+        "30": "tail whip"
+      },
+      {
+        "32": "stomp"
+      },
+      {
+        "35": "growl"
+      },
+      {
+        "39": "fire spin"
+      },
+      {
+        "43": "take down"
+      },
+      {
+        "48": "agility"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "name": "rapidash",
+    "strength_category": 6,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 100,
+      "d": 70,
+      "s": 105,
+      "sa": 80,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "ember"
+      },
+      {
+        "1": "growl"
+      },
+      {
+        "1": "stomp"
+      },
+      {
+        "1": "tail whip"
+      },
+      {
+        "39": "fire spin"
+      },
+      {
+        "47": "take down"
+      },
+      {
+        "55": "agility"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "name": "slowpoke",
+    "strength_category": 6,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "a": 65,
+      "d": 65,
+      "s": 15,
+      "sa": 40,
+      "sd": 40
+    },
+    "evolutions": {
+      "37": 80
+    },
+    "moves": [
+      {
+        "1": "confusion"
+      },
+      {
+        "18": "disable"
+      },
+      {
+        "22": "headbutt"
+      },
+      {
+        "27": "growl"
+      },
+      {
+        "33": "water gun"
+      },
+      {
+        "40": "amnesia"
+      },
+      {
+        "48": "psychic"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "name": "slowbro",
+    "strength_category": 7,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "a": 75,
+      "d": 110,
+      "s": 30,
+      "sa": 100,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "confusion"
+      },
+      {
+        "1": "disable"
+      },
+      {
+        "1": "headbutt"
+      },
+      {
+        "27": "growl"
+      },
+      {
+        "33": "water gun"
+      },
+      {
+        "37": "withdraw"
+      },
+      {
+        "44": "amnesia"
+      },
+      {
+        "55": "psychic"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "name": "magnemite",
+    "strength_category": 5,
+    "types": [
+      "electric",
+      "steel"
+    ],
+    "baseStats": {
+      "hp": 25,
+      "a": 35,
+      "d": 70,
+      "s": 45,
+      "sa": 95,
+      "sd": 55
+    },
+    "evolutions": {
+      "30": 82
+    },
+    "moves": [
+      {
+        "1": "tackle"
+      },
+      {
+        "21": "sonic boom"
+      },
+      {
+        "25": "thunder shock"
+      },
+      {
+        "29": "supersonic"
+      },
+      {
+        "35": "thunder wave"
+      },
+      {
+        "41": "swift"
+      },
+      {
+        "47": "screech"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "name": "magneton",
+    "strength_category": 6,
+    "types": [
+      "electric",
+      "steel"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "a": 60,
+      "d": 95,
+      "s": 70,
+      "sa": 120,
+      "sd": 70
+    },
+    "moves": [
+      {
+        "1": "sonic boom"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "1": "thunder shock"
+      },
+      {
+        "29": "supersonic"
+      },
+      {
+        "38": "thunder wave"
+      },
+      {
+        "46": "swift"
+      },
+      {
+        "54": "screech"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "name": "farfetch'd",
+    "strength_category": 3,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 52,
+      "a": 90,
+      "d": 55,
+      "s": 60,
+      "sa": 58,
+      "sd": 62
+    },
+    "moves": [
+      {
+        "1": "peck"
+      },
+      {
+        "1": "sand attack"
+      },
+      {
+        "7": "leer"
+      },
+      {
+        "23": "swords dance"
+      },
+      {
+        "31": "agility"
+      },
+      {
+        "39": "slash"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "name": "doduo",
+    "strength_category": 5,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "a": 85,
+      "d": 45,
+      "s": 75,
+      "sa": 35,
+      "sd": 35
+    },
+    "evolutions": {
+      "31": 85
+    },
+    "moves": [
+      {
+        "1": "peck"
+      },
+      {
+        "20": "growl"
+      },
+      {
+        "24": "fury attack"
+      },
+      {
+        "30": "drill peck"
+      },
+      {
+        "36": "rage"
+      },
+      {
+        "40": "tri attack"
+      },
+      {
+        "44": "agility"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "name": "dodrio",
+    "strength_category": 6,
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 110,
+      "d": 70,
+      "s": 110,
+      "sa": 60,
+      "sd": 60
+    },
+    "moves": [
+      {
+        "1": "fury attack"
+      },
+      {
+        "1": "growl"
+      },
+      {
+        "1": "peck"
+      },
+      {
+        "30": "drill peck"
+      },
+      {
+        "39": "rage"
+      },
+      {
+        "45": "tri attack"
+      },
+      {
+        "51": "agility"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "name": "seel",
+    "strength_category": 4,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 45,
+      "d": 55,
+      "s": 45,
+      "sa": 45,
+      "sd": 70
+    },
+    "evolutions": {
+      "34": 87
+    },
+    "moves": [
+      {
+        "1": "headbutt"
+      },
+      {
+        "30": "growl"
+      },
+      {
+        "35": "aurora beam"
+      },
+      {
+        "40": "rest"
+      },
+      {
+        "45": "take down"
+      },
+      {
+        "50": "ice beam"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "name": "dewgong",
+    "strength_category": 5,
+    "types": [
+      "water",
+      "ice"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "a": 70,
+      "d": 80,
+      "s": 70,
+      "sa": 70,
+      "sd": 95
+    },
+    "moves": [
+      {
+        "1": "aurora beam"
+      },
+      {
+        "1": "headbutt"
+      },
+      {
+        "1": "growl"
+      },
+      {
+        "44": "rest"
+      },
+      {
+        "50": "take down"
+      },
+      {
+        "56": "ice beam"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "name": "grimer",
+    "strength_category": 5,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "a": 80,
+      "d": 50,
+      "s": 25,
+      "sa": 40,
+      "sd": 50
+    },
+    "evolutions": {
+      "38": 89
+    },
+    "moves": [
+      {
+        "1": "disable"
+      },
+      {
+        "1": "pound"
+      },
+      {
+        "30": "poison gas"
+      },
+      {
+        "33": "minimize"
+      },
+      {
+        "37": "sludge"
+      },
+      {
+        "42": "harden"
+      },
+      {
+        "48": "screech"
+      },
+      {
+        "55": "acid armor"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "name": "muk",
+    "strength_category": 6,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 105,
+      "a": 105,
+      "d": 75,
+      "s": 50,
+      "sa": 65,
+      "sd": 100
+    },
+    "moves": [
+      {
+        "1": "disable"
+      },
+      {
+        "1": "poison gas"
+      },
+      {
+        "1": "pound"
+      },
+      {
+        "33": "minimize"
+      },
+      {
+        "37": "sludge"
+      },
+      {
+        "45": "harden"
+      },
+      {
+        "53": "screech"
+      },
+      {
+        "60": "acid armor"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "name": "shellder",
+    "strength_category": 6,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "a": 65,
+      "d": 100,
+      "s": 40,
+      "sa": 45,
+      "sd": 25
+    },
+    "moves": [
+      {
+        "1": "tackle"
+      },
+      {
+        "1": "withdraw"
+      },
+      {
+        "18": "supersonic"
+      },
+      {
+        "23": "clamp"
+      },
+      {
+        "30": "aurora beam"
+      },
+      {
+        "39": "leer"
+      },
+      {
+        "50": "ice beam"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "name": "cloyster",
+    "strength_category": 7,
+    "types": [
+      "water",
+      "ice"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "a": 95,
+      "d": 180,
+      "s": 70,
+      "sa": 85,
+      "sd": 45
+    },
+    "moves": [
+      {
+        "1": "aurora beam"
+      },
+      {
+        "1": "clamp"
+      },
+      {
+        "1": "supersonic"
+      },
+      {
+        "1": "withdraw"
+      },
+      {
+        "50": "spike cannon"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "name": "gastly",
+    "strength_category": 5,
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "a": 35,
+      "d": 30,
+      "s": 80,
+      "sa": 100,
+      "sd": 35
+    },
+    "evolutions": {
+      "25": 93
+    },
+    "moves": [
+      {
+        "1": "confuse ray"
+      },
+      {
+        "1": "lick"
+      },
+      {
+        "1": "night shade"
+      },
+      {
+        "27": "hypnosis"
+      },
+      {
+        "35": "dream eater"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "name": "haunter",
+    "strength_category": 6,
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "a": 50,
+      "d": 45,
+      "s": 95,
+      "sa": 115,
+      "sd": 55
+    },
+    "moves": [
+      {
+        "1": "confuse ray"
+      },
+      {
+        "1": "lick"
+      },
+      {
+        "1": "night shade"
+      },
+      {
+        "29": "hypnosis"
+      },
+      {
+        "38": "dream eater"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "name": "gengar",
+    "strength_category": 7,
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 65,
+      "d": 60,
+      "s": 110,
+      "sa": 130,
+      "sd": 75
+    },
+    "moves": [
+      {
+        "1": "confuse ray"
+      },
+      {
+        "1": "lick"
+      },
+      {
+        "1": "night shade"
+      },
+      {
+        "29": "hypnosis"
+      },
+      {
+        "38": "dream eater"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "name": "onix",
+    "strength_category": 6,
+    "types": [
+      "rock",
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "a": 45,
+      "d": 160,
+      "s": 70,
+      "sa": 30,
+      "sd": 45
+    },
+    "moves": [
+      {
+        "1": "screech"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "15": "bind"
+      },
+      {
+        "19": "rock throw"
+      },
+      {
+        "25": "rage"
+      },
+      {
+        "33": "slam"
+      },
+      {
+        "43": "harden"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "name": "drowzee",
+    "strength_category": 4,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 48,
+      "d": 45,
+      "s": 42,
+      "sa": 43,
+      "sd": 90
+    },
+    "evolutions": {
+      "26": 97
+    },
+    "moves": [
+      {
+        "1": "hypnosis"
+      },
+      {
+        "1": "pound"
+      },
+      {
+        "12": "disable"
+      },
+      {
+        "17": "confusion"
+      },
+      {
+        "24": "headbutt"
+      },
+      {
+        "29": "poison gas"
+      },
+      {
+        "32": "psychic"
+      },
+      {
+        "37": "meditate"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "name": "hypno",
+    "strength_category": 5,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "a": 73,
+      "d": 70,
+      "s": 67,
+      "sa": 73,
+      "sd": 115
+    },
+    "moves": [
+      {
+        "1": "confusion"
+      },
+      {
+        "1": "disable"
+      },
+      {
+        "1": "hypnosis"
+      },
+      {
+        "1": "pound"
+      },
+      {
+        "24": "headbutt"
+      },
+      {
+        "33": "poison gas"
+      },
+      {
+        "37": "psychic"
+      },
+      {
+        "43": "meditate"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "name": "krabby",
+    "strength_category": 4,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "a": 105,
+      "d": 90,
+      "s": 50,
+      "sa": 25,
+      "sd": 25
+    },
+    "evolutions": {
+      "28": 99
+    },
+    "moves": [
+      {
+        "1": "bubble"
+      },
+      {
+        "1": "leer"
+      },
+      {
+        "20": "vice grip"
+      },
+      {
+        "25": "guillotine"
+      },
+      {
+        "30": "stomp"
+      },
+      {
+        "35": "crabhammer"
+      },
+      {
+        "40": "harden"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "name": "kingler",
+    "strength_category": 5,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "a": 130,
+      "d": 115,
+      "s": 75,
+      "sa": 50,
+      "sd": 50
+    },
+    "moves": [
+      {
+        "1": "bubble"
+      },
+      {
+        "1": "leer"
+      },
+      {
+        "1": "vice grip"
+      },
+      {
+        "25": "guillotine"
+      },
+      {
+        "34": "stomp"
+      },
+      {
+        "42": "crabhammer"
+      },
+      {
+        "49": "harden"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "name": "voltorb",
+    "strength_category": 5,
+    "types": [
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 30,
+      "d": 50,
+      "s": 100,
+      "sa": 55,
+      "sd": 55
+    },
+    "evolutions": {
+      "30": 101
+    },
+    "moves": [
+      {
+        "1": "screech"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "17": "sonic boom"
+      },
+      {
+        "22": "self-destruct"
+      },
+      {
+        "29": "light screen"
+      },
+      {
+        "36": "swift"
+      },
+      {
+        "43": "explosion"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "name": "electrode",
+    "strength_category": 6,
+    "types": [
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 50,
+      "d": 70,
+      "s": 150,
+      "sa": 80,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "screech"
+      },
+      {
+        "1": "sonic boom"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "22": "self-destruct"
+      },
+      {
+        "29": "light screen"
+      },
+      {
+        "40": "swift"
+      },
+      {
+        "50": "explosion"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "name": "exeggcute",
+    "strength_category": 5,
+    "types": [
+      "grass",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 40,
+      "d": 80,
+      "s": 40,
+      "sa": 60,
+      "sd": 45
+    },
+    "moves": [
+      {
+        "1": "barrage"
+      },
+      {
+        "1": "hypnosis"
+      },
+      {
+        "25": "reflect"
+      },
+      {
+        "28": "leech seed"
+      },
+      {
+        "32": "stun spore"
+      },
+      {
+        "37": "poison powder"
+      },
+      {
+        "42": "solar beam"
+      },
+      {
+        "48": "sleep powder"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "name": "exeggutor",
+    "strength_category": 6,
+    "types": [
+      "grass",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "a": 95,
+      "d": 85,
+      "s": 55,
+      "sa": 125,
+      "sd": 75
+    },
+    "moves": [
+      {
+        "1": "barrage"
+      },
+      {
+        "1": "hypnosis"
+      },
+      {
+        "28": "stomp"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "name": "cubone",
+    "strength_category": 3,
+    "types": [
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "a": 50,
+      "d": 95,
+      "s": 35,
+      "sa": 40,
+      "sd": 50
+    },
+    "evolutions": {
+      "28": 105
+    },
+    "moves": [
+      {
+        "1": "bone club"
+      },
+      {
+        "1": "growl"
+      },
+      {
+        "25": "leer"
+      },
+      {
+        "31": "focus energy"
+      },
+      {
+        "38": "thrash"
+      },
+      {
+        "43": "bonemerang"
+      },
+      {
+        "46": "rage"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "name": "marowak",
+    "strength_category": 4,
+    "types": [
+      "ground"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 80,
+      "d": 110,
+      "s": 45,
+      "sa": 50,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "bone club"
+      },
+      {
+        "1": "focus energy"
+      },
+      {
+        "1": "growl"
+      },
+      {
+        "1": "leer"
+      },
+      {
+        "41": "thrash"
+      },
+      {
+        "48": "bonemerang"
+      },
+      {
+        "55": "rage"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "name": "hitmonlee",
+    "strength_category": 6,
+    "types": [
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "a": 120,
+      "d": 53,
+      "s": 87,
+      "sa": 35,
+      "sd": 110
+    },
+    "moves": [
+      {
+        "1": "double kick"
+      },
+      {
+        "1": "meditate"
+      },
+      {
+        "33": "rolling kick"
+      },
+      {
+        "38": "jump kick"
+      },
+      {
+        "43": "focus energy"
+      },
+      {
+        "48": "high jump kick"
+      },
+      {
+        "53": "mega kick"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "name": "hitmonchan",
+    "strength_category": 6,
+    "types": [
+      "fighting"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "a": 105,
+      "d": 79,
+      "s": 76,
+      "sa": 35,
+      "sd": 110
+    },
+    "moves": [
+      {
+        "1": "agility"
+      },
+      {
+        "1": "comet punch"
+      },
+      {
+        "33": "fire punch"
+      },
+      {
+        "38": "ice punch"
+      },
+      {
+        "43": "thunder punch"
+      },
+      {
+        "48": "mega punch"
+      },
+      {
+        "53": "counter"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "name": "lickitung",
+    "strength_category": 6,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "a": 55,
+      "d": 75,
+      "s": 30,
+      "sa": 60,
+      "sd": 75
+    },
+    "moves": [
+      {
+        "1": "supersonic"
+      },
+      {
+        "1": "wrap"
+      },
+      {
+        "7": "stomp"
+      },
+      {
+        "15": "disable"
+      },
+      {
+        "23": "defense curl"
+      },
+      {
+        "31": "slam"
+      },
+      {
+        "39": "screech"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "name": "koffing",
+    "strength_category": 5,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 65,
+      "d": 95,
+      "s": 35,
+      "sa": 60,
+      "sd": 45
+    },
+    "evolutions": {
+      "35": 110
+    },
+    "moves": [
+      {
+        "1": "smog"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "32": "sludge"
+      },
+      {
+        "37": "smokescreen"
+      },
+      {
+        "40": "self-destruct"
+      },
+      {
+        "45": "haze"
+      },
+      {
+        "48": "explosion"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "name": "weezing",
+    "strength_category": 6,
+    "types": [
+      "poison"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 90,
+      "d": 120,
+      "s": 60,
+      "sa": 85,
+      "sd": 70
+    },
+    "moves": [
+      {
+        "1": "sludge"
+      },
+      {
+        "1": "smog"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "39": "smokescreen"
+      },
+      {
+        "43": "self-destruct"
+      },
+      {
+        "49": "haze"
+      },
+      {
+        "53": "explosion"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "name": "rhyhorn",
+    "strength_category": 5,
+    "types": [
+      "ground",
+      "rock"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "a": 85,
+      "d": 95,
+      "s": 25,
+      "sa": 30,
+      "sd": 30
+    },
+    "evolutions": {
+      "42": 112
+    },
+    "moves": [
+      {
+        "1": "horn attack"
+      },
+      {
+        "30": "stomp"
+      },
+      {
+        "35": "tail whip"
+      },
+      {
+        "40": "fury attack"
+      },
+      {
+        "45": "horn drill"
+      },
+      {
+        "50": "leer"
+      },
+      {
+        "55": "take down"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "name": "rhydon",
+    "strength_category": 6,
+    "types": [
+      "ground",
+      "rock"
+    ],
+    "baseStats": {
+      "hp": 105,
+      "a": 130,
+      "d": 120,
+      "s": 40,
+      "sa": 45,
+      "sd": 45
+    },
+    "moves": [
+      {
+        "1": "fury attack"
+      },
+      {
+        "1": "horn attack"
+      },
+      {
+        "1": "stomp"
+      },
+      {
+        "1": "tail whip"
+      },
+      {
+        "48": "horn drill"
+      },
+      {
+        "55": "leer"
+      },
+      {
+        "64": "take down"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "name": "chansey",
+    "strength_category": 7,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 250,
+      "a": 5,
+      "d": 5,
+      "s": 50,
+      "sa": 35,
+      "sd": 105
+    },
+    "moves": [
+      {
+        "1": "double slap"
+      },
+      {
+        "1": "pound"
+      },
+      {
+        "24": "sing"
+      },
+      {
+        "30": "growl"
+      },
+      {
+        "38": "minimize"
+      },
+      {
+        "44": "defense curl"
+      },
+      {
+        "48": "light screen"
+      },
+      {
+        "54": "double-edge"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "name": "tangela",
+    "strength_category": 6,
+    "types": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 55,
+      "d": 115,
+      "s": 60,
+      "sa": 100,
+      "sd": 40
+    },
+    "moves": [
+      {
+        "1": "bind"
+      },
+      {
+        "1": "constrict"
+      },
+      {
+        "29": "absorb"
+      },
+      {
+        "32": "poison powder"
+      },
+      {
+        "36": "stun spore"
+      },
+      {
+        "39": "sleep powder"
+      },
+      {
+        "45": "slam"
+      },
+      {
+        "49": "growth"
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "name": "kangaskhan",
+    "strength_category": 6,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 105,
+      "a": 95,
+      "d": 80,
+      "s": 90,
+      "sa": 40,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "comet punch"
+      },
+      {
+        "1": "rage"
+      },
+      {
+        "26": "bite"
+      },
+      {
+        "31": "tail whip"
+      },
+      {
+        "36": "mega punch"
+      },
+      {
+        "41": "leer"
+      },
+      {
+        "46": "dizzy punch"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "name": "horsea",
+    "strength_category": 5,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "a": 40,
+      "d": 70,
+      "s": 60,
+      "sa": 70,
+      "sd": 25
+    },
+    "evolutions": {
+      "32": 117
+    },
+    "moves": [
+      {
+        "1": "bubble"
+      },
+      {
+        "19": "smokescreen"
+      },
+      {
+        "24": "leer"
+      },
+      {
+        "30": "water gun"
+      },
+      {
+        "37": "agility"
+      },
+      {
+        "45": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "name": "seadra",
+    "strength_category": 6,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "a": 65,
+      "d": 95,
+      "s": 85,
+      "sa": 95,
+      "sd": 45
+    },
+    "moves": [
+      {
+        "1": "bubble"
+      },
+      {
+        "1": "smokescreen"
+      },
+      {
+        "24": "leer"
+      },
+      {
+        "30": "water gun"
+      },
+      {
+        "41": "agility"
+      },
+      {
+        "52": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "name": "goldeen",
+    "strength_category": 3,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "a": 67,
+      "d": 60,
+      "s": 63,
+      "sa": 35,
+      "sd": 50
+    },
+    "evolutions": {
+      "33": 119
+    },
+    "moves": [
+      {
+        "1": "peck"
+      },
+      {
+        "1": "tail whip"
+      },
+      {
+        "19": "supersonic"
+      },
+      {
+        "24": "horn attack"
+      },
+      {
+        "30": "fury attack"
+      },
+      {
+        "37": "waterfall"
+      },
+      {
+        "45": "horn drill"
+      },
+      {
+        "54": "agility"
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "name": "seaking",
+    "strength_category": 4,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "a": 92,
+      "d": 65,
+      "s": 68,
+      "sa": 65,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "peck"
+      },
+      {
+        "1": "supersonic"
+      },
+      {
+        "1": "tail whip"
+      },
+      {
+        "24": "horn attack"
+      },
+      {
+        "30": "fury attack"
+      },
+      {
+        "39": "waterfall"
+      },
+      {
+        "48": "horn drill"
+      },
+      {
+        "54": "agility"
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "name": "staryu",
+    "strength_category": 6,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "a": 45,
+      "d": 55,
+      "s": 85,
+      "sa": 70,
+      "sd": 55
+    },
+    "moves": [
+      {
+        "1": "tackle"
+      },
+      {
+        "17": "water gun"
+      },
+      {
+        "22": "harden"
+      },
+      {
+        "27": "recover"
+      },
+      {
+        "32": "swift"
+      },
+      {
+        "37": "minimize"
+      },
+      {
+        "42": "light screen"
+      },
+      {
+        "47": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "name": "starmie",
+    "strength_category": 7,
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 75,
+      "d": 85,
+      "s": 115,
+      "sa": 100,
+      "sd": 85
+    },
+    "moves": [
+      {
+        "1": "harden"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "1": "water gun"
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "name": "mr. mime",
+    "strength_category": 6,
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "a": 45,
+      "d": 65,
+      "s": 90,
+      "sa": 100,
+      "sd": 120
+    },
+    "moves": [
+      {
+        "1": "barrier"
+      },
+      {
+        "1": "confusion"
+      },
+      {
+        "23": "light screen"
+      },
+      {
+        "31": "double slap"
+      },
+      {
+        "39": "meditate"
+      },
+      {
+        "47": "substitute"
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "name": "scyther",
+    "strength_category": 7,
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "a": 110,
+      "d": 80,
+      "s": 105,
+      "sa": 55,
+      "sd": 80
+    },
+    "moves": [
+      {
+        "1": "quick attack"
+      },
+      {
+        "17": "leer"
+      },
+      {
+        "20": "focus energy"
+      },
+      {
+        "24": "double team"
+      },
+      {
+        "29": "slash"
+      },
+      {
+        "35": "swords dance"
+      },
+      {
+        "42": "agility"
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "name": "jynx",
+    "strength_category": 5,
+    "types": [
+      "ice",
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 50,
+      "d": 35,
+      "s": 95,
+      "sa": 115,
+      "sd": 95
+    },
+    "moves": [
+      {
+        "1": "lovely kiss"
+      },
+      {
+        "1": "pound"
+      },
+      {
+        "18": "lick"
+      },
+      {
+        "23": "double slap"
+      },
+      {
+        "31": "ice punch"
+      },
+      {
+        "39": "body slam"
+      },
+      {
+        "47": "thrash"
+      },
+      {
+        "58": "blizzard"
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "name": "electabuzz",
+    "strength_category": 6,
+    "types": [
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 83,
+      "d": 57,
+      "s": 105,
+      "sa": 95,
+      "sd": 85
+    },
+    "moves": [
+      {
+        "1": "leer"
+      },
+      {
+        "1": "quick attack"
+      },
+      {
+        "37": "screech"
+      },
+      {
+        "42": "thunder punch"
+      },
+      {
+        "49": "light screen"
+      },
+      {
+        "54": "thunder"
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "name": "magmar",
+    "strength_category": 5,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 95,
+      "d": 57,
+      "s": 93,
+      "sa": 100,
+      "sd": 85
+    },
+    "moves": [
+      {
+        "1": "ember"
+      },
+      {
+        "36": "leer"
+      },
+      {
+        "39": "confuse ray"
+      },
+      {
+        "43": "fire punch"
+      },
+      {
+        "48": "smokescreen"
+      },
+      {
+        "52": "smog"
+      },
+      {
+        "55": "flamethrower"
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "name": "pinsir",
+    "strength_category": 6,
+    "types": [
+      "bug"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 125,
+      "d": 100,
+      "s": 85,
+      "sa": 55,
+      "sd": 70
+    },
+    "moves": [
+      {
+        "1": "vice grip"
+      },
+      {
+        "25": "seismic toss"
+      },
+      {
+        "30": "guillotine"
+      },
+      {
+        "36": "focus energy"
+      },
+      {
+        "43": "harden"
+      },
+      {
+        "49": "slash"
+      },
+      {
+        "54": "swords dance"
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "name": "tauros",
+    "strength_category": 6,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "a": 100,
+      "d": 95,
+      "s": 110,
+      "sa": 40,
+      "sd": 70
+    },
+    "moves": [
+      {
+        "1": "tackle"
+      },
+      {
+        "21": "stomp"
+      },
+      {
+        "28": "tail whip"
+      },
+      {
+        "35": "leer"
+      },
+      {
+        "44": "rage"
+      },
+      {
+        "51": "take down"
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "name": "magikarp",
+    "strength_category": 6,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 20,
+      "a": 10,
+      "d": 55,
+      "s": 80,
+      "sa": 15,
+      "sd": 20
+    },
+    "evolutions": {
+      "20": 130
+    },
+    "moves": [
+      {
+        "1": "splash"
+      },
+      {
+        "15": "tackle"
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "name": "gyarados",
+    "strength_category": 7,
+    "types": [
+      "water",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "a": 125,
+      "d": 79,
+      "s": 81,
+      "sa": 60,
+      "sd": 100
+    },
+    "moves": [
+      {
+        "1": "bite"
+      },
+      {
+        "1": "dragon rage"
+      },
+      {
+        "1": "hydro pump"
+      },
+      {
+        "1": "leer"
+      },
+      {
+        "52": "hyper beam"
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "name": "lapras",
+    "strength_category": 7,
+    "types": [
+      "water",
+      "ice"
+    ],
+    "baseStats": {
+      "hp": 130,
+      "a": 85,
+      "d": 80,
+      "s": 60,
+      "sa": 85,
+      "sd": 95
+    },
+    "moves": [
+      {
+        "1": "growl"
+      },
+      {
+        "1": "water gun"
+      },
+      {
+        "16": "sing"
+      },
+      {
+        "20": "mist"
+      },
+      {
+        "25": "body slam"
+      },
+      {
+        "38": "ice beam"
+      },
+      {
+        "46": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 132,
+    "name": "ditto",
+    "strength_category": 1,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 48,
+      "a": 48,
+      "d": 48,
+      "s": 48,
+      "sa": 48,
+      "sd": 48
+    },
+    "moves": [
+      {
+        "1": "transform"
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "name": "eevee",
+    "strength_category": 6,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "a": 55,
+      "d": 50,
+      "s": 55,
+      "sa": 45,
+      "sd": 65
+    },
+    "moves": [
+      {
+        "1": "sand attack"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "27": "quick attack"
+      },
+      {
+        "31": "tail whip"
+      },
+      {
+        "37": "bite"
+      },
+      {
+        "45": "take down"
+      }
+    ]
+  },
+  {
+    "id": 134,
+    "name": "vaporeon",
+    "strength_category": 7,
+    "types": [
+      "water"
+    ],
+    "baseStats": {
+      "hp": 130,
+      "a": 65,
+      "d": 60,
+      "s": 65,
+      "sa": 110,
+      "sd": 95
+    },
+    "moves": [
+      {
+        "1": "quick attack"
+      },
+      {
+        "1": "sand attack"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "1": "water gun"
+      },
+      {
+        "37": "tail whip"
+      },
+      {
+        "40": "bite"
+      },
+      {
+        "42": "acid armor"
+      },
+      {
+        "44": "haze"
+      },
+      {
+        "48": "mist"
+      },
+      {
+        "54": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 135,
+    "name": "jolteon",
+    "strength_category": 7,
+    "types": [
+      "electric"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 65,
+      "d": 60,
+      "s": 130,
+      "sa": 110,
+      "sd": 95
+    },
+    "moves": [
+      {
+        "1": "quick attack"
+      },
+      {
+        "1": "sand attack"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "37": "tail whip"
+      },
+      {
+        "40": "thunder wave"
+      },
+      {
+        "42": "double kick"
+      },
+      {
+        "44": "agility"
+      },
+      {
+        "48": "pin missile"
+      },
+      {
+        "54": "thunder"
+      }
+    ]
+  },
+  {
+    "id": 136,
+    "name": "flareon",
+    "strength_category": 7,
+    "types": [
+      "fire"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 130,
+      "d": 60,
+      "s": 65,
+      "sa": 95,
+      "sd": 110
+    },
+    "moves": [
+      {
+        "1": "ember"
+      },
+      {
+        "1": "quick attack"
+      },
+      {
+        "1": "sand attack"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "37": "tail whip"
+      },
+      {
+        "40": "bite"
+      },
+      {
+        "42": "leer"
+      },
+      {
+        "44": "fire spin"
+      },
+      {
+        "48": "rage"
+      },
+      {
+        "54": "flamethrower"
+      }
+    ]
+  },
+  {
+    "id": 137,
+    "name": "porygon",
+    "strength_category": 5,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "a": 60,
+      "d": 70,
+      "s": 40,
+      "sa": 85,
+      "sd": 75
+    },
+    "moves": [
+      {
+        "1": "conversion"
+      },
+      {
+        "1": "sharpen"
+      },
+      {
+        "1": "tackle"
+      },
+      {
+        "23": "psybeam"
+      },
+      {
+        "28": "recover"
+      },
+      {
+        "35": "agility"
+      },
+      {
+        "42": "tri attack"
+      }
+    ]
+  },
+  {
+    "id": 138,
+    "name": "omanyte",
+    "strength_category": 5,
+    "types": [
+      "rock",
+      "water"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "a": 40,
+      "d": 100,
+      "s": 35,
+      "sa": 90,
+      "sd": 55
+    },
+    "evolutions": {
+      "40": 139
+    },
+    "moves": [
+      {
+        "1": "water gun"
+      },
+      {
+        "1": "withdraw"
+      },
+      {
+        "34": "horn attack"
+      },
+      {
+        "39": "leer"
+      },
+      {
+        "46": "spike cannon"
+      },
+      {
+        "53": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 139,
+    "name": "omastar",
+    "strength_category": 6,
+    "types": [
+      "rock",
+      "water"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "a": 60,
+      "d": 125,
+      "s": 55,
+      "sa": 115,
+      "sd": 70
+    },
+    "moves": [
+      {
+        "1": "horn attack"
+      },
+      {
+        "1": "water gun"
+      },
+      {
+        "1": "withdraw"
+      },
+      {
+        "39": "leer"
+      },
+      {
+        "44": "spike cannon"
+      },
+      {
+        "49": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "name": "kabuto",
+    "strength_category": 5,
+    "types": [
+      "rock",
+      "water"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "a": 80,
+      "d": 90,
+      "s": 55,
+      "sa": 55,
+      "sd": 45
+    },
+    "evolutions": {
+      "40": 141
+    },
+    "moves": [
+      {
+        "1": "harden"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "34": "absorb"
+      },
+      {
+        "39": "slash"
+      },
+      {
+        "44": "leer"
+      },
+      {
+        "49": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "name": "kabutops",
+    "strength_category": 6,
+    "types": [
+      "rock",
+      "water"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "a": 115,
+      "d": 105,
+      "s": 80,
+      "sa": 65,
+      "sd": 70
+    },
+    "moves": [
+      {
+        "1": "absorb"
+      },
+      {
+        "1": "harden"
+      },
+      {
+        "1": "scratch"
+      },
+      {
+        "39": "slash"
+      },
+      {
+        "46": "leer"
+      },
+      {
+        "53": "hydro pump"
+      }
+    ]
+  },
+  {
+    "id": 142,
+    "name": "aerodactyl",
+    "strength_category": 7,
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "a": 105,
+      "d": 65,
+      "s": 130,
+      "sa": 60,
+      "sd": 75
+    },
+    "moves": [
+      {
+        "1": "agility"
+      },
+      {
+        "1": "wing attack"
+      },
+      {
+        "33": "supersonic"
+      },
+      {
+        "38": "bite"
+      },
+      {
+        "45": "take down"
+      },
+      {
+        "54": "hyper beam"
+      }
+    ]
+  },
+  {
+    "id": 143,
+    "name": "snorlax",
+    "strength_category": 8,
+    "types": [
+      "normal"
+    ],
+    "baseStats": {
+      "hp": 160,
+      "a": 110,
+      "d": 65,
+      "s": 30,
+      "sa": 65,
+      "sd": 110
+    },
+    "moves": [
+      {
+        "1": "amnesia"
+      },
+      {
+        "1": "headbutt"
+      },
+      {
+        "1": "rest"
+      },
+      {
+        "35": "body slam"
+      },
+      {
+        "41": "harden"
+      },
+      {
+        "48": "double-edge"
+      },
+      {
+        "56": "hyper beam"
+      }
+    ]
+  },
+  {
+    "id": 144,
+    "name": "articuno",
+    "strength_category": 8,
+    "types": [
+      "ice",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "a": 85,
+      "d": 100,
+      "s": 85,
+      "sa": 95,
+      "sd": 125
+    },
+    "moves": [
+      {
+        "1": "ice beam"
+      },
+      {
+        "1": "peck"
+      },
+      {
+        "51": "blizzard"
+      },
+      {
+        "55": "agility"
+      },
+      {
+        "60": "mist"
+      }
+    ]
+  },
+  {
+    "id": 145,
+    "name": "zapdos",
+    "strength_category": 8,
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "a": 90,
+      "d": 85,
+      "s": 100,
+      "sa": 125,
+      "sd": 90
+    },
+    "moves": [
+      {
+        "1": "drill peck"
+      },
+      {
+        "1": "thunder shock"
+      },
+      {
+        "51": "thunder"
+      },
+      {
+        "55": "agility"
+      },
+      {
+        "60": "light screen"
+      }
+    ]
+  },
+  {
+    "id": 146,
+    "name": "moltres",
+    "strength_category": 8,
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "a": 100,
+      "d": 90,
+      "s": 90,
+      "sa": 125,
+      "sd": 85
+    },
+    "moves": [
+      {
+        "1": "fire spin"
+      },
+      {
+        "1": "peck"
+      },
+      {
+        "51": "leer"
+      },
+      {
+        "55": "agility"
+      },
+      {
+        "60": "sky attack"
+      }
+    ]
+  },
+  {
+    "id": 147,
+    "name": "dratini",
+    "strength_category": 7,
+    "types": [
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 41,
+      "a": 64,
+      "d": 45,
+      "s": 50,
+      "sa": 50,
+      "sd": 50
+    },
+    "evolutions": {
+      "30": 148
+    },
+    "moves": [
+      {
+        "1": "leer"
+      },
+      {
+        "1": "wrap"
+      },
+      {
+        "10": "thunder wave"
+      },
+      {
+        "20": "agility"
+      },
+      {
+        "30": "slam"
+      },
+      {
+        "40": "dragon rage"
+      },
+      {
+        "50": "hyper beam"
+      }
+    ]
+  },
+  {
+    "id": 148,
+    "name": "dragonair",
+    "strength_category": 8,
+    "types": [
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 61,
+      "a": 84,
+      "d": 65,
+      "s": 70,
+      "sa": 70,
+      "sd": 70
+    },
+    "evolutions": {
+      "55": 149
+    },
+    "moves": [
+      {
+        "1": "leer"
+      },
+      {
+        "1": "thunder wave"
+      },
+      {
+        "1": "wrap"
+      },
+      {
+        "20": "agility"
+      },
+      {
+        "35": "slam"
+      },
+      {
+        "45": "dragon rage"
+      },
+      {
+        "55": "hyper beam"
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "name": "dragonite",
+    "strength_category": 9,
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 91,
+      "a": 134,
+      "d": 95,
+      "s": 80,
+      "sa": 100,
+      "sd": 100
+    },
+    "moves": [
+      {
+        "1": "agility"
+      },
+      {
+        "1": "leer"
+      },
+      {
+        "1": "thunder wave"
+      },
+      {
+        "1": "wrap"
+      },
+      {
+        "35": "slam"
+      },
+      {
+        "45": "dragon rage"
+      },
+      {
+        "60": "hyper beam"
+      }
+    ]
+  },
+  {
+    "id": 150,
+    "name": "mewtwo",
+    "strength_category": 10,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 106,
+      "a": 110,
+      "d": 90,
+      "s": 130,
+      "sa": 154,
+      "sd": 90
+    },
+    "moves": [
+      {
+        "1": "confusion"
+      },
+      {
+        "1": "disable"
+      },
+      {
+        "1": "psychic"
+      },
+      {
+        "1": "swift"
+      },
+      {
+        "63": "barrier"
+      },
+      {
+        "70": "recover"
+      },
+      {
+        "75": "mist"
+      },
+      {
+        "81": "amnesia"
+      }
+    ]
+  },
+  {
+    "id": 151,
+    "name": "mew",
+    "strength_category": 9,
+    "types": [
+      "psychic"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "a": 100,
+      "d": 100,
+      "s": 100,
+      "sa": 100,
+      "sd": 100
+    },
+    "moves": [
+      {
+        "1": "pound"
+      },
+      {
+        "10": "transform"
+      },
+      {
+        "20": "mega punch"
+      },
+      {
+        "30": "metronome"
+      },
+      {
+        "40": "psychic"
+      }
+    ]
+  }
+]

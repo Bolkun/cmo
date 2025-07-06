@@ -1,0 +1,1466 @@
+[
+  {
+    "name": "absorb",
+    "type": "grass",
+    "category": "special",
+    "power": 20,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "Absorb deals damage and the user will recover 50% of the HP drained."
+  },
+  {
+    "name": "acid",
+    "type": "poison",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 1.0,
+    "pp": 30,
+    "effect": "Acid has a 33.2% chance to lower opponent's Defense by 1 stage"
+  },
+  {
+    "name": "acid armor",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 40,
+    "effect": "Acid Armor raises the user's Defense by 2 stages"
+  },
+  {
+    "name": "agility",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "effect": "Agility raises the user's Speed by 2 stages"
+  },
+  {
+    "name": "amnesia",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "effect": "Amnesia raises the user's Special Defense by 2 stages."
+  },
+  {
+    "name": "aurora beam",
+    "type": "ice",
+    "category": "special",
+    "power": 65,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "Aurora Beam deals damage and has a 10% chance of lowering the opponent's Attack by 1 stage."
+  },
+  {
+    "name": "barrage",
+    "type": "normal",
+    "category": "physical",
+    "power": 15,
+    "accuracy": 0.85,
+    "pp": 20,
+    "effect": "Barrage hits 2-5 times per turn used. 2 hits prob. 3/8, power 30; 3 hits prob. 3/8, power 45; 4 hits prob. 1/8, power 60; 5 hits prob. 1/8, power 75;"
+  },
+  {
+    "name": "barrier",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "effect": "Barrier raises the user's Defense by 2 stages."
+  },
+  {
+    "name": "bide",
+    "type": "normal",
+    "category": "physical",
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "priority": -5,
+    "effect": "The user of Bide delays its move to store energy, then strikes back with damage equal to twice its missing HP."
+  },
+  {
+    "name": "bind",
+    "type": "normal",
+    "category": "physical",
+    "power": 15,
+    "accuracy": 0.85,
+    "pp": 20,
+    "effect": "Bind inflicts damage on the first turn then traps the opponent, causing them to lose 1/8 of their maximum HP after each turn, for 4-5 turns."
+  },
+  {
+    "name": "bite",
+    "type": "normal",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 1.0,
+    "pp": 25,
+    "effect": "Bite deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved)."
+  },
+  {
+    "name": "blizzard",
+    "type": "ice",
+    "category": "special",
+    "power": 120,
+    "accuracy": 0.9,
+    "pp": 5,
+    "effect": "Blizzard deals damage and has a 10% chance of freezing the target."
+  },
+  {
+    "name": "body slam",
+    "type": "normal",
+    "category": "physical",
+    "power": 85,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Body Slam deals damage and has a 30% chance of paralyzing the target. Paralyzed monster have a 25% chance of not being able to attack, and their Speed is decreased by 75%."
+  },
+  {
+    "name": "bone club",
+    "type": "ground",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 0.85,
+    "pp": 20,
+    "effect": "Bone Club deals damage and has a 10% chance of causing the target to flinch (if the target has not yet moved)."
+  },
+  {
+    "name": "bonemerang",
+    "type": "ground",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 0.9,
+    "pp": 10,
+    "effect": "Bonemerang deals damage and will strike twice (with 50 base power each time). Each strike of Bonemerang is treated like a separate attack."
+  },
+  {
+    "name": "bubble",
+    "type": "water",
+    "category": "special",
+    "power": 20,
+    "accuracy": 1.0,
+    "pp": 30,
+    "effect": "Bubble deals damage and has a 10% chance of lowering the target's Speed by 1 stage."
+  },
+  {
+    "name": "bubble beam",
+    "type": "water",
+    "category": "special",
+    "power": 65,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "Bubble Beam deals damage and has a 10% chance of lowering the target's Speed by 1 stage."
+  },
+  {
+    "name": "clamp",
+    "type": "water",
+    "category": "physical",
+    "power": 35,
+    "accuracy": 0.85,
+    "pp": 10,
+    "effect": "Clamp inflicts regular damage for 2-5 turns. While in effect, the target is unable to attack."
+  },
+  {
+    "name": "comet punch",
+    "type": "normal",
+    "category": "physical",
+    "power": 18,
+    "accuracy": 0.85,
+    "pp": 15,
+    "effect": "Comet Punch hits 2-5 times per turn used. 2 hits prob. 3/8 power 36; 3 hits prob 3/8 power 36; 4 hits prob. 1/8 power 72; 5 hits prob. 1/8 power 90."
+  },
+  {
+    "name": "confuse ray",
+    "type": "ghost",
+    "category": "status",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 10,
+    "effect": "Confuse Ray causes the target to become confused. Confused Monster have a 50% chance of hurting themselves each turn, for 1-4 attacking turns. The damage received is as if the Monster attacks itself with a typeless 40 base power Physical attack."
+  },
+  {
+    "name": "confusion",
+    "type": "psychic",
+    "category": "special",
+    "power": 50,
+    "accuracy": 1.0,
+    "pp": 25,
+    "effect": "Confusion deals damage and has a 10% chance of confusing the target."
+  },
+  {
+    "name": "constrict",
+    "type": "normal",
+    "category": "physical",
+    "power": 10,
+    "accuracy": 1.0,
+    "pp": 35,
+    "effect": "Constrict deals damage and has a 10% chance of lowering the target's Speed by 1 stage."
+  },
+  {
+    "name": "conversion",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "effect": "Conversion changes the user's type to the oponnent monster's type"
+  },
+  {
+    "name": "counter",
+    "type": "fighting",
+    "category": "physical",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 20,
+    "priority": -1,
+    "effect": "When hit by a Physical Attack, user strikes back with 2x power."
+  },
+  {
+    "name": "crabhammer",
+    "type": "water",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 0.85,
+    "pp": 10,
+    "effect": "Increases critical hit ratio (+1 = 12,5% instead of 6,25, +2 = 50%, +3+ = 100%)."
+  },
+  {
+    "name": "cut",
+    "type": "normal",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 0.95,
+    "pp": 30
+  },
+  {
+    "name": "defense curl",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 40,
+    "effect": "Defense Curl raises the user's Defense by 1 stage."
+  },
+  {
+    "name": "dig",
+    "type": "ground",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 1.0,
+    "pp": 10,
+    "effect": "Digs underground on first turn and attacks on second."
+  },
+  {
+    "name": "disable",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.55,
+    "pp": 20,
+    "effect": "Disable causes the previous move the target used to be disabled for 1-8 turns, which prevents the move's use."
+  },
+  {
+    "name": "dizzy punch",
+    "type": "normal",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 1.0,
+    "pp": 10
+  },
+  {
+    "name": "double kick",
+    "type": "fighting",
+    "category": "physical",
+    "power": 30,
+    "accuracy": 1.0,
+    "pp": 30,
+    "effect": "Double Kick deals damage and will strike twice (with 30 base power each time)."
+  },
+  {
+    "name": "double slap",
+    "type": "normal",
+    "category": "physical",
+    "power": 15,
+    "accuracy": 0.85,
+    "pp": 10,
+    "effect": "Double Slap hits 2-5 times per turn used. 3 hits prob. 3/8 power 30, 3 hits prob. 3/8 power 45, 4 hits prob.1/8 power 60; 5 hits prob. 1/8 power 75;"
+  },
+  {
+    "name": "double team",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 15,
+    "effect": "Double Team raises the user's Evasiveness by 1 stage, thus making the user more difficult to hit."
+  },
+  {
+    "name": "double-edge",
+    "type": "normal",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Double-Edge deals damage, but the user receives 33,33% of the damage it inflicted in recoil. In other words, if the attack does 90 HP damage to the opponent, the user will lose 30 HP."
+  },
+  {
+    "name": "dragon rage",
+    "type": "dragon",
+    "category": "special",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 10,
+    "effect": "Dragon Rage always deals 40 HP damage to the target, regardless of typing."
+  },
+  {
+    "name": "dream eater",
+    "type": "psychic",
+    "category": "special",
+    "power": 100,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Dream Eater deals damage only on sleeping foes and the user will recover 50% of the HP drained."
+  },
+  {
+    "name": "drill peck",
+    "type": "flying",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 1.0,
+    "pp": 20
+  },
+  {
+    "name": "earthquake",
+    "type": "ground",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 1.0,
+    "pp": 10
+  },
+  {
+    "name": "egg bomb",
+    "type": "normal",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 0.75,
+    "pp": 10
+  },
+  {
+    "name": "ember",
+    "type": "fire",
+    "category": "special",
+    "power": 40,
+    "accuracy": 1.0,
+    "pp": 25,
+    "effect": "Ember deals damage and has a 10% chance of burning the target."
+  },
+  {
+    "name": "explosion",
+    "type": "normal",
+    "category": "physical",
+    "power": 170,
+    "accuracy": 1.0,
+    "pp": 5,
+    "effect": "Explosion deals high damage, but causes the user to faint."
+  },
+  {
+    "name": "fire blast",
+    "type": "fire",
+    "category": "special",
+    "power": 120,
+    "accuracy": 0.85,
+    "pp": 5,
+    "effect": "Fire Blast deals damage and has a 10% chance of burning the target."
+  },
+  {
+    "name": "fire punch",
+    "type": "fire",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Fire Punch deals damage and has a 10% chance of burning the target."
+  },
+  {
+    "name": "fire spin",
+    "type": "fire",
+    "category": "special",
+    "power": 35,
+    "accuracy": 0.85,
+    "pp": 15,
+    "effect": "Fire Spin inflicts damage on the first turn then traps the opponent, causing them to lose 12,5% of their maximum HP after each turn, for 4-5 turns."
+  },
+  {
+    "name": "fissure",
+    "type": "ground",
+    "category": "physical",
+    "power": null,
+    "accuracy": 0.3,
+    "pp": 5,
+    "effect": "If it hits, Fissure is guaranteed to make the opponent faint. But does not affect oponent with a higher Speed than the user."
+  },
+  {
+    "name": "flamethrower",
+    "type": "fire",
+    "category": "special",
+    "power": 95,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Flamethrower deals damage and has a 10% chance of burning the target."
+  },
+  {
+    "name": "flash",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.7,
+    "pp": 20,
+    "effect": "Flash lowers the opponent's Accuracy by 1 stage."
+  },
+  {
+    "name": "fly",
+    "type": "flying",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 0.95,
+    "pp": 15,
+    "effect": "The user of Fly will (fly up high) on the first turn. On the second turn, Fly deals damage."
+  },
+  {
+    "name": "focus energy",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "effect": "Increases critical hit ratio (+1 = 12,5% instead of 6,25, +2 = 50%, +3+ = 100%)."
+  },
+  {
+    "name": "fury attack",
+    "type": "normal",
+    "category": "physical",
+    "power": 15,
+    "accuracy": 0.85,
+    "pp": 20,
+    "effect": "Fury Attack hits 2-5 times per turn used. 2 Hits Prob. 3/8 power 30; 3 hits prob. 3/8 power 45; 4 hits prob. 1/8 power 60; 5 hits prob. 1/8, power 75;"
+  },
+  {
+    "name": "fury swipes",
+    "type": "normal",
+    "category": "physical",
+    "power": 18,
+    "accuracy": 0.8,
+    "pp": 15,
+    "effect": "Fury Swipes hits 2-5 times per turn used. 2 Hits Prob. 3/8 power 36; 3 hits prob. 3/8 power 54; 4 hits prob. 1/8 power 72; 5 hits prob. 1/8, power 90;"
+  },
+  {
+    "name": "glare",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.75,
+    "pp": 30,
+    "effect": "Glare paralyzes oponnent. Paralyzed monster have a 25% chance of not being able to attack, and their Speed is decreased by 75%."
+  },
+  {
+    "name": "growl",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 40,
+    "effect": "Growl lowers the oponnent's Attack by 1 stage."
+  },
+  {
+    "name": "growth",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 40,
+    "effect": "Growth raises the user's Attack and Special Attack by 1 stage each."
+  },
+  {
+    "name": "guillotine",
+    "type": "normal",
+    "category": "physical",
+    "power": null,
+    "accuracy": 0.3,
+    "pp": 5,
+    "effect": "If it hits, Guillotine is guaranteed to make the opponent faint. But does not affect oponent with a higher Speed than the user."
+  },
+  {
+    "name": "gust",
+    "type": "normal",
+    "category": "special",
+    "power": 40,
+    "accuracy": 1.0,
+    "pp": 35
+  },
+  {
+    "name": "harden",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "effect": "Harden raises the user's Defense by 1 stage."
+  },
+  {
+    "name": "haze",
+    "type": "ice",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "effect": "Resets all stat changes."
+    
+  },
+  {
+    "name": "headbutt",
+    "type": "normal",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Headbutt deals damage and has a 30% chance of causing the target to flinch (if the target has not moved yet)."
+  },
+  {
+    "name": "high jump kick",
+    "type": "fighting",
+    "category": "physical",
+    "power": 85,
+    "accuracy": 0.9,
+    "pp": 20,
+    "effect": "High Jump Kick deals damage, however, if it misses the user loses 33,33% of its maximum HP, due to crash reason."
+  },
+  {
+    "name": "horn attack",
+    "type": "normal",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 1.0,
+    "pp": 25
+  },
+  {
+    "name": "horn drill",
+    "type": "normal",
+    "category": "physical",
+    "power": null,
+    "accuracy": 0.3,
+    "pp": 5,
+    "effect": "If it hits, Horn Drill is guaranteed to make the opponent faint. But does not affect oponent with a higher Speed than the user."
+  },
+  {
+    "name": "hydro pump",
+    "type": "water",
+    "category": "special",
+    "power": 120,
+    "accuracy": 0.8,
+    "pp": 5
+  },
+  {
+    "name": "hyper beam",
+    "type": "normal",
+    "category": "special",
+    "power": 150,
+    "accuracy": 0.9,
+    "pp": 5,
+    "effect": "Hyper Beam deals damage, but the user must recharge on the next turn (skipping one round). So if user used Hyper Beam in round 1, then user skipps round 2 and in round 3 he is able to do next move."
+  },
+  {
+    "name": "hyper fang",
+    "type": "normal",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 0.9,
+    "pp": 15,
+    "effect": "Hyper Fang deals damage and has a 10% chance of causing the target to flinch (if the target has not yet moved)."
+  },
+  {
+    "name": "hypnosis",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.6,
+    "pp": 20,
+    "effect": "Hypnosis puts the target to sleep, if it hits. Sleeping monster cannot move. Sleep lasts for 1-3 turns."
+  },
+  {
+    "name": "ice beam",
+    "type": "ice",
+    "category": "special",
+    "power": 95,
+    "accuracy": 1.0,
+    "pp": 10,
+    "effect": "Ice Beam deals damage and has a 10% chance of freezing the target."
+  },
+  {
+    "name": "ice punch",
+    "type": "ice",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Ice Punch deals damage and has a 10% chance of freezing the target."
+  },
+  {
+    "name": "jump kick",
+    "type": "fighting",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 0.95,
+    "pp": 25,
+    "effect": "Jump Kick deals damage, however, if it misses the user losing 33,33% of its maximum HP, due to crash reason."
+  },
+  {
+    "name": "karate chop",
+    "type": "normal",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 1.0,
+    "pp": 25,
+    "effect": "(+1 = 12,5% instead of 6,25, +2 = 50%, +3+ = 100%)."
+  },
+  {
+    "name": "kinesis",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.8,
+    "pp": 15,
+    "effect": "Kinesis lowers the target's Accuracy by 1 stage."
+  },
+  {
+    "name": "leech life",
+    "type": "bug",
+    "category": "physical",
+    "power": 20,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Leech Life deals damage and the user will recover 50% of the HP drained."
+  },
+  {
+    "name": "leech seed",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.9,
+    "pp": 10,
+    "effect": "Leech Seed deals 6,25% of the target's HP and adds to user HP."
+  },
+  {
+    "name": "leer",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 30,
+    "effect": "Leer lowers the target's Defense by 1 stage."
+  },
+  {
+    "name": "lick",
+    "type": "ghost",
+    "category": "physical",
+    "power": 20,
+    "accuracy": 1.0,
+    "pp": 30,
+    "effect": "Lick deals damage and has a 30% chance of paralyzing the target. Paralyzed monster have a 25% chance of not being able to attack, and their Speed is decreased by 75%."
+  },
+  {
+    "name": "light screen",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "effect": "Light Screen reduces damage from Special Attacks by 50%, for 5 turns."
+  },
+  {
+    "name": "lovely kiss",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.75,
+    "pp": 10,
+    "effect": "Lovely Kiss puts the target to sleep. Sleeping monster cannot move. Sleep lasts for 1-3 turns."
+  },
+  {
+    "name": "low kick",
+    "type": "fighting",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 0.9,
+    "pp": 20,
+    "effect": "Low Kick has a 30% chance of causing the target to flinch (if the target has not yet moved)."
+  },
+  {
+    "name": "meditate",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 40,
+    "effect": "Meditate raises the user's Attack by one stage."
+  },
+  {
+    "name": "mega drain",
+    "type": "grass",
+    "category": "special",
+    "power": 40,
+    "accuracy": 1.0,
+    "pp": 10,
+    "effect": "Mega Drain deals damage and the user will recover 50% of the HP drained."
+  },
+  {
+    "name": "mega kick",
+    "type": "normal",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 0.75,
+    "pp": 5
+  },
+  {
+    "name": "mega punch",
+    "type": "normal",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 0.85,
+    "pp": 20
+  },
+  {
+    "name": "metronome",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "effect": "Metronome uses a random move chosen from nearly all existing moves, even if the user cannot normally learn it."
+  },
+  {
+    "name": "mimic",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "effect": "Mimic copies the last move used by the target."
+  },
+  {
+    "name": "minimize",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "effect": "Minimize raises the user's Evasion by 2 stages"
+  },
+  {
+    "name": "mirror move",
+    "type": "flying",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "effect": "User performs the opponent's last move."
+  },
+  {
+    "name": "mist",
+    "type": "ice",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "effect": "User's stats cannot be changed for a period of time. Lasts 1-3 rounds."
+  },
+  {
+    "name": "night shade",
+    "type": "ghost",
+    "category": "special",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "The damage of Night Shade is equal to the user's level. So at level 100 the monster will inflict 100 HP damage."
+  },
+  {
+    "name": "pay day",
+    "type": "normal",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 1.0,
+    "pp": 20
+  },
+  {
+    "name": "peck",
+    "type": "flying",
+    "category": "physical",
+    "power": 35,
+    "accuracy": 1.0,
+    "pp": 35
+  },
+  {
+    "name": "petal dance",
+    "type": "grass",
+    "category": "special",
+    "power": 120,
+    "accuracy": 1.0,
+    "pp": 10,
+    "effect": "User attacks for 2-3 turns but then becomes confused. Confused Monster have a 50% chance of hurting themselves each turn, for 1-4 attacking turns. The damage received is as if the Monster attacks itself with a typeless 40 base power Physical attack."
+  },
+  {
+    "name": "pin missile",
+    "type": "bug",
+    "category": "physical",
+    "power": 14,
+    "accuracy": 0.85,
+    "pp": 20,
+    "changes": "Pin Missile hits 2-5 times per turn used. 2 hits prob 3/8 power 50, 3 hits prob. 3/8 power 75; 4 hits prob 1/8 power 100; 5 hits prob. 1/8 power 125;"
+  },
+  {
+    "name": "poison gas",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.55,
+    "pp": 40,
+    "effect": "Poison Gas causes the target to become poisoned. Poisoned monster lose 12,5% of their maximum HP each turn."
+  },
+  {
+    "name": "poison powder",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.75,
+    "pp": 35,
+    "effect": "Poison Powder causes the target to become poisoned. Poisoned monster lose 12,5% of their maximum HP each turn."
+  },
+  {
+    "name": "poison sting",
+    "type": "poison",
+    "category": "physical",
+    "power": 15,
+    "accuracy": 1.0,
+    "pp": 35,
+    "effect": "Poison Sting deals damage and has a 30% chance of poisoning the target."
+  },
+  {
+    "name": "pound",
+    "type": "normal",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 1.0,
+    "pp": 35
+  },
+  {
+    "name": "psybeam",
+    "type": "psychic",
+    "category": "special",
+    "power": 65,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "Psybeam deals damage and has a 10% chance of confusing the target."
+  },
+  {
+    "name": "psychic",
+    "type": "psychic",
+    "category": "special",
+    "power": 90,
+    "accuracy": 1.0,
+    "pp": 10,
+    "effect": "Psychic deals damage and has a 10% chance of lowering the target's Special Defense by one stage."
+  },
+  {
+    "name": "psywave",
+    "type": "psychic",
+    "category": "special",
+    "power": null,
+    "accuracy": 0.8,
+    "pp": 15,
+    "effect": "Psywave inflicts a random amount of HP damage, varying between 50% and 150% of the user's level. In other words, at level 100 the damage will be 50-150 HP."
+  },
+  {
+    "name": "quick attack",
+    "type": "normal",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 1.0,
+    "pp": 30,
+    "priority": 1,
+    "effect": "Quick Attack deals damage and has a priority of +1."
+  },
+  {
+    "name": "rage",
+    "type": "normal",
+    "category": "physical",
+    "power": 20,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "Rage always deals 20 HP damage to the target, regardless of typing."
+  },
+  {
+    "name": "razor leaf",
+    "type": "grass",
+    "category": "physical",
+    "power": 55,
+    "accuracy": 0.95,
+    "pp": 25,
+    "effect": "Increases critical hit ratio (+1 = 12,5% instead of 6,25, +2 = 50%, +3+ = 100%)."
+  },
+  {
+    "name": "razor wind",
+    "type": "normal",
+    "category": "special",
+    "power": 80,
+    "accuracy": 0.75,
+    "pp": 10,
+    "effect": "The user of Razor Wind will (whip up a whirlwind) on the first turn. On the second turn, Razor Wind deals damage"
+  },
+  {
+    "name": "recover",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "effect": "Recover restores up to 50% of the user's maximum HP."
+  },
+  {
+    "name": "reflect",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "effect": "Reflect reduces damage from Physical attacks by 50%, for 5 turns."
+  },
+  {
+    "name": "rest",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "effect": "User sleeps for 2 turns, but user is fully healed."
+  },
+  {
+    "name": "roar",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "Roar causes the target to change the monster. If it is last monster, it's faint."
+  },
+  {
+    "name": "rock slide",
+    "type": "rock",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 0.9,
+    "pp": 10,
+    "effect": "Rock Slide deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved)."
+  },
+  {
+    "name": "rock throw",
+    "type": "rock",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 0.65,
+    "pp": 15
+  },
+  {
+    "name": "rolling kick",
+    "type": "fighting",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 0.85,
+    "pp": 15,
+    "effect": "Rolling Kick deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved)."
+  },
+  {
+    "name": "sand attack",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Sand Attack lowers the target's Accuracy by 1 stage."
+  },
+  {
+    "name": "scratch",
+    "type": "normal",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 1.0,
+    "pp": 35
+  },
+  {
+    "name": "screech",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.85,
+    "pp": 40,
+    "effect": "Screech lowers the target's Defense by 2 stages."
+  },
+  {
+    "name": "seismic toss",
+    "type": "fighting",
+    "category": "physical",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "The damage of Seismic Toss is equal to the user's level. So at level 100 the monster will inflict 100 HP damage."
+  },
+  {
+    "name": "self-destruct",
+    "type": "normal",
+    "category": "physical",
+    "power": 200,
+    "accuracy": 1.0,
+    "pp": 5,
+    "effect": "Self-Destruct deals high damage, but causes the user to faint."
+  },
+  {
+    "name": "sharpen",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "effect": "Sharpen raises the user's Attack by 1 stage."
+  },
+  {
+    "name": "sing",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.55,
+    "pp": 15,
+    "effect": "Sing puts the target to sleep, if it hits. Sleeping monster cannot move. Sleep lasts for 1-3 turns."
+  },
+  {
+    "name": "skull bash",
+    "type": "normal",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "The user of Skull Bash will (tuck in its head) on the first turn and raise its Defense by 1 stage. On the second turn, Skull Bash deals damage."
+  },
+  {
+    "name": "sky attack",
+    "type": "flying",
+    "category": "physical",
+    "power": 140,
+    "accuracy": 0.9,
+    "pp": 5,
+    "effect": "The user of Sky Attack will become (cloaked in a harsh light) to all attacks on the first turn. On the second turn, Sky Attack deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved)."
+  },
+  {
+    "name": "slam",
+    "type": "normal",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 0.75,
+    "pp": 20
+  },
+  {
+    "name": "slash",
+    "type": "normal",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "Increases critical hit ratio (+1 = 12,5% instead of 6,25, +2 = 50%, +3+ = 100%)."
+  },
+  {
+    "name": "sleep powder",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.75,
+    "pp": 15,
+    "effect": "Sleep Powder puts the target to sleep, if it hits. Sleeping Pokémon cannot move (with some exceptions such as Snore). Sleep lasts for 1-3 turns."
+  },
+  {
+    "name": "sludge",
+    "type": "poison",
+    "category": "special",
+    "power": 65,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "Sludge deals damage and has a 30% chance of poisoning the target."
+  },
+  {
+    "name": "smog",
+    "type": "poison",
+    "category": "special",
+    "power": 20,
+    "accuracy": 0.7,
+    "pp": 20,
+    "effect": "Smog deals damage and has a 40% chance of poisoning the target."
+  },
+  {
+    "name": "smokescreen",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "Smokescreen lowers the target's Accuracy by 1 stage."
+  },
+  {
+    "name": "soft-boiled",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "effect": "Soft-Boiled recovers up to 50% of the user's maximum HP."
+  },
+  {
+    "name": "solar beam",
+    "type": "grass",
+    "category": "special",
+    "power": 120,
+    "accuracy": 1.0,
+    "pp": 10,
+    "effect": "The user of Solar Beam will (absorb light) on the first turn. On the second turn, Solar Beam deals damage."
+  },
+  {
+    "name": "sonic boom",
+    "type": "normal",
+    "category": "special",
+    "power": null,
+    "accuracy": 0.9,
+    "pp": 20,
+    "effect": "Sonic Boom always deals 20 HP damage to the target, regardless of typing."
+  },
+  {
+    "name": "spike cannon",
+    "type": "normal",
+    "category": "physical",
+    "power": 20,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": [],
+    "changes": "Spike Cannon hits 2-5 times per turn used. 2 hits prob 3/8, power 40; 3 hits prob. 3/8 power 60; 4 hits prob. 1/8 power 80; 5 hits prob. 1/8 power 100."
+  },
+  {
+    "name": "splash",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 40
+  },
+  {
+    "name": "spore",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Spore puts the target to sleep. Sleeping monster cannot move. Sleep lasts for 1-3 turns."
+  },
+  {
+    "name": "stomp",
+    "type": "normal",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "Stomp deals damage and has a 30% chance of causing the target to flinch (if the target has not yet moved)."
+  },
+  {
+    "name": "strength",
+    "type": "normal",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 1.0,
+    "pp": 15
+  },
+  {
+    "name": "string shot",
+    "type": "bug",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.95,
+    "pp": 40,
+    "effect": "String Shot lowers the target's Speed by 2 stages."
+  },
+  {
+    "name": "struggle",
+    "type": "normal",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 1.0,
+    "pp": null,
+    "effect": "User lose 25% of max HP."
+  },
+  {
+    "name": "stun spore",
+    "type": "grass",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.75,
+    "pp": 30,
+    "effect": "Stun Spore paralyzes the target, if it hits. Paralyzed monster have a 25% chance of not being able to attack, and their Speed is decreased by 75%."
+  },
+  {
+    "name": "submission",
+    "type": "fighting",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 0.8,
+    "pp": 25,
+    "effect": "Submission deals damage, but the user receives 0,25% of the damage it inflicts in recoil. In other words, if the attack does 100 HP damage to the opponent, the user will lose 25 HP."
+  },
+  {
+    "name": "substitute",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "effect": "Uses 25% of HP to creates a decoy that takes hits from 1-3 turns."
+  },
+  {
+    "name": "super fang",
+    "type": "normal",
+    "category": "physical",
+    "power": null,
+    "accuracy": 0.9,
+    "pp": 10,
+    "effect": "Always takes off half of the opponent's HP."
+  },
+  {
+    "name": "supersonic",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.55,
+    "pp": 20,
+    "effect": "Supersonic causes the target to become confused. Confused Monster have a 50% chance of hurting themselves each turn, for 1-4 attacking turns. The damage received is as if the Monster attacks itself with a typeless 40 base power Physical attack."
+  },
+  {
+    "name": "surf",
+    "type": "water",
+    "category": "special",
+    "power": 95,
+    "accuracy": 1.0,
+    "pp": 15
+  },
+  {
+    "name": "swift",
+    "type": "normal",
+    "category": "special",
+    "power": 60,
+    "accuracy": null,
+    "pp": 20,
+    "effect": "Swift always deals 60 HP damage to the target, regardless of typing."
+  },
+  {
+    "name": "swords dance",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "effect": "Swords Dance raises the user's Attack by 2 stages."
+  },
+  {
+    "name": "tackle",
+    "type": "normal",
+    "category": "physical",
+    "power": 35,
+    "accuracy": 0.95,
+    "pp": 35
+  },
+  {
+    "name": "tail whip",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 30,
+    "effect": "Tail Whip lowers the target's Defense by 1 stage."
+  },
+  {
+    "name": "take down",
+    "type": "normal",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 0.85,
+    "pp": 20,
+    "effect": "Take Down deals damage, but the user receives 0,25% of the damage it inflicted in recoil. In other words, if the attack does 100 HP damage to the opponent, the user will lose 25 HP."
+  },
+  {
+    "name": "teleport",
+    "type": "psychic",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 20
+  },
+  {
+    "name": "thrash",
+    "type": "normal",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 1.0,
+    "pp": 10,
+    "effect": "The user of Thrash attacks for 2-3 turns and then becomes confused. Confused Monster have a 50% chance of hurting themselves each turn, for 1-4 attacking turns. The damage received is as if the Monster attacks itself with a typeless 40 base power Physical attack."
+  },
+  {
+    "name": "thunder",
+    "type": "electric",
+    "category": "special",
+    "power": 120,
+    "accuracy": 0.7,
+    "pp": 10,
+    "effect": "Thunder deals damage and has a 30% chance of paralyzing the target. Paralyzed monster have a 25% chance of not being able to attack, and their Speed is decreased by 75%."
+  },
+  {
+    "name": "thunder punch",
+    "type": "electric",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Thunder Punch deals damage and has a 10% chance of paralyzing the target. Paralyzed monster have a 25% chance of not being able to attack, and their Speed is decreased by 75%."
+  },
+  {
+    "name": "thunder shock",
+    "type": "electric",
+    "category": "special",
+    "power": 40,
+    "accuracy": 1.0,
+    "pp": 30,
+    "effect": "Thunder Shock deals damage and has a 10% chance of paralyzing the target. Paralyzed monster have a 25% chance of not being able to attack, and their Speed is decreased by 75%."
+  },
+  {
+    "name": "thunder wave",
+    "type": "electric",
+    "category": "status",
+    "power": null,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "Thunder Wave paralyzes the opponent. Paralyzed monster have a 25% chance of not being able to attack, and their Speed is decreased by 75%."
+  },
+  {
+    "name": "thunderbolt",
+    "type": "electric",
+    "category": "special",
+    "power": 95,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Thunderbolt deals damage and has a 10% chance of paralyzing the target. Paralyzed monster have a 25% chance of not being able to attack, and their Speed is decreased by 75%."
+  },
+  {
+    "name": "toxic",
+    "type": "poison",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.85,
+    "pp": 10,
+    "effect": "Toxic causes the target to be (badly poisoned). Monster that are badly poisoned will lose an increasing amount of HP at the end of each turn. The affected monster will lose 6,25% of its maximum HP at the end of the first turn, which then increases by 6,25% each turn. In other words, they lose 6,25%, 12,5%, 25%, 50%, 100%."
+  },
+  {
+    "name": "transform",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "effect": "User takes on the form and attacks of the opponent."
+  },
+  {
+    "name": "tri attack",
+    "type": "normal",
+    "category": "special",
+    "power": 80,
+    "accuracy": 1.0,
+    "pp": 10
+  },
+  {
+    "name": "twineedle",
+    "type": "bug",
+    "category": "physical",
+    "power": 25,
+    "accuracy": 1.0,
+    "pp": 20,
+    "effect": "Tri Attack deals damage and has a 20% chance of paralyzing. Paralyzed monster have a 25% chance of not being able to attack, and their Speed is decreased by 75%."
+  },
+  {
+    "name": "vice grip",
+    "type": "normal",
+    "category": "physical",
+    "power": 55,
+    "accuracy": 1.0,
+    "pp": 30
+  },
+  {
+    "name": "vine whip",
+    "type": "grass",
+    "category": "physical",
+    "power": 35,
+    "accuracy": 1.0,
+    "pp": 10
+  },
+  {
+    "name": "water gun",
+    "type": "water",
+    "category": "special",
+    "power": 40,
+    "accuracy": 1.0,
+    "pp": 25
+  },
+  {
+    "name": "waterfall",
+    "type": "water",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 1.0,
+    "pp": 15,
+    "effect": "Waterfall deals damage and has a 20% chance of causing the target to flinch (if the target has not yet moved)."
+  },
+  {
+    "name": "whirlwind",
+    "type": "normal",
+    "category": "status",
+    "power": null,
+    "accuracy": 0.85,
+    "pp": 20,
+    "effect": "Whirlwind forces the oponnent to switch to another monster. If it is last monster, it's faint."
+  },
+  {
+    "name": "wing attack",
+    "type": "flying",
+    "category": "physical",
+    "power": 35,
+    "accuracy": 1.0,
+    "pp": 35
+  },
+  {
+    "name": "withdraw",
+    "type": "water",
+    "category": "status",
+    "power": null,
+    "accuracy": null,
+    "pp": 40,
+    "effect": "Withdraw raises the user's Defense by 1 stage."
+  },
+  {
+    "name": "wrap",
+    "type": "normal",
+    "category": "physical",
+    "power": 15,
+    "accuracy": 0.9,
+    "pp": 20,
+    "effect": "Wrap damage on the first turn then traps the opponent, causing them to lose 1/8 of their maximum HP after each turn, for 4-5 turns."
+  }
+]

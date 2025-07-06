@@ -41,11 +41,11 @@ export class GameService {
     const player1Games$ = this.afs.collection('games', ref => ref
       .where('player1Uid', '==', uid)
     ).snapshotChanges();
-  
+
     const player2Games$ = this.afs.collection('games', ref => ref
       .where('player2Uid', '==', uid)
     ).snapshotChanges();
-  
+
     // Combine the two Observables to wait for both to complete
     return combineLatest([player1Games$, player2Games$]).pipe(
       map(([player1Snapshots, player2Snapshots]) => {
@@ -55,17 +55,17 @@ export class GameService {
           const docId = snapshot.payload.doc.id;
           return { id: docId, ...data };
         });
-  
+
         const player2Games = player2Snapshots.map(snapshot => {
           const data = snapshot.payload.doc.data() as Game;
           const docId = snapshot.payload.doc.id;
           return { id: docId, ...data };
         });
-  
+
         return [...player1Games, ...player2Games];
       })
     );
-  }  
+  }
 
   getGamesPlayer1Left(): Observable<any[]> { // ToDo - Cloud Functions: delete finished games
     return this.afs.collection('games', ref => ref
@@ -135,5 +135,5 @@ export class GameService {
       })
     );
   }
-  
+
 }

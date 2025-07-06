@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.userService.isLoggedIn()) {
-      this.router.navigate(['game']);
+      this.router.navigate(['world']);
     }
   }
 }
