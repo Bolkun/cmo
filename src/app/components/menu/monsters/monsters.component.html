@@ -87,7 +87,7 @@
                   <tr>
                     <td *ngFor="let lvl of objectKeys(move)">
                       <button class="btn btn-sm btn-secondary me-2" (click)="toggleMoveDetails(i)">
-                        {{ expandedMoves[i] ? 'Hide' : 'Show' }}
+                        {{ expandedMoves[i] ? 'H' : 'S' }}
                       </button>
                       Level {{ lvl }}: {{ move[lvl] | titlecase }}
                     </td>
